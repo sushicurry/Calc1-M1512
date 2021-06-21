@@ -934,8 +934,46 @@ Like I mentioned last class we can look at higher order derivatives. Trig functi
 
 \subsubsection{Derivatives of Exponential Functions}
 
-The other type of functions we have not take the derivative of are exponential functions - such as $e^x$. 
+The other type of functions we have not take the derivative of are exponential functions - such as $e^x$. This is a special exponential function since it has $e$ as the base. A more general exponential function is $b^x$ where $b$ is any real number. 
 
+(Ask if people remember the rules for dealing with exponential functions)
 
+We can also talk about the limits at infinity for exponetial functions and those depend on whether our base is greater than 1 or inbetween 0 and 1. 
+
+We can try and take the derivative of a general exponetial function using the definition - 
+\begin{align*}
+	\frac{d}{dx} b^x &= \lim_{h \to 0} \frac{b^{x + h} - b^x}{h} \\
+					 &= \lim_{h \to 0} \frac{b^x \cdot b^h - b^x}{h} \\
+					 &= b^x \lim_{h \to 0} \frac{b^h - 1}{h}.
+\end{align*}
+
+It is interesting to note that the limit that remains is just the definition of $\left.\frac{d}{dx} b^x \right|_{x = 0}$. We will not cover what this limit is in this course, but what we will do is define this - 
+\begin{Definition}
+ Define $e$ as the number such that $\lim_{h \to 0} \frac{e^h - 1}{h} = 1$. 
+\end{Definition}
+
+If we do this we can see that by the work with did using the definition of the derivative - 
+\begin{Theorem}
+$$\frac{d}{dx} e^x = e^x$$
+\end{Theorem}
+
+For the purposes of this course, this is the only exponential function we will be working with. 
+
+\subsubsection{Derivatives as a Rate of Change Revisited}
+
+Let us come back to looking at derivatives as a rate of change now that we can take the derivatives of more functions. There are a few common types of word problems that come up when talking about derivatives. One of the most common is dealing with position functions and velocity. 
+
+We originally started the class with one such example, where we were throwing a ball and had a function that measured the hieght of the ball after it was thrown. 
+\begin{Example}
+	We will throw a ball off a building of height 20 ft at a speed of 32 ft/s. The motion of the ball is then given by the function $h(t) = 20 + 32t - 16t^2$. This function $h$ is called a position function. Another common letter used for a position function is $s$. 
+	
+	Now if we want to find the velocity of a ball at a point we calculated the limit as the secant line became a tangent line - in other words, the velocity function $v(t)$ is just the derivative of $h$, $v(t) = h'(t)$. 
+	
+	We can go even further, if we want to find the instantaneous change in velocity, i.e. the acceleration of the ball, we take the derivative again - giving the relation $a(t) = v'(t)$. 
+	
+	In general - the velocity is the derivative of the position function and the acceleration is the derivative of the velocity. This is the key relationship to take away from this situation. 
+\end{Example}
+
+There are many other examples that we can see of derivatives in action in other fields, from physics to economics. (There just was a problem on your first exam). 
 
 \end{document}
