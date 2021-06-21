@@ -852,6 +852,89 @@ A few last remaining misc details about derivatives -
 \subsection{Higher Order Derivatives} We can take higher-order derivatives. So the second, third etc. (show how to notate it). In particular the second derivative will become important as we keep going 
 \subsection{Derivatives as Rates of Change} 
 
+\section{6/21}
+
+Today is the first exam. 
+\begin{enumerate}
+	\item[a.] Begin with a quick review/ask if there are any questions. 
+	\item[b.] Give exam (60 min)
+	\item[c.] Start on some new material.
+\end{enumerate}
+
+\subsection{Review before Exam}
+
+A few common mistakes that happened on the quizzes that I noted as I was grading them. 
+
+\begin{enumerate}
+	\item[1.] Not reading the directions. If the directions say use the definition use the definition. 
+	\item[2.] Not taking the derivative correctly. The one that tripped the most people up was the term in the derivative rules quiz $\frac{10}{x^2 \sqrt{x}}$. Many people used the product rule on the denominator, but that is incorrect. You have to either rewrite this as $x$ to a power or use the quotient rule. The other mistake was in canceling during the algebra after using the quotient rule. Simplifying is where many people make mistakes so remember to take the time to make sure you have done the algebra properly. 
+\end{enumerate}
+
+\subsection{Derivatives of Trig Functions}
+The power rule we talked about last week is our main tool for dealing with derivatives of polynomials, rational and algebraic functions. However we have yet to talk about two other common types of functions - Trig and Exponential functions. 
+
+Let us first talk about the derivatives for trig functions. 
+\subsubsection{Two Special Limits}
+There are two special limits that we will need to know to find the derivatives of trig functions - 
+\begin{Theorem}
+	\begin{align*}
+		\lim_{x \to 0} \frac{\sin x}{x} &= 1 \\
+		\lim_{x \to 0} \frac{\cos x - 1}{x} &= 0.
+	\end{align*}
+\end{Theorem}
+
+The proof of these two limits are in the textbook. The first one is a classic example of using the Squeeze Theorem. Here we take a sector of the unit circle degree $x$. Then we draw a triangle inside the circle and a triangle outside. Then calculating the areas of the triangles we get that the area of the sector follows the following chain - $\frac{1}{2} \cos x \sin x < \frac{x}{2} < \frac{1}{2} \tan x$. Rearranging this we can squeeze the quantity that we want to find. 
+
+Now we can calculate the derivatives of sine and cosine by definition. 
+
+Starting with $f(x) = \sin x$ we have
+\begin{align*}
+	f'(x) &= \lim_{h \to 0} \frac{\sin (x + h) - \sin x} {h} \\
+		  &= \lim_{h \to 0} \frac{\sin x \cos h + \cos x \sin h - \sin x} {h} \\
+		  &= \lim_{h \to 0} \frac{\sin x (\cos h - 1) + \cos x \sin h}{h} \\
+		  &= \sin x \lim_{h \to 0} \frac{\cos h - 1}{h} + \cos x \lim_{h \to 0} \frac{\sin h}{h} \\
+		  &= \cos x
+\end{align*}
+
+Similarly for $g(x) = \cos x$ we have 
+\begin{align*}
+	g'(x) &= \lim_{h \to 0} \frac{\cos (x + h) - \cos x} {h} \\
+	      &= \lim_{h \to 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h} \\
+		  &= \cos x \lim_{h \to 0} \frac{\cos h - 1}{h} - \sin x \lim_{h \to 0} \frac{\sin h}{h} \\
+		  &= -\sin x.
+\end{align*}
+
+This gives us that 
+\begin{Theorem}
+	\begin{align*}
+		\frac{d}{dx} \sin x &= \cos x \\
+		\frac{d}{dx} \cos x &= - \sin x.
+	\end{align*}
+\end{Theorem}
+
+Using this and the rules we covered last week we can now find derivatives involving trig functions. 
+\begin{Example}
+	Find the derivative of $y = x^2 \cos x$. Here we would use the product rule. 
+	The derivative of $y = \frac{1 - \sin x}{1 + \sin x}$. Here we would use the quotient rule. 
+\end{Example}
+
+Again with finding derivatives of other trig functions like $\tan x$ we would just write these functions in terms of $\sin$ and $\cos$ and then use the appropriate derivative rules. Once we do this we can find the derivatives to all simple trig functions
+\begin{Theorem}
+\begin{align*}
+	\frac{d}{dx} \sin x &= \cos x \\
+	\frac{d}{dx} \cos x &= - \sin x \\
+	\frac{d}{dx} \tan x &= \sec^2 x \\
+	\frac{d}{dx} \sec x &= \sec x \tan x \\ 
+	\frac{d}{dx} \csc x &= - \csc x \cot x \\
+	\frac{d}{dx} \cot x &= - \csc^2 x.
+\end{align*}
+\end{Theorem}
+
+Like I mentioned last class we can look at higher order derivatives. Trig functions are an example where we can always take a derivative of a trig function and never get 0. 
+
+\subsubsection{Derivatives of Exponential Functions}
+
+The other type of functions we have not take the derivative of are exponential functions - such as $e^x$. 
 
 
 
