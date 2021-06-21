@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,fancyhdr,graphicx, amsthm}
+\headheight -10pt
+%%\voffset 0.3 cm
+\textheight 26cm% 25.5cm
+\textwidth 18cm
+\topmargin -2cm
+\parindent 0pt
+\oddsidemargin -1.2cm \columnsep 18pt
+%\columnseprule 0.3pt
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} \lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\newcommand{\ds}{\displaystyle}
+\usepackage[metapost]{mfpic}
+\usepackage{multicol}
+\begin{document}
+
+
+
+%\textbf{NAME:}\hrulefill
+%\vspace{0.12in}
+
+\centerline{\textbf{\Large{Sketching a Graph Using Derivatives}}}
+
+\vspace{0.2in}
+ 
+\begin{enumerate}
+\item Consider the function
+\begin{align*}
+	f(x) = \frac{1}{\sqrt{8 \pi}} e^{- \frac{(x - 1)^2}{8}}
+\end{align*}
+
+Given that the first and second derivatives are:
+\begin{align*}
+	f'(x) &= \frac{1}{8 \sqrt{2 \pi}} (x - 1) e^{- \frac{(x - 1)^2}{8}} \\
+	f''(x) &= \frac{1}{32 \sqrt{2 \pi}} (x^2 - 2x - 3) e^{- \frac{(x - 1)^2}{8}}
+\end{align*}
+
+\begin{enumerate}
+	\item What are the critical points of $f(x)$. Is there a local max or min ? (Make sure to give the actual point(s) not just the $x$-values). 
+	\item What are the points of inflection ? (Make sure to give the actual points, not just the $x$ values). Intervals of concavity? 
+	\item Sketch the graph of $f(x)$, making sure to label all the points you found above. 
+	\item Bonus question: $f(x)$ is actually a special type of function. What special function is it? 
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}

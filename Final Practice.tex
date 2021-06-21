@@ -1,0 +1,347 @@
+\documentclass[11pt,reqno]{article}
+%\input{17F-137-HomeworkTemplate}
+\title{Homework \#2}
+%\maketitle
+%\due{Tuesday 9/12}
+
+\headheight -10pt
+
+%%\voffset 0.3 cm
+
+\textheight 26cm% 25.5cm
+
+\textwidth 18cm
+
+\topmargin -2cm
+
+\parindent 0pt
+
+\oddsidemargin -1.2cm \columnsep 18pt
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts, mathdots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage{enumitem}
+%\usepackage{verbatim}
+
+\usepackage{subcaption}
+\usepackage{setspace}
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes,backgrounds,3d}
+\usepackage{fix-cm}
+\usetikzlibrary{decorations.pathreplacing,shapes,snakes}
+
+%%
+\newcommand{\coursenumber}{Math 137}
+\newcommand{\coursename}{Real and Functional Analysis}
+
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1 }
+\renewcommand{\Im}[1]{\operatorname{Im} #1}
+\newcommand{\diam}{\operatorname{diam}}
+
+%% New Commands
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\s}{\mathscr{S}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathfrak{L}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Aut}{Aut}
+
+
+
+\renewcommand{\ker}{\operatorname{kernel}}
+\newcommand{\ran}{\operatorname{range}}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\vecspan}{\operatorname{span}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\nullspace}{\operatorname{nullspace}}
+
+\linespread{1}
+\setlength{\parskip}{0.5ex plus 0.5ex minus 0.2ex}
+
+%%  Matrices
+\newcommand{\minimatrix}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}  }
+\newcommand{\megamatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}  }
+
+\renewcommand{\vec}[1]{{\bf #1}}
+\newcommand{\ovec}{\operatorname{vec}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\renewcommand{\hat}{\widehat}
+
+\newcommand{\tworowvector}[2]{[#1\,\,#2]}
+\newcommand{\threerowvector}[3]{[#1\,\,#2\,\,#3]}
+\newcommand{\fourrowvector}[4]{[#1\,\,#2\,\,#3\,\,#4]}
+\newcommand{\fiverowvector}[5]{[#1\,\,#2\,\,#3\,\,#4\,\,#5]}
+\newcommand{\sixrowvector}[6]{[#1\,\,#2\,\,#3\,\,#4\,\,#5\,\,#6]}
+
+\newcommand{\twovector}[2]{\begin{bmatrix} #1\\#2 \end{bmatrix} }
+\newcommand{\threevector}[3]{\begin{bmatrix} #1\\#2\\#3 \end{bmatrix} }
+\newcommand{\fourvector}[4]{\begin{bmatrix} #1\\#2\\#3\\#4 \end{bmatrix} }
+\newcommand{\fivevector}[5]{\begin{bmatrix} #1\\#2\\#3\\#4\\#5 \end{bmatrix} }
+
+\newcommand{\comment}[1]{\marginpar{\scriptsize\color{gray}$\bullet$\,#1}}
+\newcommand{\highlight}[1]{\color{blue}#1\color{black}}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\alph{enumi})}%
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{(\roman{enumii})}%
+\newcommand{\due}[1]{\vspace{-0.2in}\begin{center}\textsc{due at the beginning of class \underline{#1}} \end{center}\medskip }
+
+
+%%%
+%%% Theorem Styles
+%%%
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem*{Thm}{Theorem}
+\newtheorem{Postulate}{Postulate}
+\newtheorem{Lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem*{Example}{Example}
+\newtheorem*{Remark}{Remark}
+\newtheorem{problem}{Exercise}
+\newtheorem*{Question}{Question}
+
+\let\oldenumerate=\enumerate
+\def\enumerate{
+	\oldenumerate
+	\setlength{\itemsep}{1pt}
+}
+\let\olditemize=\itemize
+\def\itemize{
+	\olditemize
+	\setlength{\itemsep}{5pt}
+}
+
+\allowdisplaybreaks
+\begin{document}
+	\centerline{\textbf{\Large{Final Practice}}}
+	
+	\begin{itemize}
+		\item[1.] Find the equation of the tangent line to the curve $y = \sqrt{2x^2 + 3}$ at $x = -1$ using the limit definition of the derivative. 
+		\item[2.] Where is the function $f(x) =  |\sin x |$ differentiable on the interval $0 \leq x \leq 2 \pi$. 
+		\item[3.] Find $f'(x)$ and $f''(x)$ when $f(x) = \sqrt[5]{x + x^3}$. 
+		\item[4.] (\textbf{Challenge})Find $f'(x)$ and $f''(x)$ when $f(x) = \frac{\sqrt{625 - \sec (x^2)}}{ x^{20} }$.
+		\item[5.] Use implicit differentiation to find the tangent line to $x^4 = y^2 + x^2$ at $(2, \sqrt{12})$. 
+		\item[6.] Use differentials to estimate the amount of paint needed to apply a coat of paint 0.03 cm thick to a sphere with diameter 40 meters. 
+		\item[7.] A police helicopter is flying at 200 kilometers per hour at a constant altitude of 1 km above a straight road. The pilot uses radar to determine that an oncoming car is at a distance of exactly 2 kilometers from the helicopter, and that this distance is decreasing at 250 kph. Find the speed of the car.
+		\item[8.] The strength of a rectangular beam is proportional to the product of its width $w$ times the square of its depth $d$. Find the dimensions of the strongest beam that can be cut from a cylindrical log of radius r.
+		\item[9.] Consider the function
+		\begin{align*}
+		f(x) = \frac{1}{\sqrt{8 \pi}} e^{- \frac{(x - 1)^2}{8}}
+		\end{align*}
+		
+		Given that the first and second derivatives are:
+		\begin{align*}
+		f'(x) &= \frac{1}{8 \sqrt{2 \pi}} (x - 1) e^{- \frac{(x - 1)^2}{8}} \\
+		f''(x) &= \frac{1}{32 \sqrt{2 \pi}} (x^2 - 2x - 3) e^{- \frac{(x - 1)^2}{8}}
+		\end{align*}
+		
+		\begin{enumerate}
+			\item What are the critical points of $f(x)$. Is there a local max or min ? (Make sure to give the actual point(s) not just the $x$-values). 
+			\item What are the points of inflection ? (Make sure to give the actual points, not just the $x$ values). Intervals of concavity? 
+			\item Sketch the graph of $f(x)$, making sure to label all the points you found above. 
+			\item Bonus question: $f(x)$ is actually a special type of function. What special function is it? 
+		\end{enumerate}
+	
+		\item[10.] Find the derivative of $$f(x) = \int_{-\sqrt{x}}^{e^{x^2 }} \sec(\pi(t^2 + 2t - 1)) \; dt$$
+		\item[11.] Evaluate the following integrals: 
+		\begin{enumerate}
+			\item $$\int_{0}^{4} \sqrt{2x + 1} \; dx$$
+			\item $$\int \sin^6 2x \; dx$$ 
+			\item $$\int_{-1}^{1} \frac{x^2}{\sqrt[3]{1 - x^3}} \; dx$$. 
+		\end{enumerate}
+		\item[12.] Find the area between $y = x^2 - 2x$ and $y = x - 2$. 
+		\item[13.] Find the average value of $f(x) = \frac{x^2 + 2}{(6x + x^3)^2}$ over the interval $[1, 3]$. 
+		\item[14.] Find the volume of the region bounded by $y = x - x^2$ and the $x$-axis rotated about the $x$-axis.
+		\item[15.] Suppose that a water tank is shaped like a right circular cone with the tip at the bottom, and has height 10 meters and radius 2 meters at the top. If the tank is full, how much work is required to pump all the water out over the top? 
+		\item[16.] Find the arc length of $f(x) = x^{3/2}$ on $[1,4]$. 
+		
+	\end{itemize}
+
+	\newpage
+	
+	\textbf{\Large{Worked Solutions}}
+	
+	\begin{enumerate}
+		\item[1.] Find the equation of the tangent line to the curve $y = \sqrt{2x^2 + 3}$ at $x = -1$ using the limit definition of the derivative. 
+		
+		\textbf{Solution}: Recall that there are two limit definitions of a derivative at a point. In this case we can use both of them. The first definition is: 
+		\begin{align*}
+			f'(x) = \lim\limits_{h \to 0} \frac{f(x + h) - f(x)}{h}.
+		\end{align*}
+		
+		So using this we get: 
+		\begin{align*}
+			f'(x) = \lim\limits_{h \to 0} \frac{\sqrt{2 (x + h)^2 + 3} - \sqrt{2x^2 + 3}}{h} &= \lim\limits_{h \to 0} \frac{\sqrt{2 (x + h)^2 + 3} - \sqrt{2x^2 + 3}}{h} \cdot \frac{\sqrt{2 (x + h)^2 + 3} + \sqrt{2x^2 + 3}}{\sqrt{2 (x + h)^2 + 3} + \sqrt{2x^2 + 3}} \\
+			&= \lim\limits_{h \to 0} \frac{2(x+h)^2 - (2x^2 + 3)}{ h (\sqrt{2 (x + h)^2 + 3} + \sqrt{2x^2 + 3})} \\
+			&= \lim\limits_{h \to 0} \frac{2x^2 + 4xh + 2h^2 +3 - 2x^2 - 3}{h (\sqrt{2 (x + h)^2 + 3} + \sqrt{2x^2 + 3})} \\
+			&= \lim\limits_{h \to 0} \frac{4x + 2h}{\sqrt{2 (x + h)^2 + 3} + \sqrt{2x^2 + 3}} \\
+			&= \frac{4x}{2 \sqrt{2x^2 + 3}} = \frac{2x}{\sqrt{2x^2 + 3}}
+		\end{align*}
+		
+		So then $f'(-1) = -\frac{2}{\sqrt{5}}$.
+		
+		Alternatively we could use the other definition of the derivative (at a point) as follows:
+		\begin{align*}
+			f'(-1) = \lim\limits_{x \to -1} \frac{f(x) - f(-1)}{x - (-1)} &= \lim\limits_{x \to -1} \frac{\sqrt{2x^2 + 3} - \sqrt{5}}{x + 1} \\
+			&= \lim\limits_{x \to -1} \frac{\sqrt{2x^2 + 3} - \sqrt{5}}{x + 1} \cdot \frac{\sqrt{2 x^2 + 3} + \sqrt{5}}{\sqrt{2x^2 + 3} + \sqrt{5}} = \lim\limits_{x \to -1}\frac{2x^2 + 3 - 5}{(x + 1)(\sqrt{2x^2 + 3} + \sqrt{5})} \\
+			&= \lim\limits_{x \to -1} \frac{2(x^2 - 1)}{(x + 1)(\sqrt{2x^2 + 3} + \sqrt{5})} = \lim\limits_{x \to -1} \frac{2(x - 1)}{\sqrt{2x^2 + 3} + \sqrt{5}} = - \frac{4}{2\sqrt{5}} = - \frac{2}{\sqrt{5}}
+		\end{align*}
+		
+		So now that we know the slope and the point, the equation of the tangent line is 
+		\begin{align*}
+			y - \sqrt{5} &= -\frac{2}{\sqrt{5}}(x + 1) \\
+			y &= -\frac{2}{\sqrt{5}} x + \frac{3}{\sqrt{5}}
+		\end{align*}
+		
+		\newpage
+		\item[2.] Where is the function $f(x) =  |\sin x |$ differentiable on the interval $0 \leq x \leq 2 \pi$. 
+		
+		\textbf{Solution}: When you see an absolute value function, the place where it's not differentiable is where there is a sharp corner. In this case it is $x = \pi$. So the function is differentiable on $[0, \pi) \cup (\pi,2\pi]$
+		\item[3.] Find $f'(x)$ when $f(x) = \sqrt[5]{x + x^3}$. 
+		
+		\textbf{Solution}: Straightforward problem where you have to use the power rule and chain rule. 
+		\begin{align*}
+			f'(x) &= \frac{1}{5} (x + x^3)^{-\frac{4}{5}} (1 + 3x^2) \\
+			&= \frac{1 + 3x^2}{5 \sqrt[5]{(x + x^3)^4}}
+		\end{align*}
+		
+		Then to take the second derivative we can either use the quotient rule or the product rule. Let's try this with the quotient rule:
+		\begin{align*}
+			f''(x) &= \frac{6x \sqrt[5]{(x + x^3 )^4} - (1 + 3 x^2)\frac{4}{5} (x + x^3 )^{-1/5} (3 x^2 + 1) }{5 (x + x^3)^{8/5}} \\
+				   &= \frac{\frac{2}{5} (x + x^3)^{-1/5} [15 x(x + x^3) - 2(1 + 3x^2 )^2]}{5 (x + x^3)^{8/5}} \\
+				   &= \frac{2 (15x^2 + 15x^4 - 2 - 12x^2 - 18x^4)}{25 (x + x^3)^{9/5}} \\
+				   &= -\frac{2(2 -3 x^2 +3 x^4 )}{25 \sqrt[5]{(x + x^{3})^9 }}
+		\end{align*}
+		\newpage
+		
+		\item[4.] Find $f'(x)$ and $f''(x)$ when $f(x) = \frac{\sqrt{625 - \sec (x^2)}}{ x^{20} }$.
+		
+		\textbf{Solution}: You \textit{could} do this problem by using the quotient rule. But it's easier to keep track of things if you instead use the product rule. 
+		
+		So first rewrite $f(x)$ as a product:
+		\begin{align*}
+			f(x) = (625 - \sec x^2)^{1/2} x^{-20}
+		\end{align*}
+		
+		\begin{align*}
+			f'(x) &= \frac{-2x \sec x^2 \tan x^2}{2x^{20}\sqrt{625 - \sec x^2 }} - \frac{20 \sqrt{625 - \sec x^2 }}{x^{21}} \\
+				 &= -\frac{\sec x^2 \tan x^2 }{x^{19} \sqrt{625 - \sec x^2 }}  - \frac{20 \sqrt{625 - \sec x^2 }}{x^{21}}
+		\end{align*}
+		
+		You could combine the two fractions to simplify further but that will not help in taking the second derivative and is honestly, just more work than you need. With these kind of problems as long as you set up the derivative properly (like we did here with the product rule) you should be able to receive full marks. 
+		
+		For the second derivative again, use the product rule and not the quotient rule. 
+		
+		\begin{align*}
+			f''(x) &= -\left(\frac{2x \sec x^2 \tan^2 x^2}{x^{19} \sqrt{625 - \sec x^2}} + \frac{2x \sec^3 x^2 }{x^{19} \sqrt{625 - \sec x^2}} - \frac{19\sec x^2 \tan x^2}{x^{20} \sqrt{625 - \sec x^2}} + \frac{2x \sec^2 x^2 \tan^2 x^2 }{2 x^{19} (625 - \sec x^2 )^{3/2}}\right) \\
+			&- \left(\frac{20 (2x)(-\sec x^2 \tan x^2)}{2 x^{21} \sqrt{625 - \sec x^2 }} - \frac{20 (21) \sqrt{625 - \sec x^2}}{x^{22}}\right) \\
+			&= -\left(\frac{2 \sec x^2 \tan^2 x^2}{x^{18} \sqrt{625 - \sec x^2}} + \frac{2 \sec^3 x^2 }{x^{18} \sqrt{625 - \sec x^2}} - \frac{19\sec x^2 \tan x^2}{x^{20} \sqrt{625 - \sec x^2}} + \frac{\sec^2 x^2 \tan^2 x^2 }{x^{18} (625 - \sec x^2 )^{3/2}}\right) \\
+			&- \left(\frac{20(-\sec x^2 \tan x^2)}{x^{20} \sqrt{625 - \sec x^2 }} - \frac{420\sqrt{625 - \sec x^2}}{x^{22}}\right)  \\
+			&= \frac{420 \sqrt{625 - \sec x^2 }}{x^{21}} - \frac{2 \sec^3 x^2 }{x^{18} \sqrt{625 - \sec x^2}} - \frac{2 \sec x^2 \tan^2 x^2 }{x^{18} \sqrt{625 - \sec x^2}} - \frac{\sec^2 x^2 \tan^2 x^2 }{x^{18} \sqrt{(625 - \sec x^2 )^3 }} + \frac{39 \sec x^2 \tan x^2 }{x^{20} \sqrt{625 - \sec x^2}} 
+		\end{align*} 
+		
+		\newpage
+		\item[5.] Use implicit differentiation to find the tangent line to $x^4 = y^2 + x^2$ at $(2, \sqrt{12})$
+		
+		\textbf{Solution:} So let's use implicit differentiation,
+		\begin{align*}
+			4 x^3 &= 2 y \frac{dy}{dx} + 2x \\
+			4 x^3 - 2x &= 2y \frac{dy}{dx} \\
+			\frac{dy}{dx} &= \frac{2x^3 - x}{y}
+		\end{align*}
+		
+		So let's evaluate this at the point $(2, \sqrt{12})$ 
+		\begin{align*}
+			\frac{dy}{dx} = \frac{2 (2)^3 - 2}{\sqrt{12}} = \frac{14}{\sqrt{12}} = \frac{7}{\sqrt{3}}
+		\end{align*}
+		
+		So now that we have a slope and a point we get that the tangent line is
+		\begin{align*}
+			y - \sqrt{12} &= \frac{7}{\sqrt{3}} (x - 2) \\
+			y &= \frac{7}{\sqrt{3}} x - \frac{14}{\sqrt{3}} + 2\sqrt{3} \\
+			  &= \frac{7}{\sqrt{3}} x -\frac{8}{\sqrt{3}}
+		\end{align*}
+		
+		\item[6.] Use differentials to estimate the amount of paint needed to apply a coat of paint 0.03 cm thick to a sphere with diameter 40 meters.
+		
+		\textbf{Solution:} So first recall that the volume of a sphere is given by $V = \dfrac{4}{3} \pi r^3$ . Then $\dfrac{dV}{dr} = 4 \pi r^2$. Rearranging to solve for the differential we want ($dV$), we get $dV = 4 \pi r^2 dr$. Now let's plug in what we know, while paying attention to the units. $0.03$ cm is $0.0003 m$ and as that's the change in radius, $dr =  0.0003$ m. So then $dV = 4 \pi (20)^2 (0.0003) = 0.48 \pi = \dfrac{12}{25} \pi$
+		\newpage
+		\item[7.] A police helicopter is flying at 200 kilometers per hour at a constant altitude of 1 km above a straight road. The pilot uses radar to determine that an oncoming car is at a distance of exactly 2 kilometers from the helicopter, and that this distance is decreasing at 250 kph. Find the speed of the car.
+		
+		\textbf{Solution:} As with most related rates problems, always start by drawing a picture and labeling things. Let's call the distance on the ground between the car and helicopter $x$, the straight line distance between the car and the helicopter $y$ and the distance between the helicopter and the ground $z$. 
+		
+		\begin{tikzpicture}
+		\draw (0,0) -- (7,0) node[midway,below] {$x$}
+		-- (0,3) node[midway,above] {$y = 2$ km}
+		-- (0,0) node[midway,left] {$z = 1$ km};
+		\end{tikzpicture}
+		
+		Furthermore we know that $\dfrac{dy}{dt} = - 250 \textnormal{ kmh}^{-1}$. This is negative because the car is moving towards the helicopter (i.e. to the left). We also know that the helicopter is moving to the right at $200 \textnormal{ kmh}^{-1}$ which means that the \emph{actual} speed of the car will be $\left|\dfrac{dx}{dt}\right| - 200$. We will come back to this later. 
+		
+		Now we want to find the equation that we will use to find $\dfrac{dx}{dt}$. As with most triangle problems we use Pythagorean Theorem. So the equation is $x^2 + z^2 = y^2$. Implicitly deriving this (and noting that $z$ is a constant so it will become 0), gives:
+		\begin{align*}
+			2x \frac{dx}{dt} &= 2y\frac{dy}{dt} \\
+			\frac{dx}{dt} &= \frac{y}{x} \frac{dy}{dt}.
+		\end{align*}
+		
+		Now let's plug in what we know. We know that $\dfrac{dy}{dt} = -250$, $y = 2$ and $x = \sqrt{2^2 - 1^2} = \sqrt{3}$. So $\dfrac{dx}{dt} = \dfrac{2}{\sqrt{3}} (-250) = -\dfrac{500}{\sqrt{3}} \textnormal{ kmh}^{-1}$ So this is the rate that the distance between the car and helicopter on the ground is changing, but the question asks us for the speed of the car. We stated above that this is $\left|\dfrac{dx}{dt}\right| - 200$ so we get that speed of the car is 
+		\begin{align*}
+			\left|\dfrac{dx}{dt}\right| - 200 = \frac{500}{\sqrt{3}} - 200 \approx 88.7 \textnormal{ kmh}^{-1}
+		\end{align*} 
+		
+		\newpage
+		\item[8.] The strength of a rectangular beam is proportional to the product of its width $w$ times the square of its depth $d$. Find the dimensions of the strongest beam that can be cut from a cylindrical log of radius r.
+		
+	\end{enumerate}
+	
+	
+\end{document}

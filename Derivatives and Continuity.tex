@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,fancyhdr,graphicx, amsthm}
+\headheight -10pt
+%%\voffset 0.3 cm
+\textheight 26cm% 25.5cm
+\textwidth 18cm
+\topmargin -2cm
+\parindent 0pt
+\oddsidemargin -1.2cm \columnsep 18pt
+%\columnseprule 0.3pt
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} \lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\newcommand{\ds}{\displaystyle}
+\usepackage[metapost]{mfpic}
+\usepackage{multicol}
+\begin{document}
+
+
+
+%\textbf{NAME:}\hrulefill
+%\vspace{0.12in}
+
+\centerline{\textbf{\Large{Derivatives and Continuity Quiz}}}
+
+\vspace{0.2in}
+ 
+
+\begin{enumerate}
+
+\item We have seen that the {\em derivative of $f(x)$ at $x=a$} can be represented two ways: \[f'(a)=\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}\] and \[f'(a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\]
+
+\begin{enumerate}
+	\item Compute the derivative of $f(x) = \sqrt{2x+1}$ at $x = 0$ by using either of the definitions.
+	\item Compute the derivative of $f(x) = \frac{7}{3x+1}$ at $x = -1$ by using either of the definitions.
+\end{enumerate}
+
+\newpage
+\item Consider the function $f(x)$ defined piecewise as :
+\begin{align*}
+	f(x)=\begin{cases} x^3-cx, & x < -2; \\ 
+						x^2 - bx + c, & -2\leq x < 3; \\
+					    7 + bx & x \geq 3. \end{cases}
+\end{align*}
+Find the values of $b$ and $c$ such that $f(x)$ is continuous. Remember that a function $f(x)$ is continuous at $x = a$ if $\lim\limits_{x \to a^{-}} f(x) = \lim\limits_{x \to a^{+}} f(x)$
+ 
+
+
+
+
+\end{enumerate}
+
+
+
+\end{document}

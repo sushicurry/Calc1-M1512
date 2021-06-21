@@ -1,0 +1,515 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,fancyhdr,graphicx, amsthm}
+\headheight -10pt
+%%\voffset 0.3 cm
+\textheight 26cm% 25.5cm
+\textwidth 18cm
+\topmargin -2cm
+\parindent 0pt
+\oddsidemargin -1.2cm \columnsep 18pt
+%\columnseprule 0.3pt
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} \lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\newcommand{\ds}{\displaystyle}
+\usepackage[metapost]{mfpic}
+\usepackage{multicol}
+\begin{document}
+
+
+
+%\textbf{NAME:}\hrulefill
+%\vspace{0.12in}
+
+\centerline{\textbf{\Large{Math 1512: Extra Practice for Exam 1 Key}}}
+
+\vspace{0.2in}
+
+\textbf{\Large{Learning Goals for Exam 1}}
+
+\begin{itemize}
+\item Explain what $\lim_{x\rightarrow a}f(x)=L$ means. Illustrate with a sketch. 
+\item Explain how left and right hand limits are related to the existence of a general limit.
+\item Give an example of a piecewise function $f(x)$ such that $\lim_{x\rightarrow 1}f(x)=2$ but $\lim_{x\rightarrow 0}f(x)$ does not exist.
+\item Estimate $\lim_{x\rightarrow a}f(x)$ using a table. 
+\item Use the slope of a secant line to determine the average velocity of a particle over a given interval.
+\item Use the limit of the secant slope to estimate the instantaneous velocity of a particle at a given time $t=a$.
+
+
+
+
+\item Use proper notation when applying limit laws to calculate a limit (pay particular attention to your use of equal signs). Even if your answer is correct, you will lose points for incorrect notation. 
+\item Give an example of a limit that cannot be evaluated using direct substitution but can be computed after an algebraic simplification. 
+\item Determine when a limit exists or does not exist, algebraically and/or graphically.
+\item There are two ways we defined the slope of the tangent line to the graph of a function $f(x)$ at $x=a$. Be able to state both definitions and sketch a graph that illustrates how we obtain the slope of the tangent line from the slope of the secant line.
+\item State the two equivalent definitions of the derivative of $f(x)$ at a number $x=a$. Provide a physical example of what $f'(a)$ represents.
+\item Use the graph of a function $f(x)$ to sketch the graph of $f'(x)$ (or vice versa).
+\item Give an example of a function that is not differentiable at $x=a$. Explain why.
+
+
+
+\item Know when and how to apply the power, sum/difference, product/quotient, and constant multiple rules.
+%\item Know the derivatives of $\sin x$ and $\cos x$ and be able to derive the derivatives of $\sec x,\;\csc x,\;\tan x,\;\cot x$ using the quotient rule.
+%\item Know the derivative of the exponential function. 
+%\item Be able to find the velocity and acceleration of a particle whose position at time $t$ is modeled by any of the functions covered so far.
+
+
+
+%\item Know when and how to apply the chain rule.
+%\item Find the derivative of a relation using implicit differentiation and compute the line tangent to its graph at a given point.
+%\item Give an example of a relation where computing $dy/dx$ REQUIRES you to use implicit differentiation.
+%\item Compute the derivative of a function of the form $f(x)=\frac{g(x)}{h(x)}$ using both the product rule AND the quotient rule.
+\end{itemize}
+
+\vspace{0.2in}
+
+{\bf Instructions} These problems are meant to give you some more practice as you prepare for the exam. Please do not ONLY study these problems! Anything from or similar to the HW (both the hand-in and self-check problems) as well as anything covered in lecture are also fair game and are likely to appear on the exam. When you have questions please visit the calculus room in SMLC B-71, go to your instructor's office hours, or visit CAPS.  
+
+\begin{enumerate}
+
+\item If a ball is thrown into the air at a velocity of 40 ft/s, its height in feet $t$ seconds later is given by $h(t)=40t-16t^2$.
+
+\begin{enumerate}
+
+\item Find the average velocity for the time period beginning at $t=2$ and lasting  
+
+\begin{enumerate}
+
+\item 0.5 second\\
+
+{\em Answer}: -32 ft/s\\
+
+\item 0.1 second\\
+
+{\em Answer}: -25.6 ft/s\\
+
+\item 0.001 second\\
+
+{\em Answer}: -24.16 ft/s\\
+
+\end{enumerate}
+
+
+
+\item What is the instantaneous velocity when $t=2$ seconds?\\
+
+{\em Answer}: -24 ft/s\\
+
+
+
+\end{enumerate}
+
+\item Find the equation of the tangent line to the parabola $y=x^2$ at the point $(1,1)$.\\
+
+{\em Answer}: $y=2x-1$\\
+
+\item Estimate the instantaneous rate of change of $f(x)=3\tan(2x)$ at $x=0$ ($x$ is in radians). Use this to compute the tangent line at the point $(0,0)$.  \\
+
+{\em Answer}: $y=6x$\\
+
+
+\item Use a table of values to evaluate each limit
+
+\begin{enumerate}
+
+\item $\lim_{x\rightarrow 0}\frac{\sqrt{x+4}-2}{x}$\\
+
+{\em Answer}:  $0.25$\\
+
+\item $\lim_{x\rightarrow 0}\frac{\tan 3x}{\tan 5x}$\\
+
+
+
+{\em Answer}:  $0.6$\\
+
+\item $\lim_{x\rightarrow 0}\frac{9^x-5^x}{x}$\\
+
+
+{\em Answer}:  About $0.59$ (you'll see later the exact value is $\ln(9/5)$)\\
+
+
+
+\end{enumerate}
+
+\newpage
+
+\item Sketch the graph of the function and use it to determine the values of $a$ for which the limit $\lim_{x\rightarrow a}f(x)$ exists.\\
+
+\begin{enumerate}
+
+\item \[f(x)=\begin{cases} 1+x, & x<-1 \\ x^2, & -1\leq x<1 \\ 2-x & x\geq 1 \end{cases} \]
+
+{\em Answer}: For all $a$ except $a=-1$\\
+
+\item \[f(x)=\begin{cases} 1+\sin x, & x<0 \\ \cos x, & 0\leq x<\pi \\ \sin x & x\geq \pi \end{cases} \]
+
+{\em Answer}: For all $a$ except $a=\pi$\\
+
+\end{enumerate}
+
+\item Evaluate the following limits or explain why they do not exist.\\
+
+
+\begin{enumerate}
+
+\item \[\lim_{h\rightarrow 0}\frac{(2+h)^3-8}{h}\]
+
+{\em Answer}: 12 \\
+
+\item \[\lim_{t\rightarrow 2}\frac{4-t^2}{t-2}\]
+
+{\em Answer}:  -4\\
+
+\item \[\lim_{x\rightarrow 3}\frac{x+3}{x^2-9}\]
+
+{\em Answer}: Does not exist \\
+
+\item \[\lim_{h\rightarrow 0}\frac{\sqrt{25+h}-5}{h}\]
+
+{\em Answer}: 1/10 \\
+
+\end{enumerate}
+
+\newpage
+
+%\item Estimate  \[\lim_{x\rightarrow 0}\frac{\tan(3x)}{4x}\] by using a table.
+
+\item Determine the infinite limit.
+
+\begin{enumerate}
+
+\item $\lim_{x\rightarrow 1}\frac{2-x}{(x-1)^2}$\\
+
+
+{\em Answer}:  $\infty$\\
+
+\item $\lim_{x\rightarrow -2^+}\frac{x-1}{x^2(x+2)}$\\
+
+
+{\em Answer}:  $-\infty$\\
+
+
+\item $\lim_{x\rightarrow \pi^-}\cot x$\\
+
+{\em Answer}: $-\infty$\\
+
+\end{enumerate}
+
+\item In the theory of relativity, the mass $m$ of a particle with velocity $v$ is \[m=\frac{m_0}{\sqrt{1-v^2/c^2}}\] where $m_0$ is the mass of the particle at rest and $c$ is the speed of light. What happens to the mass of the particle as $v\rightarrow c^-$?
+
+{\em Answer}: $m$ approaches $\infty$!!!! Whoa...
+
+
+\item Let \[f(x)=\begin{cases} 1/(x+2), & x<-2 \\ x^2-5, & -2<x\leq 3 \\ \sqrt{x+13}, & x>3 \end{cases}\]
+
+Find 
+
+\begin{enumerate}
+
+\item $\lim_{x\rightarrow -2}f(x)$\\
+
+{\em Answer}: DNE\\
+
+\item $\lim_{x\rightarrow 0}f(x)$\\
+
+{\em Answer}: -5\\
+
+\item $\lim_{x\rightarrow 3}f(x)$\\
+
+{\em Answer}: 4\\
+
+\item Sketch a graph, labeling all intercepts clearly.
+
+\end{enumerate}
+
+\item Evaluate the limit, if it exists\\
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item $\lim_{x\rightarrow 4}\frac{x^2-4x}{x^2-3x-4}$\\
+
+{\em Answer}: 4/5\\
+
+
+\item$ \lim_{h\rightarrow 0} \frac{(-5+h)^2-25}{h}$\\
+
+{\em Answer}: -10\\
+
+\item $\lim_{t\rightarrow 0 }\left( \frac{1}{t\sqrt{1+t}}-\frac{1}{t} \right)$\\
+
+{\em Answer}: -0.5\\
+
+\item $\lim_{x\rightarrow 1}\frac{2x+1}{x^2(x-1)} $\\
+
+{\em Answer}: DNE\\
+
+\item $\lim_{h\rightarrow 0}\frac{(x+h)^4-x^4}{h}$\\
+
+{\em Answer}: $4x^3$\\
+
+\end{enumerate}
+
+\end{multicols}
+
+\item In the theory of relativity, the Lorentz contraction formula \[L=L_0\sqrt{1-v^2/c^2}\] expresses the length $L$ of an object as a function of its velocity $v$ with respect to an observer, where $L_0$ is the length of the object at rest and $c$ is the speed of light. Find $\lim_{v\rightarrow c^{-}}L$ and interpret the result. Why is the left-hand limit necessary?\\
+
+{\em Answer}: The length approaches zero. The left-hand limit is necessary since function is not defined for $v>c$.\\
+
+\item Is there a number $a$ such the limit \[\lim_{x\rightarrow -2}\frac{3x^2+ax+a+3}{x^2+x-2}\] exists?\\
+
+{\em Answer}: $a=15$\\
+
+\item We have seen that the {\em derivative of $f(x)$ at $x=a$} can be represented two ways: \[f'(a)=\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}\] and \[f'(a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\]
+
+If $f(x)=\frac{1}{x+2}$, compute $f'(1)$ using both definitions.\\
+
+{\em Answer}: -1/9\\
+
+Do the same for $f(x)=\sqrt{x+3}$\\
+
+{\em Answer}: 1/4\\
+
+\item The displacement (in meters) of a particle moving in a straight line is given by the equation of motion $s(t)=\frac{1}{t^2}$, where $t$ is measured in seconds. Find the velocity of the particle at time $t=3$ seconds. Interpret the sign of your answer.\\
+
+{\em Answer}: $-\frac{2}{27}$ m/s. The negative sign indicates that the particle is moving backward.\\
+
+\item Sketch the graph of a function for which $f(0)=0$, $f'(0)=3$, $f'(1)=0$, and $f'(2)=-1$\\
+
+%\item Each limit represents the derivative of some function $f$ at some number $a$. State such an $f$ and $a$ in each case.
+
+%\begin{multicols}{2} 
+
+%\begin{enumerate}
+
+%\item $\lim_{h\rightarrow 0}\frac{(1+h)^{10}-1}{h}$ 
+
+%{\em Answer}: $f(x)=x^{10}$, $a=1$\\
+
+
+
+%\item $\lim_{x\rightarrow \pi/4}\frac{\tan x-1}{x-\pi/4}$
+
+%\em Answer}: $f(x)=\tan x$, $a=\pi/4$.\\
+
+
+
+%\end{enumerate}
+
+%\end{multicols}
+
+\item The number of bacteria after $t$ hours in a controlled laboratory experiment is $n=f(t)$
+
+\begin{enumerate}
+
+\item What is the meaning of the derivative $f'(5)$? What are its units?\\
+
+{\em Answer}: $f'(5)$ is the rate of growth of the population when $t=5$ hours. The units are bacteria/hour. \\
+
+\item Suppose there is an unlimited amount of space and nutrients for the bacteria. Which do you think is larger, $f'(5)$ or $f'(10)$? If the supply of nutrients is limited, does this affect your conclusion? Explain.\\
+
+{\em Answer}:  With unlimited space and nutrients, the rate of growth should increase at time increases, so $f'(5)<f'(10)$. If the supply of nutrients is limited, the rate of growth slows down (bacteria start dying off without food).\\
+
+\end{enumerate}
+
+\item Find the derivative of the function using the definition. State the domain of the derivative. \\
+
+\begin{enumerate}
+
+\item $f(x)=5x-9x^2$\\
+
+{\em Answer}: $f'(x)=5-18x$, Domain of $f'$ is $\mathbb{R}$.\\
+
+\item $g(x)=\frac{1-2x}{3+x}$\\
+
+{\em Answer}: $g'(x)=\frac{-7}{(3+x)^2}$, Domain of $g'$ is $\{x|x\neq 3\}.$\\
+
+%\item $f(t)=\sqrt{9-t}$\\
+
+%{\em Answer}: $f'(t)=\frac{-1}{2\sqrt{9-t}}$, Domain of $f'$ is $(-\infty,9)$.\\
+
+\end{enumerate}
+
+\item Show that $g(x)=\sqrt{x}$ is not differentiable at $x=0$.\\
+
+{\em Answer}: $g'(0)=\lim_{x\rightarrow 0}\frac{g(x)-g(0)}{x-0}=\lim_{x\rightarrow 0}\frac{1}{2\sqrt{x}}$, which does not exist. There is a vertical tangent at $x=0$.\\ 
+
+\item Show that $g(x)=|x-6|$ is not differentiable at $x=6$. Sketch a graph of $g,\;g'$.\\
+
+{\em Answer}: \[g(x)=\begin{cases}  x-6, & x\geq 6 \\ -(x-6), & x<6  \end{cases}\]
+
+%We will show that the left-hand and right-hand limits do not agree. The left-hand limit is \[\lim_{x\rightarrow 6^+}\frac{g(x)-g(6)}{x-6}=1\] and the right hand limit is 
+
+%\[\lim_{x\rightarrow 6^-}\frac{g(x)-g(6)}{x-6}=-1,\] so \[\lim_{x\rightarrow 6}\frac{g(x)-g(6)}{x-6}\]
+ %does not exist.
+
+\item Differentiate the function.
+
+\begin{enumerate}
+
+\item $f(x)=2^{40}$\\
+
+{\em Answer}: $f'(x)=0$\\
+
+\item $R(a)=(3a+1)^2$\\
+
+{\em Answer}: $R'(a)=18a+6$\\ 
+
+\item $y=\frac{x^2+4x+3}{\sqrt{x}}$\\
+
+{\em Answer}: $\frac{dy}{dx}=\frac{3}{2}\sqrt{x}+\frac{2}{\sqrt{x}}-\frac{3}{2x^{3/2}}$\\
+
+%\item $f(x)=\sqrt{x}\sin x$\\
+
+%{\em Answer}: $f'(x)=\sqrt{x}\cos x+\frac{\sin x}{2\sqrt{x}}$\\
+
+\item $g(t)=(t+t^{-1})^3$\\
+
+{\em Answer}: $g'(t)=3t^2+3-3t^{-2}-3t^{-4}$\\
+
+%\item $f(x)=(x^3+2x)e^x$\\
+
+%{\em Answer}: $e^x(x^3+3x^2+2x+2)$\\
+
+\item $y=\frac{f(x)}{x^2}$, $f$ is any differentiable function of $x$.\\
+
+{\em Answer}: $\frac{dy}{dx}=\frac{xf'(x)-2f(x)}{x^3}$\\ 
+
+\item $y=\sqrt{2}\cdot x+\sqrt{3x}$\\
+
+{\em Answer}: $y'=\sqrt{2}+\frac{\sqrt{3}}{2\sqrt{x}}$\\
+
+%\item $y=\frac{\cos x}{1-\sin x}$\\
+
+%{\em Answer}: $y'=\frac{1}{1-\sin x}$\\
+
+\item $f(x)=\frac{x^2+2}{x^4-3x^2+1}$\\
+
+{\em Answer}: $f'(x)=\frac{2x(-x^4-4x^2+7)}{(x^4-3x^2+1)^2}$\\
+
+%\item $y=\frac{1-\sec x}{\tan x}$\\
+
+%{\em Answer}: $y'=\frac{\sec x(1-\sec x)}{\tan^2x}$\\
+
+%\item $y=\frac{e^x}{1-e^x}$\\
+%
+%{\em Answer}: $y'=\frac{e^x}{(1-e^x)^2}$\\
+
+
+\item $f(x)=\frac{x}{x+\frac{c}{x}}$\\
+
+{\em Answer}: $f'(x)=\frac{2cx}{(x^2+c)^2}$\\
+
+%\item $h(\theta)=\theta\csc\theta-\cot\theta$\\
+
+%{\em Answer}: $h'(\theta)=\csc\theta-\theta \csc\theta\cot\theta+\csc^2\theta$\\
+
+\end{enumerate}
+
+%\item Find an equation for the tangent line to the function at the specified point.\\
+
+%$y=2x\sin x$ at $(\pi/2,\pi)$\\
+
+%{\em Answer}: $y=2x$\\
+
+\item Find an equation of the tangent line to the curve $y=x\sqrt{x}$ that is parallel to $y=1+3x$\\
+
+{\em Answer}: $y=3x-4$\\
+
+\item Find the points on the curve $y=2x^3+3x^2-12x+1$ where the tangent line is horizontal.\\
+
+{\em Answer}: $(-2,21)$ and $(1,-6)$\\
+
+%\item At what numbers is the following function $g$ differentiable? Give formulas for $g,g'$ and sketch graphs of both functions.
+
+%\[g(x)=\begin{cases} 2x, &x\leq 0\\ 2x-x^2,& 0<x<2\\ 2-x, & x\geq 2\end{cases}\] 
+
+%{\em Answer}: Investigating the left- and right-hand derivatives at $x=0,2$ we get that $g$ is differentiable at $x=0$ but not differentiable at $x=2$.\\ 
+
+%\item A mass on a spring vibrates horizontally on a smooth level surface. Its equation of motion is\\$x(t)=8\sin t$, where $t$ is in seconds and $x$ is in centimeters. 
+
+%\begin{enumerate} 
+
+%\item Find the velocity and acceleration at time $t$. \\
+
+%{\em Answer}: $x'(t)=v(t)=8\cos t,\;\;x''(t)=a(t)=-8\sin t$\\
+
+%\item Find the position, velocity, and acceleration of the mass when $t=2\pi/3$. In what direction is it moving at that time?\\
+
+%{\em Answer}: Position: $4\sqrt{3}$ centimeters to the right of the origin. Velocity: $-4$ cm/s. Acceleration: $-4\sqrt{3}$ cm/s$^2$. The particle is moving to the left at this time since $v(2\pi/3)<0$.\\
+
+%\end{enumerate}
+
+%\item An object with weight $W$ is dragged along a horizontal plane by a force acting along a rope attached to the object. If the rope makes an angle of $\theta$ with the plane, then the magnitude of the force is \[ F=\frac{\mu W}{\mu\sin\theta+\cos\theta}\] where $\mu$ is called the {\em coefficient of friction}.
+
+ %\begin{enumerate}
+ 
+ %\item Find the rate of change of $F$ with respect to $\theta$.\\
+ 
+ %{\em Answer}: $F'(\theta)=\frac{\mu W(\sin\theta-\mu\cos\theta)}{(\mu\sin\theta+\cos\theta)^2}$\\
+ 
+ %\item For what value(s) of $\theta$ is the rate of change equal to zero?\\
+ 
+% {\em Answer}: $\theta=\tan^{-1}\mu$ 
+
+
+%\end{enumerate}
+
+%\item Find the limit.
+
+%\begin{enumerate}
+
+%\item $\lim_{t\rightarrow 0}\frac{\tan(6t)}{\sin(2t}$\\
+
+%{\em Answer} $3$\\
+
+%\item $\lim_{x\rightarrow 0}\frac{\sin(3x)\sin(5x)}{x^2}$\\
+
+%{\em Answer} $15$\\
+
+%\end{enumerate}
+
+%\item Differentiate the function (after you've seen the chain rule in class).
+
+%\begin{enumerate}
+
+%\item $y=e^{-3x^2}$\\
+
+%{\em Answer}: $y'=-6xe^{-3x^2}$\\
+
+%\item $y=e^{-2t}\cos(4t)$\\
+
+%{\em Answer}: $y=-2e^{-2t}(2\sin(4t)+\cos(4t))$\\
+
+%\item $x^3+y^3=6xy$ (use implicit differentiation)\\
+
+%{\em Answer}: $y'=\frac{2y-x^2}{y^2-2x}$\\
+
+%\item $\tan(x/y)=x+y$\\
+
+%{\em Answer}: $y'=\frac{y\sec^2(x/y)-y^2}{y^2+x\sec^2(x/y)}$\\
+
+%\item $f(x)=\cos(a^3+x^3)$\\
+
+%{\em Answer}: $f'(x)=-3x^2\sin(a^3+x^3)$\\
+
+%\item $y=\left( \frac{x^2+1}{x^2-1}\right)^3$\\
+
+%{\em Answer}: $y'=\frac{-12x(x^2+1)^2}{(x^2-1)^4}$\\
+
+%\item $y=\cot^2(\sin\theta)$\\
+
+%{\em Answer}: $y'=-2\cos\theta\cot(\sin\theta)\csc^2(\sin\theta)$\\
+
+%\end{enumerate}
+
+%\item Find all the points on the graph of $y=2\sin x+\sin^2x$ at which the tangent line is horizontal.\\
+
+%{\em Answer}: $(\frac{\pi}{2}+2k\pi,3)$ and $(\frac{3\pi}{2}+2k\pi,-1)$, where $k$ is any integer.\\
+
+
+\end{enumerate}
+
+
+\end{document}

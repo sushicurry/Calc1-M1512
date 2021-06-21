@@ -1,0 +1,350 @@
+\documentclass[11pt,reqno]{article}
+%\input{17F-137-HomeworkTemplate}
+\title{Homework \#2}
+%\maketitle
+%\due{Tuesday 9/12}
+
+\headheight -10pt
+
+%%\voffset 0.3 cm
+
+\textheight 26cm% 25.5cm
+
+\textwidth 18cm
+
+\topmargin -2cm
+
+\parindent 0pt
+
+\oddsidemargin -1.2cm \columnsep 18pt
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts, mathdots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage{enumitem}
+%\usepackage{verbatim}
+
+\usepackage{subcaption}
+\usepackage{setspace}
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes,backgrounds,3d}
+\usepackage{fix-cm}
+\usetikzlibrary{decorations.pathreplacing,shapes,snakes}
+
+%%
+\newcommand{\coursenumber}{Math 137}
+\newcommand{\coursename}{Real and Functional Analysis}
+
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1 }
+\renewcommand{\Im}[1]{\operatorname{Im} #1}
+\newcommand{\diam}{\operatorname{diam}}
+
+%% New Commands
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\s}{\mathscr{S}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathfrak{L}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Aut}{Aut}
+
+
+
+\renewcommand{\ker}{\operatorname{kernel}}
+\newcommand{\ran}{\operatorname{range}}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\vecspan}{\operatorname{span}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\nullspace}{\operatorname{nullspace}}
+
+\linespread{1}
+\setlength{\parskip}{0.5ex plus 0.5ex minus 0.2ex}
+
+%%  Matrices
+\newcommand{\minimatrix}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}  }
+\newcommand{\megamatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}  }
+
+\renewcommand{\vec}[1]{{\bf #1}}
+\newcommand{\ovec}{\operatorname{vec}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\renewcommand{\hat}{\widehat}
+
+\newcommand{\tworowvector}[2]{[#1\,\,#2]}
+\newcommand{\threerowvector}[3]{[#1\,\,#2\,\,#3]}
+\newcommand{\fourrowvector}[4]{[#1\,\,#2\,\,#3\,\,#4]}
+\newcommand{\fiverowvector}[5]{[#1\,\,#2\,\,#3\,\,#4\,\,#5]}
+\newcommand{\sixrowvector}[6]{[#1\,\,#2\,\,#3\,\,#4\,\,#5\,\,#6]}
+
+\newcommand{\twovector}[2]{\begin{bmatrix} #1\\#2 \end{bmatrix} }
+\newcommand{\threevector}[3]{\begin{bmatrix} #1\\#2\\#3 \end{bmatrix} }
+\newcommand{\fourvector}[4]{\begin{bmatrix} #1\\#2\\#3\\#4 \end{bmatrix} }
+\newcommand{\fivevector}[5]{\begin{bmatrix} #1\\#2\\#3\\#4\\#5 \end{bmatrix} }
+
+\newcommand{\comment}[1]{\marginpar{\scriptsize\color{gray}$\bullet$\,#1}}
+\newcommand{\highlight}[1]{\color{blue}#1\color{black}}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\alph{enumi})}%
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{(\roman{enumii})}%
+\newcommand{\due}[1]{\vspace{-0.2in}\begin{center}\textsc{due at the beginning of class \underline{#1}} \end{center}\medskip }
+
+
+%%%
+%%% Theorem Styles
+%%%
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem*{Thm}{Theorem}
+\newtheorem{Postulate}{Postulate}
+\newtheorem{Lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem*{Example}{Example}
+\newtheorem*{Remark}{Remark}
+\newtheorem{problem}{Exercise}
+\newtheorem*{Question}{Question}
+
+\let\oldenumerate=\enumerate
+\def\enumerate{
+	\oldenumerate
+	\setlength{\itemsep}{1pt}
+}
+\let\olditemize=\itemize
+\def\itemize{
+	\olditemize
+	\setlength{\itemsep}{5pt}
+}
+
+\allowdisplaybreaks
+\begin{document}
+	\centerline{\textbf{\Large{Trig Integral Practice}}}
+	
+	\vspace{0.2in}
+	 Worked solutions on the next page.
+	\begin{enumerate}
+		\item[1.]  $\int \sin(3x) \; dx$
+		\item[2.]  $\int \cos^2 x \; dx$
+		\item[3.] $\int 5 \sec 4x  \tan 4x \; dx$
+		\item[4.] $\int (\sin x + \cos x)^2 \; dx$
+		\item[5.] $\int \frac{\cos^2 x}{1 - \sin x} \; dx$
+		\item[6.] $\int_{-\pi/6}^{\pi/4} \sin^3 x \; dx$
+		\item[7.] $\int_{-\pi/4}^{\pi/4} \frac{\sin x}{1 + \sin x} \; dx$
+		\item[8.] $\int_{\pi/6}^{\pi/3} (\csc 3x + \cot 3x)^2 \; dx$
+		\item[9.] $\int_{0}^{\pi/4} (\sec x \tan x) \sqrt{3 + 4 \sec x} \;dx$
+		\item[10.] $\int_{0}^{\pi} \sin 3x \sin(\cos 3x) \; dx$
+		
+	
+	\end{enumerate}
+	
+	
+
+\newpage
+\newpage
+\begin{enumerate}
+	\item[1.] $\int \sin(3x) \; dx$
+	
+	Solution : You can use the substitution $u = 3x$ OR as this integral is relatively simple just go straight to the answer.
+	 \begin{align*}
+		\int \sin (3x) \; dx = -\frac{1}{3} \cos (3x) + C
+	\end{align*}
+	
+	\item[2.] $\int \cos^2 x \; dx$
+	
+	Solution: You cannot use substitution for this integral (or the power rule). Try it and see why. Instead you want to use the trig identity $\cos 2x = 2 \cos^2 x - 1$. \textbf{Memorize the double angle forumulas for cosine}. Will be one of the most useful trig identities. 
+	
+	\begin{align*}
+		\int \cos^2 x \; dx &= \int \frac{\cos 2x + 1}{2} \; dx \\
+						  &= \frac{1}{4} \sin 2x + \frac{1}{2} x + C
+	\end{align*}
+	
+	\item[3.] $\int 5 \sec 4x  \tan 4x \; dx$
+	
+	Solution: Substitution. What do you substitute? Always first try the simplest thing, which in this case is $ u = 4x$. So then $dx = \frac{1}{4} du$. 
+	
+	\begin{align*}
+		\int 5 \sec 4x  \tan 4x \; dx &= \int \frac{5}{4} \sec u \tan u \; du \\
+									  &= \frac{5}{4} \sec u + C \\
+									  &= \frac{5}{4} \sec 4x + C
+	\end{align*}
+	
+	If you were stuck on this one go back and look up or find out for yourself by working it out, the derivative of all the basic trig functions ($\sin x, \cos x, \tan x$ and their reciprocals $\csc x, \sec x, \cot x$). 
+	
+	\item[4.] $\int (\sin x + \cos x)^2 \; dx$
+	
+	Solution: Once again substitution is not useful here (try it and see why). So expand and see what happens.
+	\begin{align}
+		\int (\sin x + \cos x)^2 \; dx &= \int (\sin^2 x + 2 \sin x \cos x + \cos^2 x) \; dx \\
+									   &= \int (1 + 2 \sin x \cos x) \; dx \\
+									   &= \int (1 + \sin 2x ) \; dx \\
+									   &= x - \frac{1}{2} \cos 2x + C 
+	\end{align}
+	
+	If you don't remember the double angle formula for sine that's alright, \textbf{but} always remember the Pythagorean identity : $\sin^2 x + \cos^2 x = 1$. This is the most useful trig identity. 
+	
+	An interesting note to this problem: if at (2) you decide to use substitution to solve $\int 2 \sin x \cos x \; dx$.  you will get a different \textbf{BUT} equivalent answer (Try and see for yourself why it's equivalent).
+	
+	\newpage
+	\item[5.] $\int \frac{\cos^2 x}{1 - \sin x} \; dx$
+	
+	Solution: This is another problem where you don't want to use substitution but instead use trig identities to simplify. 
+	\begin{align*}
+		\int \frac{\cos^2 x}{1 - \sin x} \; dx & = \int \frac{1 - \sin^2 x}{1 - \sin x} \; dx \\
+											   &= \int \frac{(1 - \sin x) (1 + \sin x)}{(1 - \sin x)} \; dx\\
+											   &= \int (1 + \sin x) \; dx \\
+											   &= x - \cos x + C 			
+	\end{align*}
+	
+	Once again here we use the Pythagorean identity. Remember it!
+	
+	\item[6.] $\int_{-\pi/6}^{\pi/4} \sin^3 x \; dx$
+	
+	Solution: This is another case where substitution will get us nowhere. The trick we will use here is an important one to remember: we can rewrite $\sin^3 x$ as $\sin^2 x \cdot \sin x$. 
+	
+	\begin{align*}
+		\int_{-\pi/6}^{\pi/4} \sin^3 x \; dx &= \int_{-\pi/6}^{\pi/4} \sin^2 x \cdot \sin x \; dx \\
+											 &= \int_{-\pi/6}^{\pi/4} (1 - \cos^2 x) \sin x \;dx \\
+											 &= \int_{-\pi/6}^{\pi/4} \sin x \;dx - \int_{-\pi/6}^{\pi/4} \cos^2 x \sin x \; dx
+	\end{align*}
+	
+	The first integral we can easily find the antiderivative of, but for the second one we need to use substitution.  In this case: $u = \cos x$, $- du = \sin x dx$. As this is a definite integral need to change the limits of integration as well (you could also solve the indefinite integral first and then use the original limits). So when $x = -\pi/6, u = \cos (-\pi/6) = \sqrt{3}/2$; when $x = \pi/4, u = \sqrt{2}/2$. Then : 
+	\begin{align*}
+		\int_{-\pi/6}^{\pi/4} \sin x \;dx - \int_{-\pi/6}^{\pi/4} \cos^2 x \sin x \; dx &= \int_{-\pi/6}^{\pi/4} \sin x \; dx - \int_{\sqrt{3}/2}^{\sqrt{2}/2} u^2 (- du) \\
+		&=\int_{-\pi/6}^{\pi/4} \sin x \; dx + \int_{\sqrt{3}/2}^{\sqrt{2}/2} u^2 \; du \\
+		&= \left[-\cos x\right]_{-\pi/6}^{\pi/4} + \left[ \frac{u^3}{3}\right]_{\sqrt{3}/2}^{\sqrt{2}/2} \\
+		&= \left(- \frac{\sqrt{2}}{2} - \left(-\frac{\sqrt{3}}{2}\right)\right) + \left(\frac{1}{3}\left(\frac{\sqrt{2}}{2}\right)^3 - \frac{1}{3}\left(\frac{\sqrt{3}}{2}\right)^3\right) \\
+		&= -\frac{\sqrt{2}}{2} + \frac{2\sqrt{2}}{24} + \frac{\sqrt{3}}{2} - \frac{3\sqrt{3}}{24} \\
+		&= \frac{3\sqrt{3}}{8} - \frac{5\sqrt{2}}{12}
+	\end{align*}
+	
+	With definite integrals always pay attention to your arithmetic at the end as that is where many people trip up. 
+	
+	\newpage
+	\item[7.] $\int_{-\pi/4}^{\pi/4} \frac{\sin x}{1 + \sin x} \; dx$
+	
+	Solution: Substitution does not work here, so we're going to have to simplify the integral algebraically. The trick with this one is we want to make the denominator have one term instead of two. So we will multiply both the numerator and denominator by $(1 - \sin x)$. 
+	
+	\begin{align*}
+		\int_{-\pi/4}^{\pi/4} \frac{\sin x}{1 + \sin x} \; dx &= \int_{-\pi/4}^{\pi/4} \frac{\sin x(1 - \sin x)}{(1 + \sin x) (1 - \sin x)} \; dx \\ 
+															  &= \int_{-\pi/4}^{\pi/4} \frac{\sin x - \sin^2 x}{1 - \sin^2 x} \; dx \\
+															  &= \int_{-\pi/4}^{\pi/4} \frac{\sin x - \sin^2 x}{\cos^2 x} \; dx \\
+															  &= \int_{-\pi/4}^{\pi/4} \sec x \tan x - \tan^2 x \; dx \\
+															  &= \int_{-\pi/4}^{\pi/4} \sec x \tan x - (\sec^2 x - 1) \;dx \\ 
+															  &= \int_{-\pi/4}^{\pi/4} \sec x \tan x - \sec^2 x + 1 \; dx \\
+															  &= \left[\sec x - \tan x + x\right]_{-\pi/4}^{\pi/4} \\
+															  &= \left( \sec \left(\frac{\pi}{4}\right) - \tan \left(\frac{\pi}{4}\right) + \frac{\pi}{4}\right) - \left( \sec \left(-\frac{\pi}{4}\right) - \tan \left(-\frac{\pi}{4}\right) + \left(-\frac{\pi}{4}\right)\right) \\
+															  &= \left(\frac{2}{\sqrt{2}} - 1 + \frac{\pi}{4}\right) - \left(\frac{2}{\sqrt{2}} - (-1) - \frac{\pi}{4}\right) \\
+															  &=\frac{\pi}{2} - 2
+	\end{align*}
+	\newpage
+	\item[8.] $\int_{\pi/6}^{\pi/3} (\csc 3x + \cot 3x)^2 \; dx$
+	
+	Solution: This problem is probably the hardest problem on this worksheet. Why? Because if you want to get an answer that makes sense you need to use a very special trig identity. So to answer this problem we will do this in two parts: part 1 will be solving the indefinite integral and simplifying our solution using the special trig identity, and part 2 will be plugging the values for the bounds of integration. 
+	
+	Part 1: Let's solve  the indefinite integral $ \int (\csc 3x + \cot 3x)^2 \; dx$. We can start of with a simple substitution of $u = 3x$ to make things slightly easier - 
+	\begin{align*}
+		\int (\csc 3x + \cot 3x)^2 \; dx &= \frac{1}{3} \int (\csc u + \cot u)^2 \; du \\
+											  &= \frac{1}{3} \int \csc^2 u + 2 \csc u \cot u + \cot^2 u \; du \\
+											  &= \frac{1}{3} \int \csc^2 u + 2 \csc u \cot u + (\csc^2 u - 1) \; du \\
+											  &= \frac{1}{3} \int 2(\csc^2 u + \csc u \cot u) - 1\; du \\
+											  &= -\frac{2}{3} (\csc u + \cot u  ) - \frac{1}{3}u + C
+	\end{align*}
+	Now before we substitute our $3x$ back in, let us look at the $\cot u + \csc u$. Is there a way we can simplify this? There is and it is by using a half-angle formula. You can look up half-angle formulas for trig functions, and the one we want is for $\cot \frac{u}{2}$. So we can start with the half-angle formula for $\tan \frac{u}{2}$, which there are three - 
+	\begin{align*}
+		\tan \frac{u}{2} &= \pm \sqrt{\frac{1 - \cos u}{1 + \cos u}} \\
+					     &= \frac{1 - \cos u}{\sin u} \\
+					     &= \frac{\sin u}{1 + \cos u}
+	\end{align*}
+	
+	Ignore the one with the square root and look at the other two. Can you guess which one we will use? We will use the last one. 
+	\begin{align*}
+		\cot \frac{u}{2} = \frac{1 + \cos u}{ \sin u} = \frac{1}{\sin u} + \frac{\cos u}{\sin u} = \csc u + \cot u.
+	\end{align*}
+	
+	So then going back to our integral we get
+	\begin{align*}
+		\int (\csc 3x + \cot 3x)^2 \; dx &= -\frac{2}{3} (\csc u + \cot u  ) - \frac{1}{3}u + C \\
+											  &= - \frac{2}{3} \cot \frac{u}{2} - \frac{1}{3} u + C \\
+											  &= -\frac{2}{3} \cot\left(\frac{3}{2}x\right) - x + C
+	\end{align*}
+	
+	Part 2: Now that we solved the indefinite integral let's go back and solve the definite integral
+	\begin{align*}
+		\int_{\pi/6}^{\pi/3} (\csc 3x + \cot 3x)^2 \; dx &= \left[-\frac{2}{3} \cot\left(\frac{3}{2}x\right) - x\right]_{\pi/6}^{\pi/3} \\
+														 &= \left(-\frac{2}{3} \cot \frac{\pi}{2} - \frac{\pi}{3}\right) - \left(-\frac{2}{3} \cot \frac{\pi}{4} - \frac{\pi}{6}\right) \\
+														 &= 0 - \frac{\pi}{3} + \frac{2}{3} + \frac{\pi}{6}  = \frac{4 - \pi}{6}
+	\end{align*}
+	\newpage
+	\item[9.] $\int_{0}^{\pi/4} (\sec x \tan x) \sqrt{3 + 4 \sec x} \;dx$
+	
+	Solution: This is a straightforward substitution integral. Let $u = 3 + 4 \sec x$. Then $du =  4 \sec x \tan x dx$. When $x = 0$, $u = 7$ and when $x = \frac{\pi}{4}$, $u = 3 + 4\sqrt{2}$. So then our integral becomes:
+	\begin{align*}
+		\int_{0}^{\pi/4} (\sec x \tan x) \sqrt{3 + 4 \sec x} \;dx &= \int_{7}^{3 + 4\sqrt{2}} \frac{1}{4}\sqrt{u} \; du \\
+																  &= \left[\frac{1}{6}u^{\frac{3}{2}}\right]_{7}^{3 + 4\sqrt{2}} \\
+																 &= \frac{1}{6}\left((3 + 4\sqrt{2})^{\frac{3}{2}} - 7 \sqrt{7}\right)								
+																 															 \end{align*}
+	
+	Leave the answer like that.
+	
+	\item[10.] $\int_{0}^{\pi} \sin 3x \sin(\cos 3x) \; dx$
+	
+	Solution: This is another straightforward substitution problem. Let $u = \cos 3x$, $du = - 3 \sin 3x dx$; when $x = 0$, $u = 1$, when $x = \pi$, $u = -1$. So,
+	\begin{align*}
+		\int_{0}^{\pi} \sin 3x \sin(\cos 3x) \; dx &= \int_{1}^{-1} -\frac{1}{3} \sin u \; du \\
+												   &= \left[\frac{1}{3} \cos u\right]_{1}^{-1} \\
+												   &= \frac{1}{3} (\cos (-1) - \cos 1) \\
+												   &= \frac{1}{3} (\cos 1 - \cos 1) = 0
+	\end{align*}
+	
+	
+\end{enumerate}
+
+	
+	
+	
+	
+\end{document}

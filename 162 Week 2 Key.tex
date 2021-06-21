@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,fancyhdr,graphicx, amsthm}
+\headheight -10pt
+%%\voffset 0.3 cm
+\textheight 26cm% 25.5cm
+\textwidth 18cm
+\topmargin -2cm
+\parindent 0pt
+\oddsidemargin -1.2cm \columnsep 18pt
+%\columnseprule 0.3pt
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} \lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\newcommand{\ds}{\displaystyle}
+\usepackage[metapost]{mfpic}
+\usepackage{multicol}
+\begin{document}
+
+
+
+%\textbf{NAME:}\hrulefill
+%\vspace{0.12in}
+
+\centerline{\textbf{\Large{2.1 + 2.2 Worksheet}}}
+
+\vspace{0.2in}
+
+{\bf Instructions} These exercises are meant to reinforce what you have learned as well as challenge you on concepts that you have a basic understanding of. You will almost certainly not finish these all during one recitation session. Try picking some of the more straightforward problems to get warmed up, and then try some others you are not sure how to solve. These are all possible exam problems! Your recitation instructor will send out the key later in the week. 
+
+
+\begin{enumerate}
+
+\item If a ball is thrown into the air at a velocity of 40 ft/s, its height in feet $t$ seconds later is given by $h(t)=40t-16t^2$.
+
+\begin{enumerate}
+
+\item Find the average velocity for the time period beginning at $t=2$ and lasting  
+
+\begin{enumerate}
+
+\item 0.5 second\\
+
+%{\em Answer}: -32 ft/s\\
+
+\item 0.1 second\\
+
+%{\em Answer}: -25.6 ft/s\\
+
+\item 0.001 second\\
+
+%{\em Answer}: -24.16 ft/s\\
+
+\end{enumerate}
+
+
+
+\item What is the instantaneous velocity when $t=2$ seconds?\\
+
+%{\em Answer}: -24 ft/s\\
+
+
+
+\end{enumerate}
+
+%\item Find the equation of the tangent line to the parabola $y=x^2$ at the point $(1,1)$.\\
+
+%{\em Answer}: $y=2x-1$\\
+
+%\item Estimate the instantaneous rate of change of $f(x)=3\tan(2x)$ at $x=0$ ($x$ is in radians). Use this to compute the tangent line at the point $(0,0)$.  \\
+
+%{\em Answer}: $y=6x$\\
+
+
+\item Use a table of values to evaluate each limit
+
+\begin{enumerate}
+
+\item $\lim_{x\to 2} \frac{x^2 -4}{x - 2}$\\
+
+%{\em Answer}:  $0.25$\\
+
+\item $\lim_{t \to 0} \frac{t - 9}{\sqrt{t} - 3}$\\
+
+
+
+%{\em Answer}:  $0.6$\\
+
+\item $\lim_{x\rightarrow 1} \frac{x^3 - 1}{x^2 + x + 1}$\\
+
+
+%{\em Answer}:  About $0.59$ (you'll see later the exact value is $\ln(9/5)$)\\
+
+
+
+\end{enumerate}
+
+\newpage
+
+\item Sketch the graph of the function and use it to determine the values of $a$ for which the limit $\lim_{x\rightarrow a}f(x)$ exists.\\
+
+\begin{enumerate}
+
+\item \[f(x)=\begin{cases} 1+x, & x<-1 \\ x^2, & -1\leq x<1 \\ 2-x & x\geq 1 \end{cases} \]
+
+%{\em Answer}: For all $a$ except $a=-1$\\
+
+\item \[f(x)=\begin{cases} 1+\sin x, & x<0 \\ \cos x, & 0\leq x<\pi \\ \sin x & x\geq \pi \end{cases} \]
+
+%{\em Answer}: For all $a$ except $a=\pi$\\
+
+\end{enumerate}
+
+%\item Evaluate the following limits or explain why they do not exist.\\
+
+
+%\begin{enumerate}
+
+%\item \[\lim_{h\rightarrow 0}\frac{(2+h)^3-8}{h}\]
+
+%{\em Answer}: 12 \\
+
+%\item \[\lim_{t\rightarrow 2}\frac{4-t^2}{t-2}\]
+
+%{\em Answer}:  -4\\
+
+%\item \[\lim_{x\rightarrow 3}\frac{x+3}{x^2-9}\]
+
+%{\em Answer}: Does not exist \\
+
+%\item \[\lim_{h\rightarrow 0}\frac{\sqrt{25+h}-5}{h}\]
+
+%{\em Answer}: 1/10 \\
+
+%\end{enumerate}
+%
+%\newpage
+
+%\item Estimate  \[\lim_{x\rightarrow 0}\frac{\tan(3x)}{4x}\] by using a table.
+
+%\item Determine the infinite limit.
+
+%\begin{enumerate}
+
+%\item $\lim_{x\rightarrow 1}\frac{2-x}{(x-1)^2}$\\
+
+
+%{\em Answer}:  $\infty$\\
+
+%\item $\lim_{x\rightarrow -2^+}\frac{x-1}{x^2(x+2)}$\\
+
+
+%{\em Answer}:  $-\infty$\\
+
+
+%\item $\lim_{x\rightarrow \pi^-}\cot x$\\
+
+%{\em Answer}: $-\infty$\\
+
+%\end{enumerate}
+
+%\item In the theory of relativity, the mass $m$ of a particle with velocity $v$ is \[m=\frac{m_0}{\sqrt{1-v^2/c^2}}\] where $m_0$ is the mass of the particle at rest and $c$ is the speed of light. What happens to the mass of the particle as $v\rightarrow c^-$?
+
+%{\em Answer}: $m$ approaches $\infty$!!!! Whoa...
+
+
+
+\end{enumerate}
+
+
+
+\end{document}

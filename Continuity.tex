@@ -1,0 +1,189 @@
+\documentclass[12pt,reqno]{article}
+%\input{17F-137-HomeworkTemplate}
+\title{Homework \#2}
+%\maketitle
+%\due{Tuesday 9/12}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts, mathdots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage{enumitem}
+%\usepackage{verbatim}
+\usepackage{tikz-cd}
+
+\usepackage{subcaption}
+\usepackage{setspace}
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes,backgrounds,3d}
+\usepackage{fix-cm}
+\usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathreplacing,shapes,snakes}
+
+%%
+\newcommand{\coursenumber}{Math 137}
+\newcommand{\coursename}{Real and Functional Analysis}
+
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1 }
+\renewcommand{\Im}[1]{\operatorname{Im} #1}
+\newcommand{\diam}{\operatorname{diam}}
+
+%% New Commands
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\s}{\mathscr{S}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathfrak{L}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\renewcommand{\ker}{\operatorname{kernel}}
+\newcommand{\ran}{\operatorname{range}}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\vecspan}{\operatorname{span}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\nullspace}{\operatorname{nullspace}}
+
+\linespread{1.1}
+\setlength{\parskip}{0.5ex plus 0.5ex minus 0.2ex}
+
+%%  Matrices
+\newcommand{\minimatrix}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}  }
+\newcommand{\megamatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}  }
+
+\renewcommand{\vec}[1]{{\bf #1}}
+\newcommand{\ovec}{\operatorname{vec}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\renewcommand{\hat}{\widehat}
+
+\newcommand{\tworowvector}[2]{[#1\,\,#2]}
+\newcommand{\threerowvector}[3]{[#1\,\,#2\,\,#3]}
+\newcommand{\fourrowvector}[4]{[#1\,\,#2\,\,#3\,\,#4]}
+\newcommand{\fiverowvector}[5]{[#1\,\,#2\,\,#3\,\,#4\,\,#5]}
+\newcommand{\sixrowvector}[6]{[#1\,\,#2\,\,#3\,\,#4\,\,#5\,\,#6]}
+
+\newcommand{\twovector}[2]{\begin{bmatrix} #1\\#2 \end{bmatrix} }
+\newcommand{\threevector}[3]{\begin{bmatrix} #1\\#2\\#3 \end{bmatrix} }
+\newcommand{\fourvector}[4]{\begin{bmatrix} #1\\#2\\#3\\#4 \end{bmatrix} }
+\newcommand{\fivevector}[5]{\begin{bmatrix} #1\\#2\\#3\\#4\\#5 \end{bmatrix} }
+
+\newcommand{\comment}[1]{\marginpar{\scriptsize\color{gray}$\bullet$\,#1}}
+\newcommand{\highlight}[1]{\color{blue}#1\color{black}}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\alph{enumi})}%
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{(\roman{enumii})}%
+\newcommand{\due}[1]{\vspace{-0.2in}\begin{center}\textsc{due at the beginning of class \underline{#1}} \end{center}\medskip }
+
+
+%%%
+%%% Theorem Styles
+%%%
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem*{Thm}{Theorem}
+\newtheorem{Postulate}{Postulate}
+\newtheorem{Lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem*{Example}{Example}
+\newtheorem*{Remark}{Remark}
+\newtheorem{problem}{Exercise}
+\newtheorem*{Question}{Question}
+
+\let\oldenumerate=\enumerate
+\def\enumerate{
+	\oldenumerate
+	\setlength{\itemsep}{5pt}
+}
+\let\olditemize=\itemize
+\def\itemize{
+	\olditemize
+	\setlength{\itemsep}{5pt}
+}
+
+\allowdisplaybreaks
+\begin{document}
+	\title{Continuity and Limits of Composite Functions}
+	\date{ }
+	\maketitle
+	
+	\begin{enumerate}
+	\item[1.] Determine if 
+	\begin{align*}
+		f(x) = \begin{cases}
+			\frac{x^2 - 1}{x - 1} & x \neq 1 \\
+			3 & x = 1
+		\end{cases}
+	\end{align*}
+	is continuous at $a = 1$. 
+	
+	Ans. No. 
+	\item[2.] Determine the interval(s) on which the function
+	\begin{align*}
+		g(x) = \frac{3x^2 - 6x + 7}{x^2 + x + 1},
+	\end{align*}
+	is continuous. 
+	
+	
+	Ans. $(-\infty, \infty)$. 
+	
+	
+	\item[3.]Evaluate $$\lim_{x \to 4} \sqrt{\frac{x^3 - 2x^2 - 8x}{x - 4}}$$
+	
+	Ans. $2\sqrt{6}$. 
+		
+	\end{enumerate}
+	
+	
+	
+	
+	
+	
+	
+\end{document}

@@ -1,0 +1,858 @@
+\documentclass[12pt,reqno]{article}
+%\input{17F-137-HomeworkTemplate}
+\title{Homework \#2}
+%\maketitle
+%\due{Tuesday 9/12}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts, mathdots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage{enumitem}
+%\usepackage{verbatim}
+\usepackage{tikz-cd}
+
+\usepackage{subcaption}
+\usepackage{setspace}
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes,backgrounds,3d}
+\usepackage{fix-cm}
+\usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathreplacing,shapes,snakes}
+
+%%
+\newcommand{\coursenumber}{Math 137}
+\newcommand{\coursename}{Real and Functional Analysis}
+
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1 }
+\renewcommand{\Im}[1]{\operatorname{Im} #1}
+\newcommand{\diam}{\operatorname{diam}}
+
+%% New Commands
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\s}{\mathscr{S}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathfrak{L}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\renewcommand{\ker}{\operatorname{kernel}}
+\newcommand{\ran}{\operatorname{range}}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\vecspan}{\operatorname{span}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\nullspace}{\operatorname{nullspace}}
+
+\linespread{1.1}
+\setlength{\parskip}{0.5ex plus 0.5ex minus 0.2ex}
+
+%%  Matrices
+\newcommand{\minimatrix}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}  }
+\newcommand{\megamatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}  }
+
+\renewcommand{\vec}[1]{{\bf #1}}
+\newcommand{\ovec}{\operatorname{vec}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\renewcommand{\hat}{\widehat}
+
+\newcommand{\tworowvector}[2]{[#1\,\,#2]}
+\newcommand{\threerowvector}[3]{[#1\,\,#2\,\,#3]}
+\newcommand{\fourrowvector}[4]{[#1\,\,#2\,\,#3\,\,#4]}
+\newcommand{\fiverowvector}[5]{[#1\,\,#2\,\,#3\,\,#4\,\,#5]}
+\newcommand{\sixrowvector}[6]{[#1\,\,#2\,\,#3\,\,#4\,\,#5\,\,#6]}
+
+\newcommand{\twovector}[2]{\begin{bmatrix} #1\\#2 \end{bmatrix} }
+\newcommand{\threevector}[3]{\begin{bmatrix} #1\\#2\\#3 \end{bmatrix} }
+\newcommand{\fourvector}[4]{\begin{bmatrix} #1\\#2\\#3\\#4 \end{bmatrix} }
+\newcommand{\fivevector}[5]{\begin{bmatrix} #1\\#2\\#3\\#4\\#5 \end{bmatrix} }
+
+\newcommand{\comment}[1]{\marginpar{\scriptsize\color{gray}$\bullet$\,#1}}
+\newcommand{\highlight}[1]{\color{blue}#1\color{black}}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\alph{enumi})}%
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{(\roman{enumii})}%
+\newcommand{\due}[1]{\vspace{-0.2in}\begin{center}\textsc{due at the beginning of class \underline{#1}} \end{center}\medskip }
+
+
+%%%
+%%% Theorem Styles
+%%%
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem*{Thm}{Theorem}
+\newtheorem{Postulate}{Postulate}
+\newtheorem{Lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem*{Example}{Example}
+\newtheorem*{Remark}{Remark}
+\newtheorem{problem}{Exercise}
+\newtheorem*{Question}{Question}
+
+\let\oldenumerate=\enumerate
+\def\enumerate{
+	\oldenumerate
+	\setlength{\itemsep}{5pt}
+}
+\let\olditemize=\itemize
+\def\itemize{
+	\olditemize
+	\setlength{\itemsep}{5pt}
+}
+
+\allowdisplaybreaks
+\begin{document}
+\title{Math 1512 Lecture Notes}
+
+
+\section{6/07}
+
+\begin{enumerate}
+	\item Introductions + Group introductions (ask year, possible major, where from, interesting fact, what you want to gain from this course) 
+	\item Go over syllabus and first quiz online
+	\item Begin lecture (40 min?)
+	\item Worksheet (20 min ?)
+	\item Go over worksheet (20 min?)
+\end{enumerate}
+
+\subsection{Intro to Limits (2.1, 2.2)} 
+
+(ask if people know what limits are)
+
+First, let's talk about why we care about limits - we care about limits because of a real world application: what is called instantaneous velocity and a more general mathematical application: finding the slope of a line tangent to a curve. (These two are actually related which will be seen in the examples). 
+
+Looking at the first application - average vs instantaneous velocity. What is the difference? For example if on a road trip from let's say Albuquerque to Santa Fe you travel the distance (roughly 60 miles) in 1 hour. Average velocity is then 60 mi/ 1 hr = 60 mph. However instantaneous velocity will be different. You won't be going 60 mph in the city for example (the speed on the speedometer) 
+
+\begin{Example}
+	A rock is launched vertically upward from the ground with a speed of 49 m/s. From physics we know that the position function for the rock is given by $s(t) = -9.8t^2 + 49 t$. We can then find the average velocity of the rock between the times
+	\begin{enumerate}
+		\item[a.] $t = 1$ and $t = 3$ - 
+			$s(1) = 39.2$m  and $s(3) = 58.8$m so the average velocity is given by $s(3)- s(1)/ 2 = 19.6/2 = 9.8 $ m/s
+		\item[b.] $t = 1$ and $t = 2$ - 
+			$s(2) = 58.8 m$ so then average velocity is given by $s(2) - s(1)/1 = 19.6$m/s
+	\end{enumerate}
+
+
+
+	(Draw a graph of this example) 
+\end{Example}
+
+		\begin{Example}
+		A rock is launched vertically upward from the ground with a speed of 96 ft/s. Formula for the position of the rock is given by $s(t) = -16t^2 + 96t$. We can do the same thing as in the previous example.
+		
+		\begin{enumerate}
+			\item[a.] Between $t = 3$ and $t = 1$ we have $(144 - 80)/2 = 32$ 
+			\item[b.] Between $t = 2$ and $t = 1$ we have $(128 - 80)/1 = 48$. 
+		\end{enumerate} 
+	\end{Example}
+	(Draw graph) 
+	Now if we look at the graphs we see that finding average velocity is finding the slope of the secant line (a secant line is a line that intersects a graph at two points). But we want to eventually get to finding the instantaneous velocity. So how do we get there? We can estimate this by computing the average over smaller and smaller intervals. As we do see the value that the average approaches is called the limit. 
+	
+	Looking back at the example with the rock we have the following table - 
+	
+	
+	\begin{tabular}{| c | c |}
+		\hline
+		Time Interval & Average velocity(ft/s) \\
+		\hline
+		[1, 2] & 48 \\ \hline
+		[1, 1.5] & 56 \\ \hline
+		[1, 1.1] & 62.4 \\ \hline
+		[1, 1.01] & 63.84 \\\hline
+		[1, 1.001] & 63.984 \\\hline
+		[1, 1.0001] & 63.9984 \\\hline
+	\end{tabular}
+
+	From this table what can we guess is our limit (instantaneous velocity at 1 second)? We can write this as $\lim_{t \to 1} (s(t) - s(1))/(t - 1) = 64$ ft/s. 
+	
+	Going back to the graph let us see how this relates to the slop of the tangent line by drawing the secant lines and seeing that they get close the the tangent line. 
+	
+	[2.2]
+\begin{Definition}
+	Suppose the function $f$ is defined for all $x$ near $a$ except possibly at $a$. If $f(x)$ is arbitrarily close to $L$ (as close to $L$ as we like) for all $x$ sufficiently close (but not equal) t o $a$, we say $\lim_{x \to a} f(x) = L$ (the limit of $f$ as $x$ approaches $a$ equals $L$). 
+\end{Definition}
+
+Important to note that $\lim_{x \to a} f(x)$ depends on the values of $f$ near $a$ if it exists, NOT on $f(a)$. In some cases $\lim f(x)$ = $f(a)$ but it may possibly be different or $f(a)$ may not exist. 
+
+
+
+Most common way to see limits is through a graph. (Graph a function with all three cases above)
+
+Another way to find limits is through a table. For example the function $f(x) = (\sqrt{x} - 1)/(x - 1)$. We can look at the table of values going close to one and then estimate what $\lim_{x \to 1} f(x)$ is. 
+
+\begin{tabular}{| c | c | c | c | c | c | c | c | c |} \hline
+	x & 0.9 & 0.99 & 0.999 & 0.9999 & 1.0001 & 1.001 & 1.01 & 1.1 \\
+	 \hline
+	f(x) & 0.5131670 & 0.5012563 & 0.5001251 & 0.5000125 & 0.4999875 & 0.4998751 & 0.4987562 & 0.4880885 \\
+	\hline
+\end{tabular}
+
+So what do you think is a reasonable estimate for what the limit is? 
+
+
+The limits we've been working with so far are called two-sided limits. You can see this by looking at the table above. We see that as $f$ approaches 1 from smaller values and larger values you get the same value. We can also talk about one-sided limits - limits where you only approach a value from one direction (either "above" or "below"). These are called "right" and "left" -sided limits respectively. 
+
+\begin{Definition}
+	
+	
+	\begin{enumerate}
+		\item[1.] Right-sided limit - Suppose $f$ is defined for all $x$ near $a$ with $x > a$. If $f(x)$ is arbitrarily close to $L$ for all $x$ sufficiently close to $a$ with $x > a$, we write $\lim_{x \to a^{+}} f(x) = L$ and say the limit of $f$ as $x$ approaches $a$ from the right (or from above) equals $L$. 
+		\item[2.] Similarly for a left-sided limit, suppose $f$ is defined for all $x$ near $a$ with $x < a$. If $f(x)$ is arbitrarily close to $L$ for all $x$ sufficiently close to $a$ with $x < a$ we write $\lim_{x \to a^{-}} f(x) = L$ and say the limit of $f$ as $x$ approaches $a$ from the left (or from below) equals $L$. 
+	\end{enumerate}
+
+
+\end{Definition}
+
+\begin{Example}
+	An example function for this would be the function $f(x) = (x^3 - 8)/(4(x - 2))$. We can graph and make a table for this to evaluate the three limits we want to look at. 
+	
+	(graph like a parabola but DNE at $x = 2$) 
+	
+	Table: 
+	
+	\begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+		\hline
+		x & 1.9 & 1.99 & 1.999 & 1.9999 & 2.0001 & 2.001 & 2.01 & 2.1 \\ \hline
+		f(x) & 2.8525 & 2.985025 & 2.99850025 & 2.99985000 & 3.0015000 & 3.00150025 & 3.015025 & 3.1525 \\ \hline
+	\end{tabular}
+	
+	Based on this we see that the the left and right side limits exist and equal the two side limit. 
+\end{Example}
+
+This does lead to a theorem about the relationship between a two side limit and the one sided limits - 
+\begin{Theorem}
+	Assume $f$ is defined for all $x$ near $a$ except possibly at $a$. Then $\lim_{x \to a} f(x) = L$ if and only if $\lim_{x \to a^+ } f = L$ and $\lim_{x \to a^{-}} f = L$. 
+\end{Theorem}
+
+However it is not always the case that the two sided limit exists even if the one-sided limits exist. Important to talk about how you know whether a limit exists or not. For now it is easiest to look at either a graph or a table. 
+
+\section{6/09}
+
+\begin{enumerate}
+	\item[a.] Quick review of what was covered last class + notes on where to find some more info. Questions? Talk about MML and access problems.
+	\item[b.] Lecture on 2.3 + 2.4. (50 min) 
+	\item[c.] Worksheet + Examples (on Zoom so maybe walk through them after giving some time to work on them) (40 min) 
+	\item[d.] Close out with talking about the quiz and the homework. 
+\end{enumerate}
+
+\subsection{Techniques for Computing Limits}
+
+Last time we looked at graphical and numerical methods for calculating limits (using a calculator and tables = numerical). However, these can lead to incorrect results ocassionally so we want to look at algebraic/analytic methods for evaluating limits. 
+
+\subsubsection{Linear Functions}
+
+Linear functions are the easiest to look at so that is what we will start with. Remember that a linear function is usually defined as a function $f(x) = mx + b$ (ask what $m$ and $b$ are?). We can look at a graph of such a function and see simply that $\lim_{x \to a} f(x)  = f(a)$ since $f(x)$ approaches $f(a)$ as $x$ approaches $a$. This leads to the following theorem - 
+\begin{Theorem}
+	Let $a, b$ and $m$ be real numbers. For linear functions $f(x) = mx + b$ $\lim_{x \to a}f(x) =f(a) = ma + b$. 
+\end{Theorem}
+
+We can then try this with a few examples. Consider $\lim_{x \to 3} \frac{1}{2} x - 7. $ (A note about notation - we can either first define a function by saying "Let/Define $f(x) = \frac{1}{2} x - 7$" and then write $\lim_{x\to 3} f(x)$ or we can just not use function notation and write the limit directly like before). 
+
+What we are doing here (direct substitution) is the easiest way to evaluate limits. However it is not always possible. Before we get into that, let us first also talk about some "Laws" that will help us simplify and evaluate limits -
+\subsubsection{Limit Laws/Properties/Rules}
+
+\begin{Theorem}
+	Assume that $\lim_{x \to a} f(x)$ and $\lim_{x \to a} g(x)$ exist. The following properties hold, where $c$ is a real number and $n > 0$ is an integer. 
+	\begin{enumerate}
+		\item \textbf{Sum:} $\lim_{x \to a} (f(x) + g(x)) = \lim_{x \to a} f(x) + \lim_{x\to a} g(x)$ 
+		\item \textbf{Difference:} $\lim_{x \to a} (f(x) - g(x)) = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)$. 
+		\item \textbf{Constant Multiple:} $\lim_{x \to a} (c f(x)) = c \lim_{x \to a} f(x)$ 
+		\item \textbf{Product:} $\lim_{x\to a} (f(x) g(x)) = (\lim_{x \to a} f(x) ) (\lim_{x \to a} g(x))$ 
+		\item \textbf{Quotient:} $\lim_{x \to a} \left(\frac{f(x)}{g(x)} \right) = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}$ assuming $\lim_{x \to a} g(x) \neq 0$. 
+		\item \textbf{Power:} $\lim_{x \to a} (f(x))^n = (\lim_{x \to a} f(x))^n $
+		\item \textbf{Root:} $\lim_{x\to a}(f(x))^{1/n} = (\lim_{x \to a} f(x))^{1/n}$ assuming $f(x) > 0$ for $x$ near $a$ if $n$ is even. 
+	\end{enumerate}
+\end{Theorem}
+
+The proof of this theorem (and any theorem we talk about is in section 2.7). Maybe do a couple examples here.
+
+\subsubsection{Limits of Polynomials and Rational Functions} 
+We can know use the limit properties to find limits of polynomials and rational functions. For example if we wanted to find $\lim_{x \to 2} (7 x^3 + 3 x^2 + 4x + 2)$, we then use the sum, constant multiple and power properties from above to get
+\begin{align*}
+	\lim_{x \to 2} (7 x^3 + 3 x^2 + 4x + 2) &= \lim_{x\to 2} 7x^3 + \lim_{x\to2} 3x^2 + \lim_{x\to2}(4x + 2) \\
+										    &= 7 \lim_{x\to 2} x^3 + 3 \lim_{x\to 2} x^2 + \lim_{x\to 2}(4x + 2) \\
+										    &= 7 (\lim_{x \to 2} x)^3 + 3 (\lim_{x \to 2} x)^2 + \lim_{x \to 2}(4x + 2). \\
+										    &= 7 (2)^3 + 3 (2)^2 + (4(2) + 2) = 56 + 12 + 10 = 78.
+\end{align*}
+At the end we can use the theorem about limits of linear functions to directly substitute in and evaluate. However we do not need to do all of this work every time we want to evaluate the limit of a polynomial (or rational function). Instead we have this extremely useful theorem 
+\begin{Theorem}
+	Assume $p$ and $q$ are polynomials and $a$ is a constant. Then 
+	\begin{enumerate}
+		\item $\lim_{x\to a} p(x) = p(a)$ 
+		\item $\lim_{x \to a} \frac{p(x)}{q(x)} = \frac{p(a)}{q(a)}$ assuming $q(a) \neq 0$. 
+	\end{enumerate}
+\end{Theorem}
+	
+\subsubsection{One-Sided Limits}
+Up until now we have been talking about two sided limits. But what about one-sided limits? Do our limit properties and theorem apply for one-sided limits as well? Yes they do for the most part with some slight modifications. The one property that is modified for one-sided limits is the "root" property. So for one-sided limits we have 
+\begin{Theorem}
+	\begin{enumerate}
+		\item $\lim_{x \to a^+} (f(x))^{1/n} = (\lim_{x \to a^+} f(x))^{1/n}$ assuming $f(x) \geq 0$ for $x$ near $a$ with $x > a$ if $n$ is even.
+		\item Similarly $\lim_{x \to a^-} (f(x))^{1/n} = (\lim_{x \to a^-} f(x))^{1/n}$ assuming $f(x) \geq 0$ for $x$ near $a$ with $x < a$ if $n$ is even. 
+	\end{enumerate}
+\end{Theorem}
+
+An example for one-sided limits 
+\begin{Example}
+	Let $f(x) = \begin{cases}
+		-2x + 4 & \textnormal{if } x \leq 1, \\
+		\sqrt{x - 1} & \textnormal{if } x > 1.
+	\end{cases}$  
+
+We want to then find the values of $\lim_{x \to 1^-} f(x)$, $\lim_{x \to 1^+} f(x)$ and $\lim_{x \to 1} f(x)$ if they exist. 
+\end{Example}
+
+
+\subsubsection{Other techniques}
+
+For most of what we have done here we have had the ability ot use direct substitution. What about cases where this is not possible? For example the three we looked at on Monday on the worksheet are ones where we cannot use direct substitution. This is where we have to use algebra to help us solve. 
+
+First there are two possible cases where we cannot use direct substitution. 1) is where $f(a)$ exists, but $\lim_{x \to a} f(x) \neq f(a)$ (you have a jump in the function) 2) the limit exists but $f(a)$ does not. 
+
+Let us look at an example for the first worksheet. 
+\begin{Example}
+	Let us evaluate the limit $\lim_{x \to 2} \frac{x^2 - 4} {x - 2}$. Note that if we try direct substitution we get $0/0$ which does not tell us anything. The method we will use to solve this is to factor and then cancel. (factor and then cancel, then evaluate).  
+	
+	\begin{align*}
+		\lim_{x \to 2} \frac{x^2 -4}{x - 2} = \lim_{x\to 2} \frac{(x -2)(x +2)}{x -2} = \lim_{x \to 2} (x + 2) = 4.
+	\end{align*}
+\end{Example}
+
+\begin{Example}
+	The second method we can use is multiplication by conjugates. You will normally use this when your function has square roots in it. Taking a look at another example from the first work sheet we have  $\lim_{t \to 9} \frac{t - 9}{\sqrt{t} - 3}$. The conjugate of the denominator is $\sqrt{t} +3$. So multiplying gives us .... 
+	
+	\begin{align*}
+		\lim_{t \to 9}  \frac{t - 9}{\sqrt{t} - 3} \cdot \frac{\sqrt{t} + 3}{\sqrt{t} +3} = \lim_{t \to 9} \frac{(t - 9) (\sqrt{t} + 3)}{t - 9} = \lim_{t \to 9} \sqrt{t} + 3 = 6
+	\end{align*}
+\end{Example}
+
+%	$(\sqrt{t} - (3 + x))(\sqrt{t} + (3 + x))$
+	
+	
+
+
+\section{6/10}
+\begin{enumerate}
+	\item[a.] Begin with review of previous day (Limit properties, direct substitution and then factor-cancel/conjugates) 
+	\item[b.] Finish 2.3 with Squeeze Theorem 
+	\item[c.] Start 2.4
+	\item[d.] Worksheet for practice.
+\end{enumerate}
+
+\subsection{Evaluating Limits (cont.)} 
+\subsubsection{Squeeze Theorem}
+
+Another important theorem that can help evaluate limits is the Squeeze Theorem. As the name suggests, what you do is that you squeeze the limit that you want to find in between limits of things that you already now. For formally we have 
+\begin{Theorem}
+	Assume functions $f, g$ and $h$ satisfy $f(x) \leq g(x) \leq h(x)$ for all values of $x$ near $a$, except possibly at $a$. If $\lim_{x \to a} f(x) = \lim_{x\to a} h(x) = L$ then $\lim_{x \to a} g(x) = L$. 
+\end{Theorem}
+
+\begin{Example}
+	As an example of how to use this theorem let us look at the limit $\lim_{ x\to 0} x^2 \sin(1/x)$. Why can we not just use direct substitution? What about our algebraic methods from before? 
+	
+	By properties of trig functions we know that $-1 \leq \sin(1/x) \leq 1$ for all $x$ near 0 (Except 0). As for $x \neq 0, x^2 > 0$ we can multiply both sides by $x^2$ and get $-x^2 \leq x^2\sin(1/x) \leq x^2$. Now we have a sequence of inequalities of functions like in our theorem and furthermore we know that $\lim_{x \to 0} -x^2  = \lim{x \to 0} x^2 = 0$ so by the Squeeze theorem we have that $\lim_{x \to 0} x^2 \sin(1/x) = 0.$ This theorem is extremely useful many times when dealing with trig functions (we will use it later on as well). 
+\end{Example}
+
+\begin{Example}
+	While the previous trig limit was done using the Squeeze theorem not all trig limits can be calculated by the squeeze theorem. Instead you need to use trig identities. (who remembers trig identities?) 
+	
+	My personal three trig identities to remember are the following three : 
+	\begin{align}
+		&\sin^2 x + \cos^2 x = 1 (\textnormal{ The Pythagorean Identity}) \\
+		&\sin 2x = 2 \sin x \cos x \\
+		&\cos 2x = \cos^2 x - \sin^2 x (\textnormal{The Sine and Cosine Double Angle Formulas}).
+	\end{align} 
+
+	As an example let us look at evaluating the limit 
+	\begin{align*}
+		\lim_{x \to 0} \frac{1 - \cos 2x } {\sin x}.
+	\end{align*}
+	We cannot use direct substitution as we get 0/0. So we need to use our trig identities to solve. So what identity do you think we can use? 
+\end{Example}
+
+Using these two we will eventually (section 2.6) show that we can use direct substitution with trig functions. 
+
+\subsection{Infinite Limits}
+	We have until know talked about evaluating limits that are of finite value. There are two other limit scenarios we have not covered, one of which we have briefly talked about - infinite limits. An infinite limit is when the function values increase or decrease without bound near a point. An example of which I gave on the first day of class $y = \frac{1}{x}$. (draw a graph and look at the limit near $x = 0$). Similarly we briefly talked about an example from the worksheet yesterday which was similar. This is the scenario that is mentioned in 2.4 in the book. The other limit scenario is limits at infinity. This would be where we consider the limit of a function at really large $x$ values (i.e. $\lim_{x \to \infty}$). This is covered in 2.5. 
+	
+	Let us give a slightly more formal definition of infinite limits - 
+	\begin{Definition}
+		Suppose $f$ is defined for all $x$ near $a$. If $f(x)$ grows arbitrarily large for all $x$ sufficiently close (but not equal) to $a$ then we say $\lim_{x \to a} f(x) = \infty$. (Similarly if $f(x)$ is negative and grows large in magnitude then $-\infty$). 
+	\end{Definition}
+
+	An important remark - while we write and say that a limit is either positive or negative infinity it is important to note that $\lim_{x \to a} f(x) = \infty$ means that the limit DOES NOT EXIST.  (use $\frac{1}{x^2})$ as an example). 
+	
+	As always we can talk about one-sided infinite limits. In fact we have already discussed this before with the example of 1/x. 
+	
+	Looking at these kind of graphs of rational functions, note that whenever we have infinite limits there is always this line in the center - This line is important and called the vertical asymptote. Here is the formal definition
+	
+	\begin{Definition}
+		If $\lim_{x \to a} f(x) = \pm \infty$, $\lim_{x\to a^+} f(x) = \pm \infty$, or $\lim_{x \to a^-} f(x)  = \pm \infty$ the line $x  = a$ is called a vertical asymptote of $f$.
+	\end{Definition}
+
+	\subsubsection{How to find V. Asymptotes}
+	
+	So how to we find vertical asymptotes? If you are given a graph you would look for where the function goes to infinity/has infinite limits (ex. draw picture). If you are given a function like $g(x) = \frac{x - 2}{(x - 1)^2 (x - 3)}$ , and we cannot use a computer/calculator to graph it how do we find the v. asymptotes? You look at where the denominator is 0. 
+	
+	\subsubsection{What about Infinite Limits}
+	So we might be able to find where the vertical asymptotes are but how do we find the infinite limits near a vertical asymptote without graphing? Unfortunately to do so requires some simple arithmetic and looking at signs (positive vs negative). As an example of how we would do this let us go back to the the function $g(x)$ from before. What are the vertical asymptotes? Let us look at the the first one at $x = 1$. Now we want to know $\lim_{x \to 1^-} g(x)$ and $\lim_{x \to 1^+} g(x)$. First the first one-sided limit we need a number really close to 1 but less than 1. So take $0.99$ as an example. If we look at $g(0.99)$ we get 
+	\begin{align*}
+		g(0.99) = \frac{0.99 - 2}{(0.99 - 1)^2 (0.99 - 3)} = \frac{-1.01}{(0.1)^2 (-2.01)} = \frac{101}{100} \cdot \frac{100}{1} \cdot {100}{201} = \frac{1010000}{201}
+	\end{align*}
+	Now the important thing for me, is that this is a positive number. Now if we end up calculating what $g(0.999)$ is we see that it is $\frac{1001000000}{2001}$ so we see that it is getting bigger. However, we do not need to calculate the second value because of a fact we know - as $x = 1$ is a vertical asymptote what do we know that $\lim_{x\to 1^-} g(x)$ has to be? (it has to either be positive or negative infinity). 
+	
+	Similarly if we look at the limit from the right side we get that $g(1.01)$ is also positive. So that one sided limit also goes to positive infinity. Let us look at then the other vertical asymptote. We will get that the limit from the left is negative ,while from the right it is positive. 
+	
+	In general the method we want to look at is first make sure that ONLY the denominator is going to 0 for the value we are looking at. Then you want to look at the sign of the function near the value we are looking. Then as the denominator goes to 0, based on the sign we can decide whether it goes to positive or negative infinity. 
+	\subsection{Limits at Infinity}
+	
+	As we have talked about infinite limits, let us then talk about hte other we way we can mix limits and infinity. Now limits at infinity means we are looking as $x$ gets really large, not the function itself. These limits are important when looking at the end behavior of a function (useful when trying to see if a system every reaches an equilibrium state). 
+	
+	
+	Let us first look at an example. Consider $f(x) = \frac{x}{\sqrt{x^2 + 1}}$. The graph of this function looks like - . Notice that as $x \to \infty$ we have that $f(x) \to 1$ and similarly $x\to -\infty$ $f(x) \to -1$. These lines $y = 1$ and $y = -1$ are called horizontal asymptotes. 
+
+	Here is a formal definition of a horizontal asymptote - 
+	\begin{Definition}
+		If $f(x)$ becomes arbitarirly close to a finite number $L$ for all sufficiently large and positive $x$ then we say $\lim_{x \to \infty} f(x) = L$. Similarly if $f(x)$ becomes arbitrarily close to a finite number $M$ for all sufficiently large in magnitude and negative $x$ then we say $\lim_{x \to -\infty} f(x) = M$. 
+	\end{Definition}
+
+	A very important limit at infinity to remember is this $\lim_{x \to \pm \infty } \frac{\pm 1}{x^p} = 0$ where $p$ is any real number. 
+
+	Note: It is very important to note that unlike vertical asymptotes, where $f(x)$ CANNOT cross a vertical asymptote, $f(x)$ can cross a horizontal asymptote. 
+	
+	\begin{Example}
+		As an example consider $f(x) = 5 + \frac{\sin x}{\sqrt{x}}$. 
+		
+		We want to look at $\lim_{x \to \infty} f(x)$. By our limit laws we have 
+		\begin{align*}
+			\lim_{x\to \infty} f(x) = \lim_{x \to \infty} 5 + \lim_{x\to\infty} \frac{\sin x}{\sqrt{x}}. 
+		\end{align*}
+		Now we know what the first limit is but what about the second? (ask for guesses). We can actually show that $\lim_{x\to\infty} \frac{\sin x}{\sqrt{x}} = 0$.  
+		
+		We can use the squeeze theorem. Remember that 
+		\begin{align*}
+			-1 &\leq \sin x \leq 1 \\
+			\frac{-1}{\sqrt{x}} &\leq \frac{\sin x}{\sqrt{x}}\leq \frac{1}{\sqrt{x}} 
+		\end{align*}
+		We know by the important limit at infinity that I mentioned that the functions on the left and right go to 0 as $x \to \infty$ so the function in the middle does as well. So going back to limit of $f(x)$ we see that it is 5. So there is a horizontal asymptote of $y = 5$. 
+	\end{Example} 
+
+\section{6/11}
+\begin{enumerate}
+	\item[a.] Short review of limits at infinity 
+	\item[b.] Finish section on limits at infinity
+	\item[c.] Worksheet
+	\item[d.] Questions
+\end{enumerate}
+
+\subsection{Infinite Limits at Infinity}
+Last class we look at limits at infinity and infinite limits. What happens we combine them? We get infinite limits at infinity. An easy example is looking at any polynomial, for example $y = x^3$. These limits are important as they tell us the behavior of polynomials for large $x$. 
+
+This leads us to the following theorem that talks about limits at infinity for powers and polynomials
+\begin{Theorem}
+	Let $n$ be a positive integer and let $p$ be the polynomial $p(x) = a_n x^n + \cdots + a_2 x^2 + a_1 x + a_0$ where $a_n \neq 0$. 
+	\begin{enumerate}
+		\item[a.] $\lim_{x\to\pm \infty} x^n = \infty$, $n$ even 
+		\item[b.] $\lim_{x\to\infty} x^n = \infty$ and $\lim_{x\to-\infty} x^n = -\infty$, $n$ odd 
+		\item[c.] $\lim_{x\to\pm \infty} \frac{1}{x^n} = 0$ 
+		\item[d.] $\lim_{x \to \pm \infty} p(x) = \lim_{x \to \pm \infty} a_n x^n = \pm \infty$ depending on $n$. 
+	\end{enumerate}
+\end{Theorem}
+
+(look at some more polynomial examples)
+
+While end behavior of polynomials is not that interesting or difficult to find, we move on the next level - rational functions. For example consider the functions 
+\begin{align*}
+	f(x) &= \frac{x^3 - 2x + 1}{2x + 4} \\
+	g(x) &= \frac{4 x^4 - 2x^2}{x^4 - x^3 + x^2 -1} \\
+	h(x) &= \frac{3x - 2}{x^2 - 4}
+\end{align*}
+
+So how do we find these limits? (walk through the dividing method). 
+
+We have talked about vertical and horizontal asymptotes however there is one other type of asymptote that we can observe with rational functions - slant asmyptotes. What is a slant asmyptote? Consider a function like $y = x + \frac{1}{x}$. (draw a graph). Looking at the function we can see what is meant by a slant asymptote. Then how do we find such asymptotes? We need to use long division. Looking at another example - $f(x) = \frac{2x^2 + 6x - 2}{x + 1}$. 
+
+
+To wrap up and summarize all of the work we've done with rational functions we have the following theorem - 
+\begin{Theorem}
+	Suppose $f(x) = \frac{p(x)}{q(x)}$ is a rational function where $p(x)$ is a polynomial of degree $m$ and $q$ is a polynomial of degree $n$ then 
+	\begin{enumerate}
+		\item[1)] If $m < n$ (degree of numerator less than denominator) then $\lim_{x\to\pm\infty} f(x) = 0$ and $y = 0$ is a horizontal asymptote of $f$. 
+		\item[2)] If $m = n$ (degree of numerator = to deg of denominator) the $\lim_{x \to \pm\infty} f(x) = a_m/b_n$ and $y = a_m/b_n$ is a horizontal of $f$. 
+		\item[3)] If $m > n$ then $\lim_{x \to \pm \infty} f(x) = \infty$ or $-\infty$ and $f$ has no horizontal asymptote. 
+		\item[4)] If $m  = n+ 1$ then $\lim_{x \to \pm \infty} f(x) = \infty$ or $-\infty$ and $f$ has no horizontal asymptote but $f$ has a slant asymptote
+		\item[5)] Assuming $f$ is in reduced form ($p$ and $q$ share no common factors), vertical asymptotes occur at the zeros of $q$. 
+	\end{enumerate}
+\end{Theorem}
+
+As a note - what this theorem implies is that a rational function can only have 1 horizontal asymptote if there is one. 
+
+Now let us look at algebraic functions. Consider the example $f(x) = \frac{10 x^3 - 3x^2 + 8}{\sqrt{25x^6 + x^4 + 2}}$. To find limits at infinity we need to use the dividing trick from before with a slight modification. We need to take the square root of the highest power in the denominator and then look at it based on if we are going to positive or negative infinity. 
+
+\section{6/14}
+\subsection{Continuity at a point}
+
+The next important topic we are going briefly cover is continuity. (Draw a couple pictures) What is the difference between these functions? (make sure to have ones with jumps/breaks). Graphs with jumps or breaks are not continuous functions.... another way of thinking about it is a continuous function can be drawn without lifting the pencil. 
+
+Now using that informal definition we can get away with figuring out if a function is continuous or not most of the time. However for more complex cases we cannot - like the function $h(x) = \begin{cases}
+	x \sin \frac{1}{x} & x \neq 0 \\ 0 & x = 0
+\end{cases}$. 
+
+We cannot tell if $h$ is continuous at $0$ based on the graph. So we need a more formal definition. 
+
+\begin{Definition}
+	(Continuity at a point) A function is continuous at $a$ if $\lim_{x \to a} f(x) = f(a)$. 
+\end{Definition}
+
+This definition implies a few things - 1) Both $\lim_{x\to a}f(x)$ and $f(a)$ must exist and 2) they must be equal. Let us return to our example function from before and take a look at if it is continuous at $0$ using this formal definition. 
+
+Let us look at some more examples to see if they are continuous at a certain point - 
+\begin{Example}
+	$$f(x) = \frac{3x^2 + 2x+ 1}{x - 1}$$ at $a = 1$. (Not continuous)
+\end{Example}
+\begin{Example}
+	However look at same function at $a = 2$ (it is continuous)
+\end{Example}
+
+Similar to how we had limit rules/properties we have some properties for continuity at a point - 
+\begin{Theorem}
+	If $f$ and $g$ are continuous at $a$, then the following functions are also continuous at $a$ (assume $c$ is a constant and $n > 0$ an integer)
+	\begin{enumerate}
+		\item[a.] $f + g$
+		\item[b.] $f - g$
+		\item[c.] $c f$ 
+		\item[d.] $f g$ 
+		\item[e.] $f/g$ assuming $g(a) \neq 0$
+		\item[f.] $(f)^n$ 
+	\end{enumerate}
+\end{Theorem}
+
+The proofs of most of these properties follows from the limit properties. By the continuity properties we know the following
+\begin{Theorem}
+	\begin{enumerate}
+		\item[a.] A polynomial function is continuous for all $x$. 
+		\item[b.] A rational function $p/q$ is continuous for all $x$ for which $q(x) \neq 0$
+	\end{enumerate}
+\end{Theorem}
+
+There is one function operation we have yet to really touch on and that is composition of functions. The following theorem helps us talk about continuity of the composition of functions - 
+\begin{Theorem}
+	If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$ then the composite function $f \circ g$ is continuous at $a$. Furthermore, the limit of $f \circ g$ can be evaluated by direct substitution, that is $\lim_{x\to a} f(g(x)) = f(g(a))$. 
+\end{Theorem}
+
+
+From the previous theorem we can get the following results about the limits of composite functions - 
+\begin{Theorem}
+	\begin{enumerate}
+		\item[1.] If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$ then $\lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x))$. 
+		\item[2.] If $\lim_{x\to a} g(x) = L$ and $f$ is continuous at $L$ then $\lim_{x\to a} f(g(x)) = f(\lim_{x\to a} g(x))$. 
+	\end{enumerate}
+\end{Theorem}
+
+This theorem is helpful in evaluating limits of composite functions - 
+As an example let us look at 
+\begin{Example}
+	$$f(x) = \left(\frac{x^4 - 2x + 2}{x^6 + 2x^4 + 1}\right)^{10}$$. 
+	
+	What if we want to find $\lim_{x\to 0} f(x)$. (explain how to use the theorem above)
+\end{Example}
+\subsection{Continuity on an Interval} 
+\begin{Definition}
+	A function $f$ is continuous on an interval $I$ if it is continuous at all points of $I$. If $I$ contains its endpoints, continuity on $I$ means continuous from the right $(\lim_{x\to a^+} f(x) = f(a)$) or left ($\lim_{x \to b^-} f(x) =f(b))$ at the endpoints. 
+\end{Definition}
+
+An example - 
+\begin{Example}
+	Determine the intervals of continuity for $$f(x) = \begin{cases}
+		x^2 + 1 & x \leq 0 \\ 3x + 5 & x > 0
+	\end{cases}$$
+
+	($f$ is left continuous at 0 so the intervals are $(-\infty, 0]$ and $(0, \infty)$). 
+\end{Example}
+\subsection{Continuity with Roots} 
+\begin{Theorem}
+	Assume $n$ is a positive integer. If $n$ is an odd integer then $(f(x))^{1/n}$ is continuous at all points at which $f$ is continuous. If $n$ is even then $(f(x))^{1/n}$ is continuous at all points $a$ at which $f$ is continuous and $f(a) > 0$.
+\end{Theorem}
+
+\begin{Example}
+	The most common example of a function with a root in it would be a semicircle - $f(x) = \sqrt{9 - x^2}$. By the previous theorem since $f$ involves an even root, we know that $f$ is continuous when $9 - x^2 > 0$ and is continuous, so (-3, 3). We want to look at the endpoints $-3$ and $3$. So we then look at the limits $\lim_{x\to -3^+} f(x)$ and $\lim_{x\to 3^-} f(x)$ and see that $f$ is right cont. at -3 and left cont. at 3 so the interval of continuity for $f$ is $[-3, 3]$. 
+\end{Example}
+\subsection{Continuity of Trig Functions} 
+\begin{Theorem}
+	The functions $\sin x, \cos x, \tan x, \cot x, \sec x,$ and $\csc x$ are continuous at all points of their domains. 
+\end{Theorem}
+
+\subsection{Intermediate Value Theorem} 
+A very common problem we run into is trying to find $x$ such that $f(x) = L$ for some $L$. However, before even trying to find solutions how do we know that there even exists a solution?  We use what is called the Intermediate Value Theorem (IVT). 
+\begin{Theorem}
+	(IVT) Suppose $f$ is continuous on the interval $[a, b]$ and $L$ is a number strictly between $f(a)$ and $f(b)$. Then there exists at least one number $c$ in (a, b) satisfying $f(c) = L$. 
+\end{Theorem}
+\begin{Example}
+For example we can use this to check if the equation $f(x) = x^3 + x + 1 = 0$ has a solution on the interval $[-1, 1]$. 
+\end{Example}
+
+\section{6/16}
+
+\subsection{Derivatives} 
+
+Now that we have talked about limits and continuity we can get into the first major topic of Calculus - derivatives. But what are derivatives? This goes back to the first topic we talked about in this class - instantaneous rate of change (or the slope of a tangent line). If we look at what we did in the first section we had secant lines and then we took smaller and smaller intervals to estimate instantenous rate of change. This leads us to the definition of the derivative. (draw a picture)
+
+\begin{Definition}
+	The derivative of a function $f$ at a point $a$ is given by either of the following limits, provided that the limits exist and $a$ is in the domain of $f$ - \begin{align}
+		f'(a) &= \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \\
+		f'(a) &= \lim_{h \to 0} \frac{f(a + h) - f(a)} {h}.
+	\end{align}
+	If $f'(a)$ exists we say that $f$ is differentiable at $a$. 
+\end{Definition} 
+
+\begin{Remark}
+	A note about notation. If we are using function notation the derivative of $f$ at a point $a$ is denoted as $f'(a)$. If we are using Leibniz notation the derivative of $f$ at a point $a$ is denoted as $\left.\frac{df}{dx}\right|_{x = a}$. Another possible notation we can use is $y'(a)$ or $\left.\frac{dy}{dx}\right|_{x = a}$. .   
+\end{Remark}
+
+We can now use this to calculate the tangent lines for functions at a point. 
+\begin{Example}
+	For example take $f(x) = \sqrt{2x + 1}$. We can then find (using the definition) the derivative at $x = 2$ and then find the slope of the tangent line at that point. 
+	
+	So going by definition we calculate $f'(2)$ as 
+	\begin{align*}
+		f'(2) &= \lim_{x \to 2} \frac{f(x) - f(2)}{x - 2} \\
+			  &= \lim_{x \to 2} \frac{\sqrt{2x + 1} - \sqrt{5}}{x - 2} \\
+			  &= \lim_{x \to 2} \frac{\sqrt{2x + 1} - \sqrt{5}}{x - 2} \cdot \frac{\sqrt{2x + 1} + \sqrt{5}}{\sqrt{2x + 1} + \sqrt{5}} \\
+			  &= \lim_{x \to 2} \frac{(\sqrt{2x + 1})^2 - (\sqrt{5})^2}{(x - 2) (\sqrt{2x + 1} + \sqrt{5})} \\
+			  &= \lim_{x \to 2} \frac{2x + 1 - 5} {(x - 2)(\sqrt{2x + 1} + \sqrt{5})} \\
+			  &= \lim_{x \to 2} \frac{2x - 4}{(x - 2)(\sqrt{2x + 1} + \sqrt{5})} \\
+			  &= \lim_{x \to 2} \frac{2}{\sqrt{2x + 1} + \sqrt{5}} = \frac{2}{2\sqrt{5}} = \frac{1}{\sqrt{5}}.
+	\end{align*}
+
+	So now that we know the slope we can find the equation of the tangent line. To do so we will use the point-slope form a linear function and this gives that the tangent is $y - \sqrt{5} = \frac{1}{\sqrt{5}} (x - 2)$. 
+\end{Example}
+
+We have talked about the derivative at a point, but we can also just talk about the derivative as a function of $x$. 
+\begin{Definition}
+	The derivative of $f$ is the function $$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$ provided the limit exists and $x$ is in the domain of $f$. If $f'(x)$ exists we say $f$ is differentiable at $x$. If $f$ is differentiable at every point of an open interval $I$, we say that $f$ is differentiable on $I$.  (An open interval is an interval that does not contain its endpoints). 
+\end{Definition}
+
+As an example using the definition we have
+\begin{Example}
+	Let us find the derivative of $f(x) = -x^2 + 6x$ by definition. 
+\end{Example}
+
+Similar to how we talked about notation for the derivative at a point we have multiple different ways to notate the derivative of $f$ - $f'(x), \frac{df}{dx}, \frac{d}{dx}(f(x)), D_x (f(x)), \frac{dy}{dx}, $ and $y'$. You can use any notation that you prefer as long as you are consistent. 
+
+I mentioned how continuity is related to derivatives. But how? Continuity is a result of differentiabilty. 
+\begin{Theorem}
+	If $f$ is differentiable at $a$ then $f$ is continuous at $a$. 
+\end{Theorem} 
+
+Another way to think about this is using the "contrapositive" - If $f$ is not continuous at $a$ then $f$ is not differentiable at $a$.
+
+\begin{Remark}
+	It is important to note that the opposite is NOT true - You can be continuous at a point but not differentiable. Consider $f(x) = |x|$. This function is continuous at $0$, however it is not differentiable. The reason being that the limit does not exist (from the right we have 1 and left we have -1). 
+\end{Remark} 
+
+
+
+\subsubsection{Graphs of Derivatives}
+An interesting thing to do is look at the graphs of a derivative of a function and see how it relates to the original function. We will come back to this later when we can take the derivatives of more functions using derivative rules, but for now let us use the fact that the derivative represents the slope of the tangent line to sketch the graphs of the derivative. 
+
+
+\section{6/17}
+Now that we have defined how to take a derivative, we will talk about rules to help make calculating derivatives easier. 
+\subsection{Derivative Rules} 
+
+The first two rules we will talk about are the rules for taking derivatives of constant functions and derivatives of a simple monomial - $x^n$. 
+
+If we look at the graph of a constant function we see that we have a slope of zero. This leads to the very simple constant rule
+\begin{Theorem}
+	If $c$ is a real number, then $\frac{d}{dx} (c) = 0$. 
+\end{Theorem}
+
+Next let us look at the power rule. The power rule is as follows 
+\begin{Theorem}
+	$\frac{d}{dx} x^n = n x^{n  - 1}$, where $n$ is a positive integer
+\end{Theorem}
+
+How do we get the rule? There is proof in the textbook, but I will show a different proof. The proof I will show uses the binomial theorem, which tells us how to expand $(x + y)^n$. For those who don't remember what this is the expansion goes as follows 
+\begin{align*}
+	(x + y)^n = x^n + \begin{pmatrix}
+		n \\ n - 1
+	\end{pmatrix} x^{n - 1} y + \begin{pmatrix}
+	n \\ n - 2
+\end{pmatrix} x^{n - 2} y^2 + \cdots + \begin{pmatrix}
+n \\ 2 
+\end{pmatrix} x^2 y^{n - 2} + \begin{pmatrix}
+n \\ 1
+\end{pmatrix} xy^{n - 1} + y^{n}
+\end{align*}
+
+So let us work through from the definition of $f'(x)$ from last class. 
+
+\begin{align*}
+	f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
+		  &= \lim_{h \to 0} \frac{(x + h)^n - x^n}{h} \\
+		  &= \lim_{h \to 0}  \frac{x^n + \begin{pmatrix}
+		  		n \\ n - 1
+		  	\end{pmatrix} x^{n - 1} h + \begin{pmatrix}
+		  		n \\ n - 2
+		  	\end{pmatrix} x^{n - 2} h^2 + \cdots + \begin{pmatrix}
+		  		n \\ 2 
+		  	\end{pmatrix} x^2 h^{n - 2} + \begin{pmatrix}
+		  		n \\ 1
+		  	\end{pmatrix} xh^{n - 1} + h^{n} - x^n}{h} \\
+	  	  &= \lim_{h \to 0} \frac{\begin{pmatrix}
+	  	  		n \\ n - 1
+	  	  	\end{pmatrix} x^{n - 1} h + \begin{pmatrix}
+	  	  		n \\ n - 2
+	  	  	\end{pmatrix} x^{n - 2} h^2 + \cdots + \begin{pmatrix}
+	  	  		n \\ 2 
+	  	  	\end{pmatrix} x^2 h^{n - 2} + \begin{pmatrix}
+	  	  		n \\ 1
+	  	  	\end{pmatrix} xh^{n - 1} + h^{n}}{h} \\
+  	  	&= \lim_{h \to 0} \begin{pmatrix}
+  	  		n \\ n - 1
+  	  	\end{pmatrix} x^{n - 1}  + \begin{pmatrix}
+  	  		n \\ n - 2
+  	  	\end{pmatrix} x^{n - 2} h + \cdots + \begin{pmatrix}
+  	  		n \\ 2 
+  	  	\end{pmatrix} x^2 h^{n - 3} + \begin{pmatrix}
+  	  		n \\ 1
+  	  	\end{pmatrix} xh^{n - 2} + h^{n - 1} \\
+    	&= \begin{pmatrix}
+    		n \\ n - 1
+    	\end{pmatrix} x^{n - 1} = \frac{n!}{(n - 1)! 1!} x^{n - 1} = n x^{n - 1}. 
+\end{align*}
+
+While we have only shown that this is true for positive integers, in fact the power rule applies for ALL real numbers - 
+\begin{Theorem}
+	(general power rule) $\frac{d}{dx} x^n = n x^{n - 1}$, $n$ is any real number. 
+\end{Theorem}
+
+The next rule that we will look at is the constant multiple rule. 
+\begin{Theorem}
+	If $f$ is differentiable at $x$ and $c$ is a constant, then $\frac{d}{dx} (c f(x)) = c f'(x)$. 
+\end{Theorem}
+
+We can also work this one through from the definition - 
+\begin{align*}
+	\frac{d}{dx} (cf(x)) &= \lim_{h \to 0} \frac{(c f(x + h)) - (c f(x))}{h} \\
+						 &= \lim_{h \to 0} \frac{c (f(x + h) - f(x))}{h} \\
+						 &= c \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
+						 &= c f'(x).
+\end{align*}
+
+The next rule is the sum rule. Simply put this is as follows - 
+\begin{Theorem}
+	If $f$ and $g$ are differentiable at $x$ then $\frac{d}{dx}(f(x) + g(x)) = f'(x) + g'(x)$. 
+\end{Theorem}
+
+Again let us work through this by definition - 
+\begin{align*}
+	\frac{d}{dx} (f(x) + g(x)) &= \lim_{h \to \infty} \frac{(f(x + h) + g(x+h)) - (f(x) + g(x))}{h} \\
+						       &= \lim_{h \to \infty} \frac{f(x + h) - f(x)}{h} + \frac{g(x + h) - g(x)}{h} \\
+						       &= \lim_{h \to \infty} \frac{f(x + h) - f(x)}{h} + \lim_{h \to \infty} \frac{g(x + h) - g(x)}{h} \\
+						       &= f'(x) + g'(x). 
+\end{align*}
+
+We can generalize this sum rule to work with more than just two summands. 
+
+There are two more rules we will look at - the product and quotient rule. 
+
+These two rules are 
+\begin{Theorem}
+	\begin{align*}
+		\frac{d}{dx}(f(x) g(x)) &= f'(x) g(x) + f(x) g'(x) \\
+		\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right) &= \frac{f'(x) g(x) - f(x) g'(x)}{(g(x))^2}.
+	\end{align*}
+\end{Theorem}
+
+Both of these we can also show from the definition. However they are more complicated than any of the rules we have done before. We will go through the just the product rule for right now - 
+\begin{align*}
+	\frac{d}{dx}(f(x) g(x)) &= \lim_{h \to 0} \frac{f(x + h)g(x + h) - f(x) g(x)} {h} \\
+						    &= \lim_{h \to 0} \frac{f(x + h) g(x + h) - f(x) g(x + h) + f(x)g(x + h) - f(x) g(x)}{h} \\
+					    	&= \lim_{h \to 0} \frac{(f(x + h) - f(x)) g(x + h) + f(x) (g(x + h) - g(x))}{h} \\
+					    	&= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} g(x + h) + f(x) \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} \\ 
+					    	&= f'(x) g(x) + f(x) g'(x).  
+\end{align*}
+
+
+Now that we have gone over all of these rules, let's summarize all of the rules we have 
+\begin{align}
+	\textnormal{(Constant)} \frac{d}{dx} (c) &= 0 \\ 
+	\textnormal{(Power)} \frac{d}{dx} (x^n) &= n x^{n - 1} \textnormal{ n is any real number} \\
+	\textnormal{(Constant Multiple)} \frac{d}{dx}(c f) &= c f'(x) \\ 
+	\textnormal{(Sum)} \frac{d}{dx}(f  + g) &= f'(x) + g'(x) \\
+	\textnormal{(Product)} \frac{d}{dx} (f g) &= f' g + f g' \\
+	\textnormal{(Quotient)} \frac{d}{dx} \left(\frac{f}{g}\right) &= \frac{f' g - f g'}{g^2} 
+\end{align}
+
+
+Now let us get into some examples. Most of the time you will be using more than one rule at the same time. So we will look over a few examples, before moving on to the worksheet that will have many more. 
+
+\begin{Example}
+	Polynomials. One of the most common functions. Let us look at a not so simple problem. Let us find the derivative of $y = (2x^3 - 4)(x^2 +3x + 2)$. There are two ways to solve this. One is to FOIL out (expand) and then take the derivative. Or we can use the product rule. Let us do both. 
+\end{Example}
+
+\begin{Example}
+	Let us look at an example that pull all of the rules together. Let us find the derivative of $$y = \frac{4x(2x^3 - 3x^{-1})}{x^2 + 1}$$. There are two ways to approach a rational function - either we use the quotient rule, or we rewrite the rational function as a product and use the product rule. 
+	
+	Let us use try to do both. (Ans. $$\frac{8x(2x^4 + 4x^2 + 3)}{(x^2 + 1)^2}$$)
+\end{Example}
+
+\section{6/18}
+
+A few last remaining misc details about derivatives - 
+
+\subsection{Higher Order Derivatives} We can take higher-order derivatives. So the second, third etc. (show how to notate it). In particular the second derivative will become important as we keep going 
+\subsection{Derivatives as Rates of Change} 
+
+
+
+
+\end{document}

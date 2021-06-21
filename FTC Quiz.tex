@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,fancyhdr,graphicx, amsthm}
+\headheight -10pt
+%%\voffset 0.3 cm
+\textheight 26cm% 25.5cm
+\textwidth 18cm
+\topmargin -2cm
+\parindent 0pt
+\oddsidemargin -1.2cm \columnsep 18pt
+%\columnseprule 0.3pt
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy} \lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\newcommand{\ds}{\displaystyle}
+\usepackage[metapost]{mfpic}
+\usepackage{multicol}
+\begin{document}
+
+
+
+%\textbf{NAME:}\hrulefill
+%\vspace{0.12in}
+
+\centerline{\textbf{\Large{FTC Quiz}}}
+
+\vspace{0.2in}
+ 
+\begin{enumerate}
+\item Evaluate the following integrals : (hint: two of these integrals you do not even need to use the Fundamental Theorem of Calculus)
+\begin{enumerate}
+	\item $\int_{-5}^{5} \sin x \, dx$
+	\item $\int_{-2\pi}^{2\pi} \cos x \, dx$
+	\item $\int_{3}^{3} (e^{-2x^{2}} + \sec x) dx$
+	\item $\int_{-1}^{2} (1 + x^2) \, dx$
+\end{enumerate} 
+\item Using the Fundamental Theorem of Calculus find $f'(x)$ if 
+\begin{align*}
+	f(x) = \int_{\tan (x^2)}^{x^2 + 2x + 1} \frac{2}{\sqrt{2 - t^2 }} \, dt.
+\end{align*}
+You do not need to simplify your answer.
+\end{enumerate}
+
+
+\end{document}
