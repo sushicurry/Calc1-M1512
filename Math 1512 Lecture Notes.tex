@@ -932,7 +932,7 @@ Again with finding derivatives of other trig functions like $\tan x$ we would ju
 
 Like I mentioned last class we can look at higher order derivatives. Trig functions are an example where we can always take a derivative of a trig function and never get 0. 
 
-\subsubsection{Derivatives of Exponential Functions}
+\subsection{Derivatives of Exponential Functions}
 
 The other type of functions we have not take the derivative of are exponential functions - such as $e^x$. This is a special exponential function since it has $e$ as the base. A more general exponential function is $b^x$ where $b$ is any real number. 
 
@@ -959,7 +959,7 @@ $$\frac{d}{dx} e^x = e^x$$
 
 For the purposes of this course, this is the only exponential function we will be working with. 
 
-\subsubsection{Derivatives as a Rate of Change Revisited}
+\subsection{Derivatives as a Rate of Change Revisited}
 
 Let us come back to looking at derivatives as a rate of change now that we can take the derivatives of more functions. There are a few common types of word problems that come up when talking about derivatives. One of the most common is dealing with position functions and velocity. 
 
@@ -976,4 +976,72 @@ We originally started the class with one such example, where we were throwing a 
 
 There are many other examples that we can see of derivatives in action in other fields, from physics to economics. (There just was a problem on your first exam). 
 
+\section{6/23}
+
+\begin{enumerate}
+	\item[a.] Start class with touching on rates of change (the physics example)
+	\item[b.] Chain Rule
+	\item[c.] Worksheet
+\end{enumerate}
+
+\subsection{The Chain Rule}
+
+The Chain Rule is one of the most powerful/important derivative rules we have, while at the same time also being one of the hardest to understand at a first glance. Which is why a lot of this is going to be either done through examples and through you guys practicing a lot through worksheets. 
+
+
+Let us start with the statement of the chain rule. There are two main ways that the chain rule is stated in textbooks - 
+\begin{Theorem} 
+ Suppose that $y = f(u)$ is differentiable at $u = g(x)$ and $u = g(x)$ is differentiable at $x$. The composite function $y = f(g(x))$ is differentiable at $x$ and its derivative can be expressed in two equivalent ways: 
+ \begin{align*}
+ 	\frac{dy}{dx} &= \frac{dy}{dy} \frac{du}{dx} \\ 
+	\frac{d}{dx} f(g(x)) &= f'(g(x)) \cdot g'(x). 
+\end{align*}
+\end{Theorem}
+
+This looks complicated, but can we get this rule from the definition? The answer is yes. It is interesting to look at as it requires some manipulation of limits in a different way than what we have done before - 
+\begin{align*}
+	\frac{d}{dx} f(g(x)) &= \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{h} \\
+						 &= \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{h} \cdot \frac{g(x + h) - g(x)}{g(x + h) - g(x)} \\ 
+						 &= \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{g(x + h) - g(x)} \cdot \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} 
+\end{align*}
+
+The second limit is just the definition of $g'(x)$, so we need to look at the first. Let $u = g(x + h)$ and $v = g(x)$. Notice that as $h \to 0$ then $u \to v$. Substituting this into our first limit we get
+\begin{align*}
+	\lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{g(x + h) - g(x)} &= \lim_{u \to v} \frac{f(u) - f(v)}{u - v} \\
+			&= f'(v) = f'(g(x)).
+\end{align*}
+
+We get the second to third line by the definition of the derivative at a point. 
+
+Putting these two together gives us the result that $\frac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$. 
+
+
+At the start it always helps to write everything out to make sure you are using the chain rule properly. That way you can keep track of your $f$'s , and $g$'s. 
+(go over a few examples)
+
+Remember, as with all derivative rules the chain rule has to be used properly along with other rules. We can now touch on a few examples of problems mentioned in previous classes. We can also talk about how to deal with a quotient without using the quotient rule. (maybe do an example using both) 
+
+\subsubsection{A Special Case}
+
+A special case of the chain rule is when we are using it on a power of a function ex. $(g(x))^p$. In this case we have - 
+\begin{Theorem}
+	If $g$ is differentiable for all $x$ in its domain and $p$ a real number then $$\frac{d}{dx} (g(x))^{p} = p (g(x))^{p - 1} g'(x)$$. 
+\end{Theorem}
+
+This is one of the most common scenarios when using the chain rule so keeping this always in the back of your mind when working with taking derivatives is helpful. 
+
+(do some more examples)
+
+\subsubsection{More complicated Compositions} 
+
+It is possible that we will run into a composition of three or more functions. This just means that we need to be even more careful as to how we apply the chain rule. In these cases we will usually be applying the chain rule more than once.
+
+As an example we can look at $e^{\sin 2x}$ or $\sin (\sqrt{x^2 + 2})$. We can think of these functions as $f(g(h(x)))$ a composition of three functions. So then $\frac{d}{dx}f(g(h(x)))$ given by the Chain Rule is 
+\begin{align*}
+	\frac{d}{dx} f(g(h(x))) &= f'(g(h(x))) [g(h(x))]' \\
+	&= f'(g(h(x))) \cdot g'(h(x)) h'(x) \\
+	&= f'(g(h(x))) g'(h(x)) h'(x).
+\end{align*}
+
+We can use this on the example functions given to find their derivatives. 
 \end{document}
