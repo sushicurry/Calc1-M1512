@@ -1090,6 +1090,26 @@ Using this procedure let us go back to our example of two planes.
 
 A lot of related rates is going to be just working through problems like this over and over again. The Pythagorean Thm is one of the common formulas you will need to know to solve related rates problems. Other problems will include dealing with volume and areas of standard shapes. 
 
+Let us look at a slightly more involved example that requires some more knowledge of triangles - 
+\begin{Example}
+	Let us say that coffee is draining out of a conical filter at a rate of 2.25 cubed inches per min. If the cone is 5 in tall and has a radius of 2 in, how fast is the coffee level dropping when the coffee is 3 in deep. 
+	
+	So following the procedure let us sketch the problem. We then have a sketch of the cone and looking at this we can see the three relevant variables - the volume $V$, the radius $r$ and the height $h$. We want to find $\frac{dh}{dt}$  at the instant when $h = 3$ in and $\frac{dV}{dt} = - 2.25$ cubic inches per min. We will also draw this cross section which is a triangle that will come in handy in a bit. Now we want to write our relevant formula and that would be the volume of a cone which is $V = \frac{1}{3} \pi r^2 h$. Now in this equation we have to deal with $r$ the radius. In our problem statement we are only given that the radius of the cone is 2in but we have no info about the radius of the level of coffee in the cone. This is where we use the triangle we drew. By similar triangles we know that ration of long side with the short side is $\frac{r}{h} = \frac{2}{5}$. Using this we can find an expression for $r$ in terms of $h$ - $r = \frac{2}{5}h$. We then substitute this into our volume equation and get $V = \frac{4}{75}\pi h^3$. 
+	
+	Now we can implicitly differentiate and get $\frac{dV}{dt} = \frac{4}{25}\pi h^2 \frac{dh}{dt}$. Solving for the value we want to find which is rate of change of height we get $\frac{dh}{dt} = \frac{25 dV/dt}{4\pi h^2}$. Substituting what we know that $\frac{dh}{dt}$ is roughly -0.497 in/min. 
+\end{Example}
+
+
+Another common type of related rates problem deals with rate of change over time of an angle. Here is an example of such a problem - 
+\begin{Example}
+	An observer stands 200 m from the launch site of a hot-air balloon at an elevation equal to the elevation of the launch site. The balloon rises vertically at a constant rate of 4 m/s. How fast is the angle of elevation of the balloon increasing 30 seconds after the launch. 
+	So again let us draw a picture. We have a right triangle where the base of the triangle is 200 m long, the height is $y$ and the angle is given by $\theta$. We know that $\frac{dy}{dt} = 4$ m/s and we want to find $\frac{d\theta}{dt}$. 
+	
+	We need an equation to relate these two variables - so we turn to trig functions. In this case the equation that relates the two is $\tan \theta = \frac{y}{200}$. Then implicitly differentiating gives us $\sec^2 \theta \frac{d\theta}{dt} = \frac{1}{200}\frac{dy}{dt}$. Now solve for what we want - $\frac{d\theta}{dt} = \frac{dy/dt \cdot \cos^2 \theta}{200}$. So we need to find $\theta.$ After 30s the height of the balloon is $120$m. Using pythagorean theorem we know that hypothenuse has length approx 233.24 m and then $\cos \theta$ is approx 0.86. Using this we get that $\frac{d\theta}{dt}$ is approx 0.015 rad/s. 
+\end{Example}
+
+These are examples of some of the most common types of related rates problems. 
+
 
 
 
