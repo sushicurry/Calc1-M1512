@@ -8,8 +8,8 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
-\usepackage{amsfonts, mathdots}
-\usepackage{graphicx}
+\usepackage{amsfonts}
+%\usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{times}
 \usepackage{fancyhdr}
@@ -1044,4 +1044,73 @@ As an example we can look at $e^{\sin 2x}$ or $\sin (\sqrt{x^2 + 2})$. We can th
 \end{align*}
 
 We can use this on the example functions given to find their derivatives. 
+
+\section{6/25} 
+
+We are now going to be moving away from the theory of how to take derivatives and move towards applying derivatives to solve different types of problems. At this point you should be very comfortable using the derivative rules as well as comfortable using implicit differentiation as the first thing we are going to touch on relies on you being able to implicitly differentiate properly. 
+
+
+\subsection{Related Rates}
+
+So related rates. We are going back to the idea of derivatives as rates of change. In particular we are going to be looking at how variables change with respect to time. The defining feature of a related rates problem is that will be looking at how two or more variables that are related change with time. 
+
+For example a setup for a problem would be something like - we have two planes approaching an airport with known speeds, one plane from the west and another from the north. How fast is the distance between the two planes changing. This problem has three related variables - the distance between the two planes and the position of the two planes. They are all related and the goal is to find the rate of change of one of those variables at a moment of time. 
+
+So let us work through an example and then I'll try to give a general way of approaching a related rates problem. 
+\begin{Example}
+	Consider an oil rig leak in the ocean where the oil spreads in a circular patch around the rig. If the radius of the oil patch increases at a rate of $30 m/hr$, how fast is the are of patch increasing when the patch has a radius of $100$ meters. 
+	
+	So first we need to consider what variables are changing. In this case there are two - the radius of the oil spill and the area of the oil spill. We need to find a formula that relates these two variables. What is a formula that relates the area of a circle and its radius? Well the formula for the area of a cirle - $A = \pi r^2$. As our variables are functions of time we can also express this in our formula - $A(t) = \pi (r(t))^2$.  
+	
+	What is our goal? Our goal is to find the rate of change of the area of the circle, which is $A'(t)$. We are given that the radius increases at a rate of 30 m/hr which means that $r'(t) = 30$ m/hr.We know that the radius that we want to examine is 100 m, so $r(t) = 100$m. Now going back to our formula how do we introduce derivatives? Implicit differentiation! So let us implicitly differentiate and we get $A'(t) = 2 \pi r(t) r'(t)$. Now we can plug in the values that we know to find $A'(t)$ - $A'(t) = 2 \pi (100)(30) = 6000\pi$. Now are we done? No! Never forget your units. What are our units here? They are $m^2$/hr. So the area of the oil spill increases at a rate of 6000$\pi$ $m^2$/hr when the radius is 100 m. 
+\end{Example}
+
+Now that we have seen how to work through a problem here is a procedure that you can use to help you solve a related-rates problem - 
+\begin{enumerate}
+	\item[1.] After reading the problem, sketch a picture (usually helpful) and make a note of the given information. 
+	\item[2.] Write one or more equations that relate the quantities you are going to be working with 
+	\item[3.] Use implicit differentiation with respect to time $t$ to introduce the rates of change. 
+	\item[4.] Solve for the quantity that we want to find and then substitute the given values that you noted down in step 1. 
+	\item[5.] Double check you have not forgotten your units and pay attention to signs. 
+\end{enumerate}
+
+Using this procedure let us go back to our example of two planes. 
+\begin{Example}
+	We two small planes approaching an airport, one flying due west at 120 mi/hr and the other flying due north at 150 mi/hr. Assuming a constant elevation, how fast is the distance between the planes changing when the westbound plane is 180 mi from the airport and the northbound plane is 225 miles from the airport. 
+	
+	Ok let us do the first step- draw a picture and make a note of the given information. So we have a triangle and let us label the side with the plane going north $y$ and the one withe the westbound plane as $x$ and then the distance between the two planes (hypotenuse) as $z$. These are all functions depending on $t$. We know that the speed of the westbound plane is $\frac{dx}{dt} = -120$ mi/hr and the speed of the northbound plane is $\frac{dy}{dt} = - 150$ mi/hr. Why are these rates negative? Because they are coming towards the airport not going away from it. Our reference point (where we are standing if you want to think of it that way) is the airport so the planes are coming towards us and not away so the - signs. (Can also think of it as the distance between the planes and the airport is shrinking). 
+	
+	Now what is our equation to relate them? Well what equation goes with a right triangle? The pythogorean theorem. $z^2 = x^2 + y^2$. So now let us do step three - implicitly differentiate. Implicitly differentiating gives us 
+	\begin{align*}
+		2z \frac{dz}{dt} &= 2x \frac{dx}{dt} + 2y \frac{dy}{dt} \\
+		\frac{dz}{dt} &= \frac{x \frac{dx}{dt} + y \frac{dy}{dt}}{z}.
+	\end{align*}
+	Now that we did part of step 4 we can then substitute in what we know. Our $x = 180$, $y = 225$, and we can find $z$ using the Pyathgorean theorem to be about 288 mi. Plugging these in gives us that $\frac{dz}{dt} = - 192$ mi/hr. 
+\end{Example}
+
+A lot of related rates is going to be just working through problems like this over and over again. The Pythagorean Thm is one of the common formulas you will need to know to solve related rates problems. Other problems will include dealing with volume and areas of standard shapes. 
+
+Let us look at a slightly more involved example that requires some more knowledge of triangles - 
+\begin{Example}
+	Let us say that coffee is draining out of a conical filter at a rate of 2.25 cubed inches per min. If the cone is 5 in tall and has a radius of 2 in, how fast is the coffee level dropping when the coffee is 3 in deep. 
+	
+	So following the procedure let us sketch the problem. We then have a sketch of the cone and looking at this we can see the three relevant variables - the volume $V$, the radius $r$ and the height $h$. We want to find $\frac{dh}{dt}$  at the instant when $h = 3$ in and $\frac{dV}{dt} = - 2.25$ cubic inches per min. We will also draw this cross section which is a triangle that will come in handy in a bit. Now we want to write our relevant formula and that would be the volume of a cone which is $V = \frac{1}{3} \pi r^2 h$. Now in this equation we have to deal with $r$ the radius. In our problem statement we are only given that the radius of the cone is 2in but we have no info about the radius of the level of coffee in the cone. This is where we use the triangle we drew. By similar triangles we know that ration of long side with the short side is $\frac{r}{h} = \frac{2}{5}$. Using this we can find an expression for $r$ in terms of $h$ - $r = \frac{2}{5}h$. We then substitute this into our volume equation and get $V = \frac{4}{75}\pi h^3$. 
+	
+	Now we can implicitly differentiate and get $\frac{dV}{dt} = \frac{4}{25}\pi h^2 \frac{dh}{dt}$. Solving for the value we want to find which is rate of change of height we get $\frac{dh}{dt} = \frac{25 dV/dt}{4\pi h^2}$. Substituting what we know that $\frac{dh}{dt}$ is roughly -0.497 in/min. 
+\end{Example}
+
+
+Another common type of related rates problem deals with rate of change over time of an angle. Here is an example of such a problem - 
+\begin{Example}
+	An observer stands 200 m from the launch site of a hot-air balloon at an elevation equal to the elevation of the launch site. The balloon rises vertically at a constant rate of 4 m/s. How fast is the angle of elevation of the balloon increasing 30 seconds after the launch. 
+	So again let us draw a picture. We have a right triangle where the base of the triangle is 200 m long, the height is $y$ and the angle is given by $\theta$. We know that $\frac{dy}{dt} = 4$ m/s and we want to find $\frac{d\theta}{dt}$. 
+	
+	We need an equation to relate these two variables - so we turn to trig functions. In this case the equation that relates the two is $\tan \theta = \frac{y}{200}$. Then implicitly differentiating gives us $\sec^2 \theta \frac{d\theta}{dt} = \frac{1}{200}\frac{dy}{dt}$. Now solve for what we want - $\frac{d\theta}{dt} = \frac{dy/dt \cdot \cos^2 \theta}{200}$. So we need to find $\theta.$ After 30s the height of the balloon is $120$m. Using pythagorean theorem we know that hypothenuse has length approx 233.24 m and then $\cos \theta$ is approx 0.86. Using this we get that $\frac{d\theta}{dt}$ is approx 0.015 rad/s. 
+\end{Example}
+
+These are examples of some of the most common types of related rates problems. 
+
+
+
+
 \end{document}
