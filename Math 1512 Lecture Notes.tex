@@ -1110,6 +1110,111 @@ Another common type of related rates problem deals with rate of change over time
 
 These are examples of some of the most common types of related rates problems. 
 
+\section{6/28}
+\subsection{Applications of Derivatives: Maxima and Minima}
+
+One of the most important applications of derivatives is how we can use them to analyze functions. There is a lot of information we can get out of a derivative that will help us learn more about an arbitrary function and eventually we will put all of this information together to help graph a function. For now let us talk about maxima and minima. There are two kinds - absolute and local. 
+\begin{Definition}
+	Let $f$ be defined on a set $D$ containing $c$. If $f(c) \geq f(x)$ for every $x$ in $D$ then $f(c)$ is an absolute maximum value of $f$ on $D$. Similarly if $f(c) \leq f(x)$ for every $x$ in $D$, then $f(c)$ is an absolute minimum value of $f$ on $D$. An absolute extreme value is either an absolute max or an absolute min. These are sometimes called global max and min values.
+\end{Definition}
+
+Let us do a quick review of what open and closed intervals are. An open interval is an interval that does not contain either of its end points, while a closed interval is one that does. 
+\begin{Example}
+	Consider the function $y = 4 - x^2$. We can look at finding the absolute max and min on various intervals - $(-\infty, \infty), [0, 2], (0, 2], (0, 2)$. 
+\end{Example}
+
+If we want to know whether absolute max and min values exist, we need two things - 
+\begin{Theorem}
+	(Extreme Value Theorem or EVT) A function that is continuous on a closed interval $[a, b]$ has an absolute max value and an absolute min value on that interval. 
+\end{Theorem}
+
+Now let us look at local extrema - 
+\begin{Definition}
+	Suppose $c$ is an interior point of some interval $I$ on which $f$ is defined. If $f(c) \geq f(x)$ for all $x$ in $I$ then $f(c)$ is a local maximum. Similarly if $f(c) \leq f(x)$ for all $x$ in $I$ then $f(c)$ is a local minimum. Local extrema are also called relative extrema. 1
+\end{Definition}
+
+(draw a couple examples here, including one where absolute and local max/min are the same and one where absolute and local max/min are different)
+
+While we have talked about these points we have not linked how they are related to derivatives - we will now do that. If we look at the examples above we notice that the local max and min occur at points where the derivative of the function is 0. This leads to the Local Extreme Value Theorem - 
+\begin{Theorem}
+	If $f$ has a local maximum or minimum value at $c$ and $f'(c)$ exists, then $f'(c) = 0$. 
+\end{Theorem}
+
+In general local extrema can occur at points $c$ where  $f'(c)$ does not exist, but most examples in this course will be where $f'(c)$ does exist. 
+
+It is not however always true that if $f'(c) = 0$ then we have a local max or min. So we need to define another term to talk about these special points - 
+\begin{Definition}
+	An interior point $c$ of the domain of $f$ at which $f'(c) = 0$ or $f'(c)$ fails to exist is called a critical point of $f$. 
+\end{Definition}
+
+So let us look at an example of finding critical points and then determining whether we have a local max/min - 
+\begin{Example}
+	Consider $y = \frac{x}{x^2 + 1}$. 
+\end{Example}
+
+What about locating absolute maxima and minima? Normally on these types of problems we are given an interval to work on. The general procedure is in 3 steps - 
+\begin{enumerate}
+	\item[1.] Find the critical points of $f$ 
+	\item[2.] Evaluate $f$ at the critical points and at the endpoints of the interval 
+	\item[3.] Choose the largest and smallest values for the absolute max and min. 
+\end{enumerate}
+
+So let us look at an example - 
+\begin{Example}
+	Consider $f(x) = x^4 - 2x^3$ on the interval $[-2, 2]$. 
+\end{Example}
+
+A common word problem application of this is finding the maximum height of a trajectory. 
+\begin{Example}
+	A stone is launched vertically upward from a bridge 80 ft above the ground at a speed of 64 ft/s. Its height above the ground $t$ seconds after the launch is given by $f(t) = -16t^2 + 64t + 90$ for $0 \leq t \leq 5$. When does the stone reach its maximum height. (go through the 3 step process above)
+\end{Example}
+
+
+\subsection{Mean Value Theorem (MVT)} 
+
+So the use of finding maxima and minima is to help us in graphing functions as well as solving optimization problems that we will eventually get to. To get there though, we need to talk about one of the most important theorems in Calculus - the Mean Value Theorem. 
+
+\subsubsection{Rolle's Theorem} 
+
+The MVT relies on a theorem known as Rolle's Theorem. Rolle's Theorem states the following 
+\begin{Theorem}
+	Consider a function $f$ that is continuous on a closed interval $[a, b]$ and differentiable on the open interval $(a, b)$. If $f(a) = f(b)$ then there is at least one point $c \in (a, b)$ such that $f'(c) = 0$. 
+\end{Theorem}
+
+The proof of this theorem is an application of the EVT that was mentioned before. 
+
+An example of a problem dealing with Rolle's Theorem that you might see is -
+\begin{Example}
+	Find an interval $I$ on which Rolle's Theorem applies to $f(x) = x^3 - 7x^2 + 10x$. Then find all points $c$ in $I$ at which $f'(c) = 0$. 
+	
+	So to do this problem we just need an interval $[a, b]$ where $f(a) = f(b)$. The easiest way to find this is to find two points where $f(x) = 0$ and then take the interval between them. We can factor $f(x) = x(x - 2)(x - 5)$. We have a few options here but let us just take the interval $[0, 5]$. Now the second part of the problem is to find all points at which $f'$ is 0 and this just amounts to finding the critical points of $f$. 
+\end{Example}
+
+\subsubsection{Mean Value Theorem}
+
+Now let us talk about the main result in this section - the MVT. The statement of the MVT is 
+\begin{Theorem}
+	If $f$ is continuous on the closed interval $[a, b]$ and differentiable on $(a, b)$, then there is at least one point $c$ in $(a, b)$ such that $$\frac{f(b) - f(a)}{b - a} = f'(c).$$
+\end{Theorem}
+
+So how do we use this theorem? Well here is one example - 
+\begin{Example}
+	Determine whether the function $f(x) = 2x^3 - 3x + 1$ satisfies the conditions of the MVT on the interval $[-2, 2]$. If so find the point(s) guaranteed to exist by the theorem. 
+	
+	So when it says "satisfies the conditions" we need to check if $f$ is continuous and differentiable on the interval $[-2, 2]$. It is because $f$ is a polynomial. So then on the interval the average rate of change is $\frac{f(2) - f(-2)}{2 - (-2)}  = 5$. So our goal is to find a point $x$ where $f'(x) = 5$. Solving for this gives two points $x = \pm 2/\sqrt{3}$. 
+\end{Example}
+
+\subsubsection{Consequences of the MVT} 
+
+There are two important consequences of the MVT - 
+\begin{Theorem}
+	If $f$ is differentiable and $f'(x) = 0$ at all points on an open interval $I$, then $f$ is a constant function on $I$. 
+\end{Theorem}
+
+\begin{Theorem}
+	If two functions have the property that $f'(x) = g'(x)$ for all $x$ on an open interval $I$, then $f(x) - g(x) = C$ on $I$ where $C$ is a constant, i.e. $f$ and $g$ differ by a constant. 
+\end{Theorem}
+
 
 
 
