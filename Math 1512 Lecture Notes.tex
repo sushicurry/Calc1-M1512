@@ -1215,7 +1215,56 @@ There are two important consequences of the MVT -
 	If two functions have the property that $f'(x) = g'(x)$ for all $x$ on an open interval $I$, then $f(x) - g(x) = C$ on $I$ where $C$ is a constant, i.e. $f$ and $g$ differ by a constant. 
 \end{Theorem}
 
+\section{6/30}
+\subsection{Graphing with Derivatives}
+We are now going to get into talking about how we can use derivatives to help us graph functions. 
+\subsubsection{Increasing vs Decreasing Functions} 
 
+An important feature about functions we can talk about is whether they are increasing or decreasing. 
+\begin{Definition}
+By definition we have that a function $f$ is increasing on an interval $I$ if $f(x_2) > f(x_1)$ whenever $x_2 > x_1$. Similarly $f$ is decreasing on an interval $I$ if $f(x_2) < f(x_1)$ whenever $x_2 > x_1$. 
+\end{Definition}
 
+As a note - a function that is always increasing or decreasing is called monotonic. We can say a function is "monotone increasing" or "monotone decreasing". 
 
+So how do we know when a function is increasing or decreasin? Well looking a graph of an increasing/decreasing function let us look at the slope of the tangent line. Note that when a function is increasing the tangent line slope is positive and when a function is decreasing the slope of the tangent line is decreasing. 
+
+\begin{Theorem}
+Test for Intervals of Increase and Decrease. Suppose $f$ is a continuous function on an interval $I$. If $f'(x) > 0$ for all points on $I$ then $f$ is increasing on $I$ and similarly if $f'(x) < 0$ for all points on $I$ then $f$ is decreasing on $I$. 
+\end{Theorem}
+
+Last class there was some talk about how we use the Mean Value Theorem. Well here is one place where we end up using it - to prove this statement. The MVT is a very powerful theorem in proving many important results in Calculus which is why it is covered in every Calc class. 
+
+So let's talk about how we use the MVT here to prove this statement. Let $a$ and $b$ be any two distinct points in the interval $I$ with $b > a$. By the $MVT$ we know that there is some $c$, $a < c < b$ where $$\frac{f(b) - f(a)}{b - a} = f'(c)$$. We can rearrange this to get $$f(b) - f(a) = f'(c)(b - a)$$. Now we know that $b - a > 0$ as $b > a$. If $f'(c) > 0$ then $f(b) - f(a) > 0$ so for all $a, b$ in $I$ (since we picked our $a$ and $b$ at random) with $b > a$ we have that $f(b) > f(a)$, i.e. $f$ is increasing on $I$. Similarly if $f'(c) < 0$, $f(b) - f(a) < 0$ so $f$ is decreasing on $I$. This is just one example of how the MVT is used to help us prove important facts that we will continuously use in the future. 
+
+\subsubsection{Intervals of Increase/Decrease and Local Max/Min}
+
+We can use the fact we just looked at to help us identify points that are local minimums or local maximums. Looking at a picture of what these look at notice that around a local minimum we have that (from left to right) the slope of the tangent line goes from negative, to 0, to positive. While for a local minimum we have the slop of the tangent line goes from positive, 0, to negative. This leads to one of the first major tools we have in graphing a function - the First Derivative Test.
+\begin{Theorem}
+(First Derivative Test) Assume that $f$ is continuous on an interval that contains a critical point $c$ and $f$ is differentiable on an interval containing $c$ except perhaps at $c$ itself. 
+	\begin{enumerate}
+		\item[1.] If $f'$ changes sign from positive to negative as $x$ increases through $c$ then $f$ has a local maximum at $c$. 
+		\item[2.] If $f'$ changes sign from negative to positive as $x$ increases through $c$ then $f$ has a local minimum at $c$. 
+		\item[3.] If $f'$ does not change sign at $c$ then $f$ has no local extreme value at $c$. 
+	\end{enumerate}
+\end{Theorem}
+
+So let us do an example of putting together finding intervals of increase/decrease with the first derivative test. 
+
+\begin{Example}
+	Consider the function $f(x) = 3x^4 - 4x^3 - 6x^2 + 12 x + 1$. 
+	
+	To do anything we need to first find the derivative. This is just $f'(x) = 12x^3 - 12x^2 - 12x + 12 = 12(x^3 - x^2 - x + 1) = 12(x - 1)(x^2 - 1) = 12(x - 1)^2 (x + 1)$. 
+	As a note - from now on as we are always going to be looking a critical points of functions it will be very helpful for us to try and factor the derivative as much as we can immediately when we calculate it. Looking at the derivative we have above it is not hard to see that we will have two critical $x$-values: $x = 1$ and $x = -1$.
+	To find intervals of increase and decrease we just need to plug in some numbers and see what the sign of our derivative is. I just using simple/small integers. For example we can use -2, 0 and 2. Plugging this into our derivative we get 
+	\begin{align*}
+		f'(-2) &= 12(-2 -1)^2 (-2+1) < 0 \\
+		f'(0) &= 12(0 - 1)^2 (0 + 1) > 0 \\
+		f'(2) &= 12(2 - 1)^2 (2 + 1) > 0
+	\end{align*}
+	
+	So from this we see that we have an interval of decrease from $(-\infty, -1)$ and then an interval of increase from $(-1, 1)\cup (1, \infty) = (-1, \infty)$. Note that we never include any of the end points in our intervals of increase and decrease as either they are infinity or critical points which are points where $f'(x) = 0$ (neither increasing or decreasing) or $f'(x)$ does not exist.
+
+	Now let us use the first derivative test to find where we have local extrema. The test says that when the derivative changes sign we have either a local max or min and when it does not change we have neither. Note that around -1, we have that the derivative changes sign from negative to positive - so by the first derivative test $f(-1)$ is a local minimum. Around 1 the derivative does not change sign, so that means that $f(1)$ is not a local max or local min.
+\end{Example} 	
 \end{document}
