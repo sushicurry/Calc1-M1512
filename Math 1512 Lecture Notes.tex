@@ -1267,4 +1267,63 @@ So let us do an example of putting together finding intervals of increase/decrea
 
 	Now let us use the first derivative test to find where we have local extrema. The test says that when the derivative changes sign we have either a local max or min and when it does not change we have neither. Note that around -1, we have that the derivative changes sign from negative to positive - so by the first derivative test $f(-1)$ is a local minimum. Around 1 the derivative does not change sign, so that means that $f(1)$ is not a local max or local min.
 \end{Example} 	
+
+\subsubsection{Absolute Max/Min on Any Interval}
+Last class we talked about Absolute Max/Min on a closed interval. The question remains whether we can extend talking about absolute max to any arbitrary interval. Well there is a result that deals with this - 
+\begin{Theorem}
+	Suppose $f$ is continuous on an interval $I$ that contains exactly one local extremum at $c$. 
+	\begin{itemize}
+		\item If a local minimum occurs at $c$, then $f(c)$ is the absolute minimum of $f$ on $I$. 
+		\item If a local maximum occurs at $c$, then $f(c)$ is the absolute maximum of $f$ on $I$. 
+	\end{itemize}
+\end{Theorem}
+
+We can see an example of this theorem at work when we look at absolute extreme values of a quadratic function on any open interval. 
+
+\subsubsection{Concavity and Inflection Points}
+
+So far we have talked about increasing and decreasing intervals using the first derivative. I might have mentioned in passing that the second derivative would be a useful tool when graphing a function. Well this is where we are going to talk about the second derivative and what it can tell us about a function. 
+
+Let us talk first about concavity. A function can be concave up or concave down on an interval. Concave up is shaped like a U, while concave down is shaped like an upside down U. The point at which a function changes concavity (from up to down or vice versa) is called an inflection point. 
+
+So how do we determine when a function is concave up or down? How do we determine where the inflection points are? To do so we use the second derivative. 
+\begin{Theorem}
+	Suppose $f''$ exists on an open interval $I$. 
+	\begin{itemize}
+		\item If $f'' > 0$ on $I$, then $f$ is concave up on $I$. 
+		\item If $f'' < 0$ on $I$, then $f$ is concave down on $I$. 
+		\item If $c$ is a point of $I$ at which $f''$ changes sign at $c$ then $f$ has an inflection point at $c$. 
+	\end{itemize}
+\end{Theorem}
+
+Again similar to how we looked at critical points and saw that not all critical points are a local max or min, not all points where $f''(x) = 0$ are inflection points (ex. $f(x) = x^4$). 
+
+\begin{Example}
+Finding intervals of concavity is similar to how we found intervals of increase and decrease earlier. Consider $f(x) = 3x^4 - 4x^3 - 6x^2 + 12 x + 1$ again. We found that $f'(x) = 12(x + 1)(x - 1)^2$ previously. So now let us find the second derivative. By the product rule we have $f''(x) = 12 (x - 1)^2 + 24(x + 1)(x - 1) = 12(x - 1)[(x - 1) + 2(x + 1)] = 12(x - 1)(3x + 1)$. So we see that $f''(x) = 0$ at $x = 1$ and $x = -\frac{1}{3}$. We then check to see if the function is positive or negative around these points. So using nice integer values like $-1$, $0$ and $2$ we see that 
+	\begin{align*}
+		f''(-1) &= 12(- 1 - 1)(3(-1) + 1) > 0 \\
+		f''(0) &= 12 (0 - 1)(0 + 1) < 0 \\
+		f''(2) &= 12 (2 - 1) (3(2) + 1) > 0
+	\end{align*}
+	
+	We can see from this that since $f''(x) > 0$ on the intervals $(-\infty, -\frac{1}{3})$ and $(1, \infty)$, $f$ is concave up on these intervals and that $f$ is concave down on the interval $(-\frac{1}{3}, 1)$ as $f''(x) < 0$ on this interval. 
+\end{Example}
+
+If you recall we found that $f(-1)$ is a local minimum of the function in the previous example. We just showed that $f''(-1) > 0$ so $f$ is concave up at $-1$. This leads to the second way one can look for local extreme values - the Second Derivative Test. 
+\begin{Theorem} 
+	Suppose $f''$ is continous on an open interval containing $c$ with $f'(c) = 0$. 
+	\begin{itemize}
+		\item If $f''(c) > 0$ then $f$ has a local minimum at $c$. 
+		\item If $f''(c) < 0$ then $f$ has a local maximum at $c$. 
+		\item If $f''(c) = 0$ then we cannot tell if it is a max or a min. 
+	\end{itemize}
+\end{Theorem}
+
+\subsubsection{Review of Derivative Properies}
+
+So let us put together everything we have found out so far. We have looked at two properties of functions - increasing/decreasing intervals and concavity. We use the first derivative to help up figure out when a function is increasing vs. decreasing. We then looked at the second derivative to tell us more about concavity. We also noted that a point where concavity changes is called an inflection point. 
+
+Along the way using the nature of concavity or what it means for a function to switch from increasing to decreasing or vice versa we developed two tests to help us determine local max/min - the first derivative test and the second derivative test.
+
+We can now put all of this together to help us graph functions using derivatives. 
 \end{document}
