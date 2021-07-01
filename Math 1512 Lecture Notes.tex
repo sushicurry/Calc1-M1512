@@ -22,6 +22,7 @@
 \usepackage{enumitem}
 %\usepackage{verbatim}
 \usepackage{tikz-cd}
+\usepackage{pgfplots}
 
 \usepackage{subcaption}
 \usepackage{setspace}
@@ -1326,4 +1327,159 @@ So let us put together everything we have found out so far. We have looked at tw
 Along the way using the nature of concavity or what it means for a function to switch from increasing to decreasing or vice versa we developed two tests to help us determine local max/min - the first derivative test and the second derivative test.
 
 We can now put all of this together to help us graph functions using derivatives. 
+
+
+\section{7/1}
+
+\subsection{Graphing}
+So last class we talked about using the first derivative to find intervals of increase and decrease and using the second derivative to find intervals of concavity. We have previously talked about finding vertical, horizontal and slant asymptotes. We will now put all of these together to help us graph a function. 
+
+Let us start with a list of things that if we note down will help us sketch a graph of the function without needing to use a graphing calculator. 
+
+\subsubsection{Procedure for Graphing}
+\begin{itemize}
+	\item[1.] First note the domain/interval of interest of the function. It is also useful at this stage to think about if your function has some sort of symmetry (even or odd function). 
+	\item[2.] Find the vertical and horizontal asymptotes of a function if they exist. (end behavior)
+	\item[3.] Then find the first and second derivatives of the function. 
+	\item[4.] Find the critical points and possible inflection points by solving $f'(x) = 0$ and $f''(x) = 0$. 
+	\item[5.] Identify intervals of increase/decrease and concavity. 
+	\item[6.] Using the previous step (test of your choice) find the local extreme values and inflection points if they exist. 
+	\item[7.] Find $x$ and $y$ intercepts. 
+	\item[8.] Then finally sketch the function. 
+\end{itemize}
+
+In reality all the previous steps can be done in any order. As long as you get all of that information it will not be difficult to sketch the graph of a function. 
+
+There is no better way to see this than going through a few examples of how to do all of this. 
+\subsubsection{Examples}
+Let us start simple and make our way to harder functions. 
+\begin{Example}
+ Let us try to sketch $f(x) = x^3 -6x^2 + 9x$. We can factor this to find our $x$-intercepts, $f(x) = x(x^2 - 6x + 9) = x(x - 3)^2$ So this gives us our two $x$-intercepts $(0, 0)$ and $(0, 3)$. This also gives us our $y$-intercept. As $f$ is a polynomial we know that the end behavior is that it goes to negative infinity as $x$ goes to negative infinity and $f$ goes to positive infinity as $x$ goes to positive infinity. 
+ 
+ Now let us take the first derivative and look at critical points - $f'(x) = 3x^2 - 12x + 9 = 3 (x^2 - 4x + 3) = 3(x - 1)(x - 3)$. So here we have two critical points when $x = 1$ and $x = 3$. Looking for intervals of increase and decrease we have 
+ \begin{align*}
+ 	f'(0) &= 3(- 1)(-3) > 0 \\
+	f'(2) &= 3(2 - 1)(2 -3) = 3(1)(-1) < 0 \\
+	f'(4) &= 3(4 - 1)(4 - 3) > 0.
+\end{align*}
+
+So the intervals of increase are $(-\infty, 1)$ and $(3, \infty)$ and the interval of decrease is $(1, 3)$. We can use this to find our local max/min  - By the first derivative test we have that there is a local max when $x = 1$ and a local min when $x = 3$. Finding the points gives us $(1, 4)$ and $(3, 0)$. 
+
+So next moving on to concavity we take the second derivative - $f''(x) = 6x - 12 = 6(x - 2)$ and see that we have one possible point of inflection when $x = 2$. Notice that as this function is linear the sign will change, so $(2, 2)$ is an inflection point. Then looking to see where we have concave up vs down Look at $f''(0) < 0$ and $f''(3) > 0$ so $f$ is concave down on $(-\infty, 2)$ and concave up on $(2, \infty)$. 
+
+Now we can put all of this together and sketch a graph of this function. 
+
+\begin{tikzpicture}
+	\draw[->] (-0.5, 0) -- (3.2, 0) node[right] {$x$};
+	\draw[->] (0, -4) -- (0, 6) node[above] {$y$};
+	\draw[scale=0.5, domain=-0.5:4.5, smooth, variable=\x, blue] plot ({\x}, {\x*\x*\x - 6*\x*\x + 9*\x});
+\end{tikzpicture}
+\end{Example}
+
+Let us try and example where we can talk about symmetry - 
+\begin{Example}
+	Sketch $f(x) = x + \sin 2x$ on the interval $[-\pi, \pi]$. So let us talk about how symmetry helps us here. Note that $f(-x) = (-x) + \sin 2(-x) = -x + \sin (-2x) = -x - \sin 2x = - (x + \sin 2x) = - f(x)$. So $f$ is what is called an odd function. So using what we find out about $x$ on the positive axis we can sketch $f$ on the negative axis. So let us for simplicities sake just consider $f$ on the interval $[0, \pi]$. 
+	
+	So looking at this we have only one $x$ interecept and that's $(0, 0)$. 
+	
+	Then let us look at critical points - $f'(x) = 1 + 2 \cos 2x = 0$. So this is $0$ when $\cos 2x = - \frac{1}{2}$, which on the interval $[0, \pi]$ is only when $2x = \frac{2}{3}\pi$ and $2x = \frac{4}{3}\pi$, so when $x = \frac{\pi}{3}, \frac{2\pi}{3}$. Then looking at intervals of increase and decrease - 
+	\begin{align*}
+		f'(\pi/ 6) &= 1 + 2 \cos \frac{\pi}{3} > 0  \\
+		f'(\pi/2) &= 1 + 2 \cos \pi < 0 \\
+		f'(3\pi/4) &= 1 + 2 \cos \frac{3}{2}\pi > 0 
+	\end{align*}
+	
+	So from this we can see that the intervals of increase are $[0, \frac{\pi}{3})$ and $(\frac{2\pi}{3}, \pi]$ and decreasing on $(\frac{\pi}{3}, \frac{2\pi}{3})$. 
+	
+	Moving on to the second derivative and concavity, $f''(x) = -4\sin 2x$. Then $f''(x) = 0$ only at$\frac{\pi}{2}$ in the interval $[0, \pi]$ (we do not look at the end points on of the interval for now). Note then that 
+	\begin{align*}
+		f''(\frac{\pi}{3})  &= -4 \sin \frac{2\pi}{3} < 0 \\	
+		f''(\frac{2\pi}{3}) &= -4 \sin \frac{4\pi}{3} > 0
+	\end{align*}
+	
+	So we see that on the interval $[0, \frac{\pi}{2})$ $f$ is concave down and then from $(\frac{\pi}{2}, \pi]$ $f$ is concave up. So $(\frac{\pi}{2}, \frac{\pi}{2} - 1)$ is an inflection point. By the second derivative test we know that $(\frac{\pi}{3}, \frac{\pi}{3} + \sqrt{3}{2})$ is a local max and $(\frac{2\pi}{3}, \frac{2\pi}{3} - \sqrt{3}{2})$ is a local minimum. 
+	
+	Using this we can attempt to sketch what our function looks like on the interval $[0, \pi]$. Then by the symmetry we have of $f$ where $f$ is an odd function we can rotate about the line $y = x$ to sketch $f$ on the interval $[- \pi, 0]$. Doing this gives us that there is another local minimum (this time) at $(-\frac{\pi}{3}, - \frac{\pi}{3} - \sqrt{3}{2})$ and a local maximum at $(-\frac{2\pi}{3}, -\frac{2\pi}{3} + \sqrt{3}{2})$. Intervals of increase at $[-\pi, -\frac{2\pi}{3})$ and $(-\frac{\pi}{3}, 0]$ and decrease on $(-\frac{2\pi}{3}, -\frac{\pi}{3})$. For concavity we have concave up on the interval $(\frac{-\pi}{2}, 0)$ and concave down on the interval $[-\pi, -\frac{\pi}{2})$. 
+	
+\begin{tikzpicture}
+	\draw[->] (-3.2, 0) -- (3.2, 0) node[right] {$x$};
+	\draw[->] (0, -3.2) -- (0, 3.2) node[above] {$y$};
+	\draw[color=red, domain=-3.2:3.2, smooth] plot({\x}, {\x + sin(2*\x r)});
+\end{tikzpicture}
+\end{Example}
+
+Let us look at a more complicated example - a rational function. 
+\begin{Example}
+	Consider the function $f(x) = \frac{x^3}{4- x^2}$. As we have a rational function the first thing we can do is find vertical and horizontal asymptotes. Solving the denominator for 0 gives us $x = \pm 2$ as our vertical asymptotes. Notice that we have an $x$ and $y$ intercept at $(0,0)$. We know that as the power of the numerator is exactly one larger than the denominator we have a slant asymptote so then using polynomial division we get that $f(x) = -x + \frac{4x}{4 - x^2}$. So we have a slant asymptote of $y = -x$. 
+
+	Now let us look at the first derivative. 
+	\begin{align*}
+		f'(x) &= \frac{3x^2 (4 - x^2) - x^3(-2x)}{(4 - x^2)^2} \\ 
+		      &= \frac{12x^2 - 3x^4 + 2x^4}{(4 - x^2)^2} \\
+			  &= \frac{12x^2 - x^4}{(4 - x^2)^2} \\
+			  &= \frac{x^2 (12 - x^2)}{(4 - x^2)^2}
+	\end{align*}
+	
+	From this we can see that we have 5 critical points. We have critical points when $x = 0, \pm 2 \sqrt{3} = \sqrt{12}$ and $\pm 2$. Then looking at intervals of increase and decrease we want to find points on each of the intervals - 
+	\begin{align*}
+		f'(-4) &= \frac{16 (12 - 16)}{(4 - 25)^2} < 0 \\
+		f'(-3) &= \frac{9 (12 - 9)}{(4 - 9)^2} > 0 \\
+		f'(-1) &= \frac{1 (12 - 1)}{(4 - 1)^2} > 0 \\
+		f'(1) &= \frac{1 (12 - 1)}{(4 - 1)^2} > 0 \\
+		f'(3) &= \frac{9 (12 - 9)}{(4 - 9)^2} > 0 \\
+		f'(4) &= \frac{16(12 - 16)}{(4 - 25)^2} < 0
+	\end{align*}
+	
+	From this we see that we have intervals of increase on $(-2\sqrt{3}, -2), (-2, 0), (0, 2)$ and $(2, 2\sqrt{3})$ and intervals of increase $(-\infty, -2\sqrt{3})$ and $(2\sqrt{3}, \infty)$. So from this we see that we have a local max when $x = 2\sqrt{3}$ the point being $(2\sqrt{3}, -3\sqrt{3})$ and a local min when $x = -2\sqrt{3}$, the point being $(-2\sqrt{3}, 3\sqrt{3})$ 
+	
+	For concavity we need to take the second derivative. This is where dealing with certain rational functions gets really tedious and challenging. It is easy to make a mistake at this point when calculating the second derivative. I will do this by rewriting our $f'$ as $f'(x) = (12x^2 - x^4)(4 - x^2)^{-2}$. Then taking the derivative we get -
+	\begin{align*}
+		f''(x) &= (24x - 4x^3)(4 - x^2)^{-2} + (12x^2 - x^4)(-2)(4 - x^2)^{-3}(-2x) \\
+			   &= \frac{24x - 4x^3}{(4 -x^2)^{2}} + \frac{4x(12x^2 - x^4)}{(4 - x^2)^3} \\
+			   &= \frac{(24x - 4x^3)(4 - x^2) + 4x(12x^2 - x^4)}{(4 - x^2)^3} \\
+			   &= \frac{96x - 16x^3 - 24x^3 + 4x^5 + 48x^3 - 4x^5}{(4 - x^2)^3} \\
+			   &= \frac{96x - 8x^3}{(4 - x^2)^3} = \frac{8x (12 + x^2)}{(4 - x^2)^3}. 
+	\end{align*}
+	
+	From this note that $x^2 + 12 > 0$ for all $x$ so that $f''(x) = 0$ only at $x = 0$. So this is a possible inflection point. HOWEVER, it is possible for concavity of a function to change on different sides of a vertical asymptote. So we need to look at where we have vertical asymptotes as well, which are at $x = \pm 2$. So looking for intervals of concavity we have - 
+	\begin{align*}
+		f''(-3) &= \frac{8(-3)(12 + 9)}{(4 - 9)^{3}} > 0. \\
+		f''(-1) &= \frac{8(-1)(12 + 1)}{(4 - 1)^3 } < 0 \\
+		f''(1) &= \frac{8(1) (12 + 1)}{(4 - 1)^3 } > 0 \\ 
+		f''(3) &= \frac{8(3) (12 + 9)}{(4 - 9)^3} < 0
+	\end{align*}
+	
+	So from this we see that $f$ is concave up on the intervals $(-\infty, 2)$ and $(0, 2)$ and concave down on the intervals $(-2, 0)$ and $(2, \infty)$. 
+	
+	We can now sketch what this function would look like. 
+	
+	\begin{tikzpicture}
+		\begin{axis} [
+		axis lines = center,
+		xlabel = $x$,
+		ylabel = {$y$},
+		xmax = {6},
+		xmin = {-6},
+		ymax = {10},
+		ymin = {-10},
+		restrict y to domain = -10:10,
+		]
+		
+		\addplot [
+			domain=-6:6,
+			samples=100,
+			color=black,
+		]
+		{(x^3)/(4 - x^2)};
+		
+		%slant asymptote
+		\addplot[dashed] {-x};
+		%vertical asymptote at x = -2
+		\draw[dashed] ({axis cs:-2, 0}|-{rel axis cs:0,0}) -- ({axis cs:-2, 0}|-{rel axis cs:0, 1});
+		%vertical asymptote at x = 2
+		\draw[dashed] ({axis cs:2, 0}|-{rel axis cs:0,0}) -- ({axis cs:2,0}|-{rel axis cs:0, 1});
+		\end{axis}
+	\end{tikzpicture}
+\end{Example}
+	
 \end{document}
