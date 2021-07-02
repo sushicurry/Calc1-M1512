@@ -1481,5 +1481,96 @@ Let us look at a more complicated example - a rational function.
 		\end{axis}
 	\end{tikzpicture}
 \end{Example}
+
+\section{7/2}
+
+\subsection{Optimization}
+
+So we are now going to talk about a type of application of derivative problem called optimization problems. The main goal of such problems is that we have a function that we want to optimize with respect to a set of constraints. 
+
+As an example of how this works think about this question - if you are given two numbers that add to 20, what is the largest the product of those two numbers could be. This is a very simple example of an optimization problem. Our constraint is that the two numbers add to 20. We would write this as $x + y = 20$. The function we want to optimize is the product of the two, so $P = xy$. Now this is a function with two variables $x$ and $y$. We want to rewrite $P$ as a function of one variable, say $x$. The way we do this is through the constraint. Rewriting the constrait we get $y = 20 - x$. So then $P = x(20 - x) = 20x - x^2$. Now to maximize this (which is what the question asks to find) we then take the derivative and find the critical point as that will tell us where the local max/min of our function is. This case the derivative is simple - $P' = 20 - 2x$. Solving for the critical point we get $x = 10$. Now since we know that $P$ is a quadratic we have that $x = 10$ gives us a maximum, but normally we will have to use a derivative test to double check that we are getting a max or a min. So as $x = 10$ is the max, using our constraint we have that $y = 10$. So the largest product of two numbers that add to 20 is 100. 
+
+\subsubsection{More Examples}
+	Let us go through some examples. 
+	\begin{Example}
+		Suppose a rancher has 400 ft of fence for constructing a rectangular corral. One side is formed by a barn and requires no fence. Three exterior fences and two interior fences partition the corral into three rectangular regions. What dimensions of the corral maximize the enclosed area? What is the area of that corral? 
+		
+		So let us first create a sketch where $x$ is the width and $y$ is the length of the corral. The amount of fence required is $4x + y$ and as the rancher has 400 ft the constraint is $4x + y = 400$. The function we want to maximize is the area function of a rectangle which is $A = xy$. Again rewriting the constraint to solve for one variable, $y = 400 - 4x$. So then $A = xy = x(400 - 4x) = 400x - 4x^2$. Now we want to maximize this function. But note that as $x$ is a length, it is larger than 0 and has to be less than 100 due to the constraint. This gives us the domain we want to maximize $A$ on which is $0 \leq x \leq 100$. Take the derivative $A' = 400 - 8x$ and then solve for $x$ which gives $x = 50$. We know as this is again a quadratic that this is going to be a local max - so we have a maximum area when $x = 50$ and $y = 400 - 4(50) = 200$ which gives us a maximum area of $50*200 = 10000$. 
+	\end{Example}
 	
+	\begin{Example}
+		Suppose an airline policy states that all baggage must be box-shaped with a sum of length, width and height not exceeding 64 in. What are the dimensions and volume of a square-based box with the greatest volume under these condition? 
+		
+		So let us do a rough sketch. Since we are using a square based box our width and length are the same. So we have the sum of the length, width and height being $2w + h = 64$. This is our constraint. We want to maximize the volume function $V = w^2 h$. Using our constraint let's express $h$ in terms of $w$ - $h = 64 - 2w$. Then substituting gives $V = w^2 (64 - 2w) = 64w^2 - 2 w^3$. Our interval of interest for $w$ is $0 \leq w \leq 32$. As we want to maximize the volume we take the derivative of $V$ and get $V' = 128 w - 6w^2 = 2w(64 - 3w)$. Setting equal to 0 gives two critical points 0 and $\frac{64}{3}$. To check that we have a max let us use the second derivative test. $V'' = 128 - 12w$. Note that when we plug in $0$ $V''>0$, but when we plug in $\frac{64}{3}$, $V'' < 0$. So we have a local maximum at $\frac{64}{3}$. Hence, the deminesions and volume of a square-based box with the greatest volume is $\frac{64}{3} \times \frac{64}{3} \times \left(\frac{64}{3}\right)$ and the volume is $\left(\frac{64}{3}\right)^3$ cubic inches.  
+	\end{Example}
+	
+\subsubsection{Procedure for Optimization Problems}
+	\begin{enumerate}
+		\item[1.] Read the problem, identitfy the variables and organize using a picture if possible. 
+		\item[2.] Identify the objective function (function to be optimized) and write it using the variables you choose. 
+		\item[3.] Identify the constraint function and express it using the variables you chose. 
+		\item[4.] Use the constraint(s) to eliminate all but one independent variable of the objective function. 
+		\item[5.] Find the interval of interest of the objective function. 
+		\item[6.] Find the absolute max/min of the objective function on the interval of interest.
+	\end{enumerate}
+	
+So now using this let us do some more examples. 
+\subsubsection{Even More Examples}
+	\begin{Example}
+		A water storage tank in a small community is build in the shape of a right circular cylinder with a capacity of $32000 \textnormal{ ft}^3$. The interior wall and floor of the fank must be cleaned and treated annually. Labor costs for cleaning the wall are twice as high per square foot as the cost to clean the floor. Find the radius and height of the tank that minimize the cleaning cost. 
+		
+		So let us give some of the variables names while sketching a picture. Let $C$ be the cost of cleaning, $r$ the radius and $h$ the height. Then the objective function is the cost function which is given by $C = 2(2\pi rh) + \pi r^2$. 
+		The constraint we are given is the capacity of the cylinder, which is the volume. So we have $V = \pi r^2 h = 32000$. It is probably easiest to solve for $h$ here so we have that $h = \frac{32000}{\pi r^2}$. We can plug this into our objective function. 
+		Doing this gives us the new objective function $C(r) = \frac{128000}{r} + \pi r^2$. We have no constraint on the radius so our interval of interest is $0 < r < \infty$. So then taking the derivative we get 
+		\begin{align*}
+			C'(r) &= -\frac{128000}{r^2} + 2\pi r \\
+				  &= \frac{2\pi r^3 - 128000}{r^2} = 0.
+		\end{align*}
+		Solving for $r$ gives us $r^3 = \frac{128000}{2 \pi} = \frac{64000}{\pi}$ or $r = \frac{40}{\sqrt[3]{\pi}}$. 
+		We need to confirm that this is a minimum so let us take the second derivative - $C''(r) = \frac{256000}{r^3} + 2\pi$. Note that if we plug in $r$ that this will be positive so we do have a minimum. 
+		
+		So our radius that minimizes the cost is $r = \frac{40}{\sqrt[3]{\pi}}$ and the correspoinding height is $h = \frac{32000}{\pi} r^{-2} = \frac{32000}{\pi} \cdot \frac{\sqrt[3]{\pi^2}}{1600} = \frac{20}{\sqrt[3]{\pi}}$. So this would be the dimensions of the tank that minimize the cost of cleaning.
+	\end{Example}
+	
+	\begin{Example}
+		An 8-foot tall fence runs parallel to the side of a house 3 feet away. What is the length of the shortest ladder that clears the fence and reaches the house? 
+		
+		So let us draw a picture. We have the 8 foot fence then the ladder going as the hypotenuse. The wall of the house creates a similar triangle. Let $L$ be the length of the ladder, $x$ be the distance from the ladder to the fence and $b$ be the height the ladder makes with the house.  The length of the ladder is given by Pyathagorean theorem as $L^2. = (x + 3)^2 + b^2$. It is important to note that we can work $L^2$ as the max/min of $L^2$ is the same as the max/min of $L$. By similar traingles we have that $\frac{8}{x} = \frac{b}{3 + x}$. So expressing $b$ in terms of $x$ gives $b = \frac{8 (x + 3)}{x}$. Plugging this into our function for $L^2$ we have 
+		\begin{align*}
+			L^2 &= (x + 3)^2 + b^2 \\
+				&= (x + 3)^2 + \left(\frac{8 (x + 3)}{x}\right)^2 \\
+				&= (x + 3)^2 + \frac{64 (x + 3)^2}{x^2} \\
+				&= (x + 3)^2 \left(1 + \frac{64}{x^2}\right).
+		\end{align*}
+		
+		Since $L^2$ is nonnegative $L$ and $L^2$ have the same local extrema. So we can just take the derivative of $L^2$ - 
+		\begin{align*}
+			(L^2)' &= 2(x + 3)\left(1 + \frac{64}{x^2}\right) + (x + 3)^2 \left(-\frac{128}{x^3}\right) \\
+				   &=2(x + 3) \left[ 1 + \frac{64}{x^2} - (x + 3)\frac{64}{x^3}\right] \\
+				   &= \frac{2(x + 3)(x^3 - 192)}{x^3}.
+		\end{align*}
+		
+		As $x > 0$ we know that $x+ 3 \neq 0$. Therefore we only have a 0 when $x^3 - 192 = 0$ which gives us $x = \sqrt[3]{192} = \sqrt[3]{64*3} = 4 \sqrt[3]{3}$. We can use the first derivative test to see that this is a local minimum. Plugging into our function for $L^2$ (using a calculator) gives a value of about 224.77 which means that $L$ is about 15ft. 
+	\end{Example}	
+	
+	Another common example using the Pythagorean Theorem is finding the closest point on a function to a certain point. 
+	\begin{Example}
+		What point on the line $y = 3x + 4$ is closest to the origin? In this case our constraint is already given to us - $y = 3x + 4$. The function we want to optimize is the distance function $d = \sqrt{x^2 + y^2}$ (this is the distance of a point from the origin). Similar to the previous example we can just minimize the function under the square root, i.e. minimize $d^2 = x^2 + y^2$. We use our constraint to express $y$ in terms of $x$ and we get $d^2 = x^2 + (3x + 4)^2$. Then taking the derivative we have $(d^2)' = 2x + 2(3x + 4)(3) = 2x + 18x + 24 = 0$. Solving gives $x = -\frac{6}{5}$. By the first derivative test we know that this is a minimum for the function. So the point on the line $y = 3x + 4$ that is closest to the origin is $\left(-\frac{6}{5}, \frac{2}{5}\right)$. 
+	\end{Example}
+	
+	Let's do another example - 
+	\begin{Example}
+		You want to see a certain number $n$ of items in order to maximize your profit. Market research tells you that if you set the price at \$1.50, you will be able to sell $5000$ items and for every 10 cents you lower the price below \$1.50 you will be able to sell another 1000 items. Suppose that your fixed costs total \$2000, and the per item cost of production is \$0.50. Find the price to set per item and number of items sold in order to maximize profit. Also dtermine the maximum profit you can get. 
+		
+		So the first thing we want to do is convert this into a function maximization problem. Since we want to maximize profit by setting the price per item, call our function $P(x)$ where $P$ is profit and $x$ is price per item. Profit is given by revenue minus costs and the revenue is the number of items sold times the price per item. This gives us that the function for profit is $$P(x) = nx - 2000 - 0.5n$$. The number of items sold is itself a function of $x$ - $$n = 5000 +\frac{1000 (1.5 - x)}{0.1}$$ Now we substitute for $n$ in the profit function and get 
+		\begin{align*}
+			P(x) &= nx - 2000 -0.5n \\
+				 &= \left(5000 + \frac{1000(1.5 - x)}{0.10}\right)x - 2000 - 0.5\left(5000 + \frac{1000(1.5 - x)}{0.1}\right) \\
+				 &= (5000 + 10000(1.5 - x))x - 2000 - 0.5(5000 + 10000(1.5 - x)) \\
+				 &= 5000x + 15000x - 10000x^2 - 2000 - 2500 - 7500 + 5000x \\
+				 &= -10000x^2 + 25000x - 12000.
+		\end{align*}
+		
+		We want to know the maximum value of this function when $x$ is between 0 and 1.5. We take the derivative $P'(x) = -20000x + 25000$ and solving for $x$ when $P'(x) = 0$ gives us $x = 1.25$. Since this is going to be the local maxiumum we know that this is going to be the global maximum as well ($P$ is a quadratic with a negative leading term). So the maximum profit is \$3625 which is attained when we set the price to \$1.25, sell 7500 items. 
+	\end{Example}
 \end{document}
