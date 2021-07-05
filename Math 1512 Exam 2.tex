@@ -1,0 +1,262 @@
+\documentclass[11pt,reqno]{article}
+%\input{17F-137-HomeworkTemplate}
+\title{Homework \#2}
+%\maketitle
+%\due{Tuesday 9/12}
+
+\headheight -10pt
+
+%%\voffset 0.3 cm
+
+\textheight 26cm% 25.5cm
+
+\textwidth 18cm
+
+\topmargin -2cm
+
+\parindent 0pt
+
+\oddsidemargin -1.2cm \columnsep 18pt
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts, mathdots}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[usenames]{color}
+\usepackage{enumitem}
+%\usepackage{verbatim}
+
+\usepackage{subcaption}
+\usepackage{setspace}
+
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes,backgrounds,3d}
+\usepackage{fix-cm}
+\usetikzlibrary{decorations.pathreplacing,shapes,snakes}
+
+%%
+\newcommand{\coursenumber}{Math 137}
+\newcommand{\coursename}{Real and Functional Analysis}
+
+
+\renewcommand{\Re}[1]{\operatorname{Re} #1 }
+\renewcommand{\Im}[1]{\operatorname{Im} #1}
+\newcommand{\diam}{\operatorname{diam}}
+
+%% New Commands
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\s}{\mathscr{S}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathfrak{L}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Aut}{Aut}
+
+
+
+\renewcommand{\ker}{\operatorname{kernel}}
+\newcommand{\ran}{\operatorname{range}}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\vecspan}{\operatorname{span}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\nullspace}{\operatorname{nullspace}}
+
+\linespread{1}
+\setlength{\parskip}{0.5ex plus 0.5ex minus 0.2ex}
+
+%%  Matrices
+\newcommand{\minimatrix}[4]{\begin{bmatrix} #1 & #2 \\ #3 & #4 \end{bmatrix}  }
+\newcommand{\megamatrix}[9]{\begin{bmatrix} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}  }
+
+\renewcommand{\vec}[1]{{\bf #1}}
+\newcommand{\ovec}{\operatorname{vec}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\renewcommand{\hat}{\widehat}
+
+\newcommand{\tworowvector}[2]{[#1\,\,#2]}
+\newcommand{\threerowvector}[3]{[#1\,\,#2\,\,#3]}
+\newcommand{\fourrowvector}[4]{[#1\,\,#2\,\,#3\,\,#4]}
+\newcommand{\fiverowvector}[5]{[#1\,\,#2\,\,#3\,\,#4\,\,#5]}
+\newcommand{\sixrowvector}[6]{[#1\,\,#2\,\,#3\,\,#4\,\,#5\,\,#6]}
+
+\newcommand{\twovector}[2]{\begin{bmatrix} #1\\#2 \end{bmatrix} }
+\newcommand{\threevector}[3]{\begin{bmatrix} #1\\#2\\#3 \end{bmatrix} }
+\newcommand{\fourvector}[4]{\begin{bmatrix} #1\\#2\\#3\\#4 \end{bmatrix} }
+\newcommand{\fivevector}[5]{\begin{bmatrix} #1\\#2\\#3\\#4\\#5 \end{bmatrix} }
+
+\newcommand{\comment}[1]{\marginpar{\scriptsize\color{gray}$\bullet$\,#1}}
+\newcommand{\highlight}[1]{\color{blue}#1\color{black}}
+
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\alph{enumi})}%
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{(\roman{enumii})}%
+\newcommand{\due}[1]{\vspace{-0.2in}\begin{center}\textsc{due at the beginning of class \underline{#1}} \end{center}\medskip }
+
+
+%%%
+%%% Theorem Styles
+%%%
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Corollary}{Corollary}
+\newtheorem{Theorem}{Theorem}
+\newtheorem*{Thm}{Theorem}
+\newtheorem{Postulate}{Postulate}
+\newtheorem{Lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{Definition}{Definition}
+\newtheorem*{Example}{Example}
+\newtheorem*{Remark}{Remark}
+\newtheorem{problem}{Exercise}
+\newtheorem*{Question}{Question}
+
+\let\oldenumerate=\enumerate
+\def\enumerate{
+	\oldenumerate
+	\setlength{\itemsep}{1pt}
+}
+\let\olditemize=\itemize
+\def\itemize{
+	\olditemize
+	\setlength{\itemsep}{5pt}
+}
+
+\allowdisplaybreaks
+\pagenumbering{gobble}
+\begin{document}
+\centerline{\textbf{\Large{Math 1512 Exam 1}}}
+
+\vspace{0.12in}
+
+\textbf{NAME:}\hrulefill
+
+\vspace{0.2in}
+
+
+\textbf{INSTRUCTIONS:}
+
+SHOW ALL OF YOUR WORK. Unsupported and illegible answers will not receive credit. Use\textbf{ proper mathematical notation} to receive full credit.
+Absolutely NO electronic devices or notes are allowed during this test. May the Force be with you...
+	
+	\begin{enumerate}
+		\item[1.] (15 pts) Compute the derivative of the following functions.You do not need to simplify your answer. 
+		\begin{enumerate}
+			\item[a.] $y = \sqrt{1 - \cos 2x}$
+			\vspace{6cm}
+			\item[b.] $y = \left(x^3 - \frac{7}{x}\right)^{-2}$
+			\vspace{6cm} 
+			\item[c.] $y = 10 \sec(e^{-3x^2})$. 
+		\end{enumerate}
+	\newpage
+	\item[2.] (15 pts) Find the equation of the tangent line to the curve $x^3 + y^3 = 3xy$ at the point $\left(\frac{3}{2}, \frac{3}{2}\right)$ 
+		
+		%\vspace{2in}
+		
+		
+		
+		
+		
+		
+		
+		%\vspace{1in}
+		
+		%\item For what values of $a$ does $f(x)$ fail to be differe
+		
+		
+		\newpage 
+		
+		\item[3.]  (15 pts) Find the absolute maximum and minimum values of $f(x) = 4 \sin x + 4 \cos x$ on the interval $[0, 2\pi]$. 
+		\newpage
+		\item[4.] (20 pts) On a rainy day, a girl broke up with her boyfriend after being together for eight long years. They decided to seperate at the place where everything about them began, at the same time. The boy is due north crying and running at a rate of 5 ft/sec and the girl is walking due east at a rate of 1 ft/sec thinking if she made the right decision. How fast are they sepearating from each other 5 seconds after they started moving to a new life without each other. 
+		\newpage
+		\item[5.] (20 pts) Given that $$f(x) = x^{2/3}(6 -x)^{1/3}, f'(x) = \frac{4- x}{x^{1/3}(6-x)^{2/3}}, f''(x) = \frac{-8}{x^{4/3}(6 - x)^{5/3}}.$$
+		\begin{enumerate}
+			\item[a.] On what intervals is $f(x)$ increasing or decreasing? Give the coordinates of any local minimums or local maximums. 
+			\vspace{3cm}
+			\item[b.] On what intervals is the graph of $f(x)$ concave up or down? Find any points of inflection. 
+			\vspace{5cm}
+			\item[c.] Neatly sketch a plot of the graph of $f(x)$. Be sure to label CLEARLY all of the points of interest. 
+			
+			\begin{tikzpicture}[>=latex]
+			%x axis
+			\draw[->] (-7,0) -- (7,0) node[below] {$x$};
+			
+			
+			%y axis
+			\draw[->] (0,-5) -- (0,5) node[left] {$y$};
+			
+			\node[below left] at (0,0) {\footnotesize $0$};
+			\end{tikzpicture}
+			
+			
+		\end{enumerate}
+		\newpage
+		\textbf{DIRECTIONS:} Pick \textbf{ONE} problem from Problems 6-8 to complete. Make sure it is clear which problem you have chosen and which ones you have not chosen. 
+		\item[6.] (15 pts) Compute the linearization of $f(x) = \sqrt{8 - x}$ at $a = 4$. Use this to approximate $\sqrt{4.1}$. Sketch a graph of $f(x)$ and $L(x)$ on the same axes. Label all key points CLEARLY.
+			\vspace{8cm}
+			
+			\begin{tikzpicture}[>=latex]
+				%x axis
+				\draw[->] (-7,0) -- (7,0) node[below] {$r$};
+				
+				
+				%y axis
+				\draw[->] (0,-5) -- (0,5) node[left] {$F(r)$};
+				
+				\node[below left] at (0,0) {\footnotesize $0$};
+			\end{tikzpicture}
+			
+			\newpage
+		\item[7.] (15 pts) Find the point on the curve $y = \sqrt{x}$ that is closest to the point $(3,0)$. Sketch a graph that illustrates the situation. 
+		\newpage
+		\item[8.] (15 pts) Evaluate the following limits. 
+		\begin{enumerate}
+			\item[a.] $$\lim_{x\to 1} \frac{4 \sin \pi x}{x + \cos \pi x }$$ 
+			\vspace{6cm}
+			\item[b.] $$\lim_{x \to 1}\frac{x - 1}{\sqrt{x} - 1}$$ 
+			\vspace{6cm}
+			\item[c.] $$\lim_{v \to 3} \frac{v - 1 - \sqrt{v^2 - 5}}{v - 3}$$
+		\end{enumerate}
+	\end{enumerate}
+	
+	
+\end{document}
