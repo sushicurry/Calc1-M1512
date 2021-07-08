@@ -1607,7 +1607,7 @@ Let us take a look at another example -
 \begin{Example}
 Let us find the linearization of the function $f(x) = \sqrt{x + 3}$ at $a = 1$ and use it to approximate the nubmers $\sqrt{3.98}$ and $\sqrt{4.05}$. Again the process for finding the linear approximation is the same. First find the derivative - $f'(x) = \frac{1}{2} (x + 3)^{-1/2}$ and then find $f'(1) = \frac{1}{4}$ and $f(1) = 2$. Then our linear approximation is given by $$L(x) = f(1) - f'(1) (x - 1) = 2 - \frac{1}{4}(x - 1) = \frac{x}{4} + \frac{7}{4}.$$
 
-	Now we want to use this to estimate our square roots. Note that since the function we have a linear approximation of is $\sqrt{x + 3}$ we need to find $x$ such that $\sqrt{x + 3} = \sqrt{3.98}$. In this case that is $x = 0.98$. So this is what we plug into our approximation - $L(0. 98) = \frac{0.98}{4} + \frac{7}{4} = 1.995$. Similarly we have that $\sqrt{4.05} \simeq L(1.05) = \frac{7}{4} + \frac{1.05}{4} = 2.0125.$ So it is important to note that your $x$ is not always the value you are trying to estimate but depends on the function which you got your linear approximation from. 
+	Now we want to use this to estimate our square roots. Note that since the function we have a linear approximation of is $\sqrt{x + 3}$ we need to find $x$ such that $\sqrt{x + 3} = \sqrt{3.98}$. In this case that is $x = 0.98$. So this is what we plug into our approximation - $L(0. 98) = \frac{0.98}{4} + \frac{7}{4} = 1.995$. Similarly we have that $\sqrt{4.05} \approx L(1.05) = \frac{7}{4} + \frac{1.05}{4} = 2.0125.$ So it is important to note that your $x$ is not always the value you are trying to estimate but depends on the function which you got your linear approximation from. 
 \end{Example}
 
 \subsubsection{Linear Approximation + Concavity}
@@ -1624,25 +1624,25 @@ Let us take a look at an example -
 		L_{2} (x) &= 3 + \frac{1}{27}(x - 27) = \frac{1}{27} x + 2
 	\end{align*}
 	
-	We can then estimate $\sqrt[3]{2}$ and $\sqrt[3]{26}$ as $$\sqrt[3]{2} \simeq L_1 (2) = \frac{1}{3}\cdot 2 + \frac{2}{3} = \frac{4}{3}$$ and $\sqrt[3]{26}$ as $$\sqrt[3]{26} \simeq L_2 (26) = \frac{1}{27} \cdot 26 + 2 \simeq 2.963.$$
+	We can then estimate $\sqrt[3]{2}$ and $\sqrt[3]{26}$ as $$\sqrt[3]{2} \approx L_1 (2) = \frac{1}{3}\cdot 2 + \frac{2}{3} = \frac{4}{3}$$ and $\sqrt[3]{26}$ as $$\sqrt[3]{26} \approx L_2 (26) = \frac{1}{27} \cdot 26 + 2 \approx 2.963.$$
 	
-	If we were to take the second derivative to look at concavity we have $f''(x) = -\frac{2}{9} x^{-5/3}$. Since for both the points we took approximations at the second derivative is negative, we have that our estimates are overestimates. Furthermore since $|f''(1)|\simeq 0.22$ and $|f''(27)|\simeq 0.00091$ we know that our estimate of $\sqrt[3]{26}$ is more accurate than our estimate of $\sqrt[3]{2}$. 
+	If we were to take the second derivative to look at concavity we have $f''(x) = -\frac{2}{9} x^{-5/3}$. Since for both the points we took approximations at the second derivative is negative, we have that our estimates are overestimates. Furthermore since $|f''(1)|\approx 0.22$ and $|f''(27)|\approx 0.00091$ we know that our estimate of $\sqrt[3]{26}$ is more accurate than our estimate of $\sqrt[3]{2}$. 
 	
 	Note that talking about error of estimates requires a calculator many times so will not be asked on a test. However you might be asked to say whether your estimate is an overestimate or underestimate. 
 \end{Example}
 
 \subsubsection{Linear Approximation + Change}
 
-We can also use this idea of linear approximation to estimate the change in a function over a period. Our formula for a linear approximation is $$f(x) \simeq f(a) + f'(a)(x - a).$$ If we were to rearrange this we would get $$f(x) - f(a) \simeq f'(a) (x - a).$$ We can denotet the left hand side as $\Delta y$ (change in $y$) and $(x - a)$ as $\Delta x$ (change in $x$). Now we have an apprixmation formula for approximating change $\Delta y \simeq f'(a) \Delta x$. Let us see how this works. 
+We can also use this idea of linear approximation to estimate the change in a function over a period. Our formula for a linear approximation is $$f(x) \approx f(a) + f'(a)(x - a).$$ If we were to rearrange this we would get $$f(x) - f(a) \approx f'(a) (x - a).$$ We can denotet the left hand side as $\Delta y$ (change in $y$) and $(x - a)$ as $\Delta x$ (change in $x$). Now we have an apprixmation formula for approximating change $\Delta y \approx f'(a) \Delta x$. Let us see how this works. 
 \begin{Example}
-	Let us approxmiate the change in $y = f(x) = x^9 - 2x + 1$ when $x$ changes from $1.00$ to $1.05$. So for the $a$ we use $a = 1$. Then calculating $f'(x) = 9x^8 - 2$ we see that $f'(1) = 7$. So then by our approximating change formula we have that the change in $y$ when $x$ changes from $1.00$ to $1.05$ is $\Delta y \simeq f'(1) \Delta x = 7*0.05 = 0.35$. 
+	Let us approxmiate the change in $y = f(x) = x^9 - 2x + 1$ when $x$ changes from $1.00$ to $1.05$. So for the $a$ we use $a = 1$. Then calculating $f'(x) = 9x^8 - 2$ we see that $f'(1) = 7$. So then by our approximating change formula we have that the change in $y$ when $x$ changes from $1.00$ to $1.05$ is $\Delta y \approx f'(1) \Delta x = 7*0.05 = 0.35$. 
 \end{Example}
 
 Another example given as a word problem would be  - 
 \begin{Example}
 	Approximate the change in surface area of a spherical hot-air baloon when the radius decreases from $4$m to $3.9$m. 
 	
-	In this case we need a formula for surface area of a sphere. That formula is $S(r) = 4 \pi r^2$. Taking the derivative we have $S'(r) = 8 \pi r$. We want to approximate near $r = 4$ so we find $S'(4) = 32 \pi$. Then using our approximation formula we have $\Delta y \simeq S'(4) \Delta x = 32 \pi (-0.1) = 3.2\pi \simeq -10.05$. So the change in surface area is approximately -10.05 $\textnormal{m}^2$. Or you can say the surface area will decrease by approximately 10.05 $\textnormal{m}^2$. 
+	In this case we need a formula for surface area of a sphere. That formula is $S(r) = 4 \pi r^2$. Taking the derivative we have $S'(r) = 8 \pi r$. We want to approximate near $r = 4$ so we find $S'(4) = 32 \pi$. Then using our approximation formula we have $\Delta y \approx S'(4) \Delta x = 32 \pi (-0.1) = 3.2\pi \approx -10.05$. So the change in surface area is approximately -10.05 $\textnormal{m}^2$. Or you can say the surface area will decrease by approximately 10.05 $\textnormal{m}^2$. 
 \end{Example}
 
 \subsection{Differentials}
@@ -1650,7 +1650,7 @@ Another example given as a word problem would be  -
 The previous work we did with using linear approximation to approximate a change in $y$ using linear approximation. What if we want to talk about a change in our linear approximation over a range of $x$ values? To do this we have a very specific type of variables and that is differentials. We give these variables a very specific notation as well - $dy$ is the change in the lienar approximation and $dx$ is the change in $x$. The formula for differentials is in fact the same as what we were working with previously - $dy = f'(x) dx$. 
 
 \begin{Definition}
-To give a formal definition we have - Let $f$ be differentiable on an interval containing $x$. A small change in $x$ is denoted by the differential $dx$. The corresponding change in $f$ is approximated by the differential $dy = f'(x) dx$. That is $\Delta y = f(x + dx) - f(x) \simeq dy = f'(x) dx$. 
+To give a formal definition we have - Let $f$ be differentiable on an interval containing $x$. A small change in $x$ is denoted by the differential $dx$. The corresponding change in $f$ is approximated by the differential $dy = f'(x) dx$. That is $\Delta y = f(x + dx) - f(x) \approx dy = f'(x) dx$. 
 \end{Definition}
 
 The use of differentials is again almost the same as with approximating change in $y$ we did before. 
