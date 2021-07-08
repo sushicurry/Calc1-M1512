@@ -1320,7 +1320,7 @@ If you recall we found that $f(-1)$ is a local minimum of the function in the pr
 	\end{itemize}
 \end{Theorem}
 
-\subsubsection{Review of Derivative Properies}
+\subsubsection{Review of Derivative Properties}
 
 So let us put together everything we have found out so far. We have looked at two properties of functions - increasing/decreasing intervals and concavity. We use the first derivative to help up figure out when a function is increasing vs. decreasing. We then looked at the second derivative to tell us more about concavity. We also noted that a point where concavity changes is called an inflection point. 
 
@@ -1339,7 +1339,7 @@ Let us start with a list of things that if we note down will help us sketch a gr
 \subsubsection{Procedure for Graphing}
 \begin{itemize}
 	\item[1.] First note the domain/interval of interest of the function. It is also useful at this stage to think about if your function has some sort of symmetry (even or odd function). 
-	\item[2.] Find the vertical and horizontal asymptotes of a function if they exist. (end behavior)
+	\item[2.] Find the vertical and horizontal asymptotes of a function if they exist. (end behaviour)
 	\item[3.] Then find the first and second derivatives of the function. 
 	\item[4.] Find the critical points and possible inflection points by solving $f'(x) = 0$ and $f''(x) = 0$. 
 	\item[5.] Identify intervals of increase/decrease and concavity. 
@@ -1354,7 +1354,7 @@ There is no better way to see this than going through a few examples of how to d
 \subsubsection{Examples}
 Let us start simple and make our way to harder functions. 
 \begin{Example}
- Let us try to sketch $f(x) = x^3 -6x^2 + 9x$. We can factor this to find our $x$-intercepts, $f(x) = x(x^2 - 6x + 9) = x(x - 3)^2$ So this gives us our two $x$-intercepts $(0, 0)$ and $(0, 3)$. This also gives us our $y$-intercept. As $f$ is a polynomial we know that the end behavior is that it goes to negative infinity as $x$ goes to negative infinity and $f$ goes to positive infinity as $x$ goes to positive infinity. 
+ Let us try to sketch $f(x) = x^3 -6x^2 + 9x$. We can factor this to find our $x$-intercepts, $f(x) = x(x^2 - 6x + 9) = x(x - 3)^2$ So this gives us our two $x$-intercepts $(0, 0)$ and $(0, 3)$. This also gives us our $y$-intercept. As $f$ is a polynomial we know that the end behaviour is that it goes to negative infinity as $x$ goes to negative infinity and $f$ goes to positive infinity as $x$ goes to positive infinity. 
  
  Now let us take the first derivative and look at critical points - $f'(x) = 3x^2 - 12x + 9 = 3 (x^2 - 4x + 3) = 3(x - 1)(x - 3)$. So here we have two critical points when $x = 1$ and $x = 3$. Looking for intervals of increase and decrease we have 
  \begin{align*}
@@ -1380,7 +1380,7 @@ Let us try and example where we can talk about symmetry -
 \begin{Example}
 	Sketch $f(x) = x + \sin 2x$ on the interval $[-\pi, \pi]$. So let us talk about how symmetry helps us here. Note that $f(-x) = (-x) + \sin 2(-x) = -x + \sin (-2x) = -x - \sin 2x = - (x + \sin 2x) = - f(x)$. So $f$ is what is called an odd function. So using what we find out about $x$ on the positive axis we can sketch $f$ on the negative axis. So let us for simplicities sake just consider $f$ on the interval $[0, \pi]$. 
 	
-	So looking at this we have only one $x$ interecept and that's $(0, 0)$. 
+	So looking at this we have only one $x$ intercept and that's $(0, 0)$. 
 	
 	Then let us look at critical points - $f'(x) = 1 + 2 \cos 2x = 0$. So this is $0$ when $\cos 2x = - \frac{1}{2}$, which on the interval $[0, \pi]$ is only when $2x = \frac{2}{3}\pi$ and $2x = \frac{4}{3}\pi$, so when $x = \frac{\pi}{3}, \frac{2\pi}{3}$. Then looking at intervals of increase and decrease - 
 	\begin{align*}
@@ -1488,7 +1488,7 @@ Let us look at a more complicated example - a rational function.
 
 So we are now going to talk about a type of application of derivative problem called optimization problems. The main goal of such problems is that we have a function that we want to optimize with respect to a set of constraints. 
 
-As an example of how this works think about this question - if you are given two numbers that add to 20, what is the largest the product of those two numbers could be. This is a very simple example of an optimization problem. Our constraint is that the two numbers add to 20. We would write this as $x + y = 20$. The function we want to optimize is the product of the two, so $P = xy$. Now this is a function with two variables $x$ and $y$. We want to rewrite $P$ as a function of one variable, say $x$. The way we do this is through the constraint. Rewriting the constrait we get $y = 20 - x$. So then $P = x(20 - x) = 20x - x^2$. Now to maximize this (which is what the question asks to find) we then take the derivative and find the critical point as that will tell us where the local max/min of our function is. This case the derivative is simple - $P' = 20 - 2x$. Solving for the critical point we get $x = 10$. Now since we know that $P$ is a quadratic we have that $x = 10$ gives us a maximum, but normally we will have to use a derivative test to double check that we are getting a max or a min. So as $x = 10$ is the max, using our constraint we have that $y = 10$. So the largest product of two numbers that add to 20 is 100. 
+As an example of how this works think about this question - if you are given two numbers that add to 20, what is the largest the product of those two numbers could be. This is a very simple example of an optimization problem. Our constraint is that the two numbers add to 20. We would write this as $x + y = 20$. The function we want to optimize is the product of the two, so $P = xy$. Now this is a function with two variables $x$ and $y$. We want to rewrite $P$ as a function of one variable, say $x$. The way we do this is through the constraint. Rewriting the constraint we get $y = 20 - x$. So then $P = x(20 - x) = 20x - x^2$. Now to maximize this (which is what the question asks to find) we then take the derivative and find the critical point as that will tell us where the local max/min of our function is. This case the derivative is simple - $P' = 20 - 2x$. Solving for the critical point we get $x = 10$. Now since we know that $P$ is a quadratic we have that $x = 10$ gives us a maximum, but normally we will have to use a derivative test to double check that we are getting a max or a min. So as $x = 10$ is the max, using our constraint we have that $y = 10$. So the largest product of two numbers that add to 20 is 100. 
 
 \subsubsection{More Examples}
 	Let us go through some examples. 
@@ -1501,12 +1501,12 @@ As an example of how this works think about this question - if you are given two
 	\begin{Example}
 		Suppose an airline policy states that all baggage must be box-shaped with a sum of length, width and height not exceeding 64 in. What are the dimensions and volume of a square-based box with the greatest volume under these condition? 
 		
-		So let us do a rough sketch. Since we are using a square based box our width and length are the same. So we have the sum of the length, width and height being $2w + h = 64$. This is our constraint. We want to maximize the volume function $V = w^2 h$. Using our constraint let's express $h$ in terms of $w$ - $h = 64 - 2w$. Then substituting gives $V = w^2 (64 - 2w) = 64w^2 - 2 w^3$. Our interval of interest for $w$ is $0 \leq w \leq 32$. As we want to maximize the volume we take the derivative of $V$ and get $V' = 128 w - 6w^2 = 2w(64 - 3w)$. Setting equal to 0 gives two critical points 0 and $\frac{64}{3}$. To check that we have a max let us use the second derivative test. $V'' = 128 - 12w$. Note that when we plug in $0$ $V''>0$, but when we plug in $\frac{64}{3}$, $V'' < 0$. So we have a local maximum at $\frac{64}{3}$. Hence, the deminesions and volume of a square-based box with the greatest volume is $\frac{64}{3} \times \frac{64}{3} \times \left(\frac{64}{3}\right)$ and the volume is $\left(\frac{64}{3}\right)^3$ cubic inches.  
+		So let us do a rough sketch. Since we are using a square based box our width and length are the same. So we have the sum of the length, width and height being $2w + h = 64$. This is our constraint. We want to maximize the volume function $V = w^2 h$. Using our constraint let's express $h$ in terms of $w$ - $h = 64 - 2w$. Then substituting gives $V = w^2 (64 - 2w) = 64w^2 - 2 w^3$. Our interval of interest for $w$ is $0 \leq w \leq 32$. As we want to maximize the volume we take the derivative of $V$ and get $V' = 128 w - 6w^2 = 2w(64 - 3w)$. Setting equal to 0 gives two critical points 0 and $\frac{64}{3}$. To check that we have a max let us use the second derivative test. $V'' = 128 - 12w$. Note that when we plug in $0$ $V''>0$, but when we plug in $\frac{64}{3}$, $V'' < 0$. So we have a local maximum at $\frac{64}{3}$. Hence, the dimensions and volume of a square-based box with the greatest volume is $\frac{64}{3} \times \frac{64}{3} \times \left(\frac{64}{3}\right)$ and the volume is $\left(\frac{64}{3}\right)^3$ cubic inches.  
 	\end{Example}
 	
 \subsubsection{Procedure for Optimization Problems}
 	\begin{enumerate}
-		\item[1.] Read the problem, identitfy the variables and organize using a picture if possible. 
+		\item[1.] Read the problem, identify the variables and organize using a picture if possible. 
 		\item[2.] Identify the objective function (function to be optimized) and write it using the variables you choose. 
 		\item[3.] Identify the constraint function and express it using the variables you chose. 
 		\item[4.] Use the constraint(s) to eliminate all but one independent variable of the objective function. 
@@ -1529,13 +1529,13 @@ So now using this let us do some more examples.
 		Solving for $r$ gives us $r^3 = \frac{128000}{2 \pi} = \frac{64000}{\pi}$ or $r = \frac{40}{\sqrt[3]{\pi}}$. 
 		We need to confirm that this is a minimum so let us take the second derivative - $C''(r) = \frac{256000}{r^3} + 2\pi$. Note that if we plug in $r$ that this will be positive so we do have a minimum. 
 		
-		So our radius that minimizes the cost is $r = \frac{40}{\sqrt[3]{\pi}}$ and the correspoinding height is $h = \frac{32000}{\pi} r^{-2} = \frac{32000}{\pi} \cdot \frac{\sqrt[3]{\pi^2}}{1600} = \frac{20}{\sqrt[3]{\pi}}$. So this would be the dimensions of the tank that minimize the cost of cleaning.
+		So our radius that minimizes the cost is $r = \frac{40}{\sqrt[3]{\pi}}$ and the corresponding height is $h = \frac{32000}{\pi} r^{-2} = \frac{32000}{\pi} \cdot \frac{\sqrt[3]{\pi^2}}{1600} = \frac{20}{\sqrt[3]{\pi}}$. So this would be the dimensions of the tank that minimize the cost of cleaning.
 	\end{Example}
 	
 	\begin{Example}
 		An 8-foot tall fence runs parallel to the side of a house 3 feet away. What is the length of the shortest ladder that clears the fence and reaches the house? 
 		
-		So let us draw a picture. We have the 8 foot fence then the ladder going as the hypotenuse. The wall of the house creates a similar triangle. Let $L$ be the length of the ladder, $x$ be the distance from the ladder to the fence and $b$ be the height the ladder makes with the house.  The length of the ladder is given by Pyathagorean theorem as $L^2. = (x + 3)^2 + b^2$. It is important to note that we can work $L^2$ as the max/min of $L^2$ is the same as the max/min of $L$. By similar traingles we have that $\frac{8}{x} = \frac{b}{3 + x}$. So expressing $b$ in terms of $x$ gives $b = \frac{8 (x + 3)}{x}$. Plugging this into our function for $L^2$ we have 
+		So let us draw a picture. We have the 8 foot fence then the ladder going as the hypotenuse. The wall of the house creates a similar triangle. Let $L$ be the length of the ladder, $x$ be the distance from the ladder to the fence and $b$ be the height the ladder makes with the house.  The length of the ladder is given by Pythagorean theorem as $L^2. = (x + 3)^2 + b^2$. It is important to note that we can work $L^2$ as the max/min of $L^2$ is the same as the max/min of $L$. By similar triangles we have that $\frac{8}{x} = \frac{b}{3 + x}$. So expressing $b$ in terms of $x$ gives $b = \frac{8 (x + 3)}{x}$. Plugging this into our function for $L^2$ we have 
 		\begin{align*}
 			L^2 &= (x + 3)^2 + b^2 \\
 				&= (x + 3)^2 + \left(\frac{8 (x + 3)}{x}\right)^2 \\
@@ -1635,7 +1635,7 @@ Let us take a look at an example -
 
 We can also use this idea of linear approximation to estimate the change in a function over a period. Our formula for a linear approximation is $$f(x) \approx f(a) + f'(a)(x - a).$$ If we were to rearrange this we would get $$f(x) - f(a) \approx f'(a) (x - a).$$ We can denotet the left hand side as $\Delta y$ (change in $y$) and $(x - a)$ as $\Delta x$ (change in $x$). Now we have an apprixmation formula for approximating change $\Delta y \approx f'(a) \Delta x$. Let us see how this works. 
 \begin{Example}
-	Let us approxmiate the change in $y = f(x) = x^9 - 2x + 1$ when $x$ changes from $1.00$ to $1.05$. So for the $a$ we use $a = 1$. Then calculating $f'(x) = 9x^8 - 2$ we see that $f'(1) = 7$. So then by our approximating change formula we have that the change in $y$ when $x$ changes from $1.00$ to $1.05$ is $\Delta y \approx f'(1) \Delta x = 7*0.05 = 0.35$. 
+	Let us approximate the change in $y = f(x) = x^9 - 2x + 1$ when $x$ changes from $1.00$ to $1.05$. So for the $a$ we use $a = 1$. Then calculating $f'(x) = 9x^8 - 2$ we see that $f'(1) = 7$. So then by our approximating change formula we have that the change in $y$ when $x$ changes from $1.00$ to $1.05$ is $\Delta y \approx f'(1) \Delta x = 7*0.05 = 0.35$. 
 \end{Example}
 
 Another example given as a word problem would be  - 
@@ -1647,7 +1647,7 @@ Another example given as a word problem would be  -
 
 \subsection{Differentials}
 
-The previous work we did with using linear approximation to approximate a change in $y$ using linear approximation. What if we want to talk about a change in our linear approximation over a range of $x$ values? To do this we have a very specific type of variables and that is differentials. We give these variables a very specific notation as well - $dy$ is the change in the lienar approximation and $dx$ is the change in $x$. The formula for differentials is in fact the same as what we were working with previously - $dy = f'(x) dx$. 
+The previous work we did with using linear approximation to approximate a change in $y$ using linear approximation. What if we want to talk about a change in our linear approximation over a range of $x$ values? To do this we have a very specific type of variables and that is differentials. We give these variables a very specific notation as well - $dy$ is the change in the linear approximation and $dx$ is the change in $x$. The formula for differentials is in fact the same as what we were working with previously - $dy = f'(x) dx$. 
 
 \begin{Definition}
 To give a formal definition we have - Let $f$ be differentiable on an interval containing $x$. A small change in $x$ is denoted by the differential $dx$. The corresponding change in $f$ is approximated by the differential $dy = f'(x) dx$. That is $\Delta y = f(x + dx) - f(x) \approx dy = f'(x) dx$. 
@@ -1655,7 +1655,7 @@ To give a formal definition we have - Let $f$ be differentiable on an interval c
 
 The use of differentials is again almost the same as with approximating change in $y$ we did before. 
 \begin{Example}
-	Consider $f(x) = 3 \cos^2 x$. Let us write a formula for estimating small change $dx$. We first find the derivative  - $f'(x) = -6 \cos x \sin x = -3 \sin 2x$. So then our fomula for estimating small change in $f(x)$ given small change in $dx$ is $dy = -3 \sin 2x \; dx$. For example if $x$ increases from $\frac{\pi}{4}$ to $\frac{\pi}{4} + 0.1$ then $dy = -3 \sin \frac{\pi}{2} * 0.1 = -0.3$. So there is an approximate change in the function of -0.3. 
+	Consider $f(x) = 3 \cos^2 x$. Let us write a formula for estimating small change $dx$. We first find the derivative  - $f'(x) = -6 \cos x \sin x = -3 \sin 2x$. So then our formula for estimating small change in $f(x)$ given small change in $dx$ is $dy = -3 \sin 2x \; dx$. For example if $x$ increases from $\frac{\pi}{4}$ to $\frac{\pi}{4} + 0.1$ then $dy = -3 \sin \frac{\pi}{2} * 0.1 = -0.3$. So there is an approximate change in the function of -0.3. 
 \end{Example}
 
 Much like before, we can also have word problems - 
@@ -1668,9 +1668,9 @@ Much like before, we can also have word problems -
 \end{Example}
 \subsection{L'H\^{o}pital's Rule}
 
-Let us go back to talking about limits. We have previously discussed a few different ways to evaluate limits that are "indetermininate forms". An indeterminante form is a limit that cannot be solved by direct substitution. The two methods we talked about were factoring and canceling, and multiplying the conjugate. 
+Let us go back to talking about limits. We have previously discussed a few different ways to evaluate limits that are "indeterminate forms". An indeterminate form is a limit that cannot be solved by direct substitution. The two methods we talked about were factoring and canceling, and multiplying the conjugate. 
 
-However there are some limits that we cannot do either to get a result. For example we have the following limit $$\lim_{x \to 0} \frac{\sin x}{x}.$$ This was one of our two special trig limits from when we were talking about trig derivatives, where I said that this limit is equal to 1. If we plug in $x = 0$ into this we get $0/0$. This is one type of indeterminante form.
+However there are some limits that we cannot do either to get a result. For example we have the following limit $$\lim_{x \to 0} \frac{\sin x}{x}.$$ This was one of our two special trig limits from when we were talking about trig derivatives, where I said that this limit is equal to 1. If we plug in $x = 0$ into this we get $0/0$. This is one type of indeterminate form.
 
 The other time of indeterminate form is illustrated by the limit $\lim_{x \to \infty} \frac{a x}{x + 1}$. In this case we have $\infty/\infty$ if we "plug" in $\infty$ for $x$. 
 
@@ -1688,7 +1688,7 @@ To deal with both of these cases we can use a rule called L' H\^{o}pital's Rule.
 
 Let us return to our trig integral example at the start to see how this works. 
 \begin{Example}
-	Consider $\lim_{x \to 0} \frac{\sin x}{x}$. We see that this is of the form $0/0$. As both $\sin x$ and $x$ are differentiable everywhere and the derivative of $x$ is not 0 everywhere we can use L'H\^{o}pital's Rule - 
+	Consider $\lim_{x \to 0} \frac{\sin x}{x}$. We see that this is of the form $0/0$. As both $\sin x$ and $x$ are differentiable everywhere and the derivative of $x$ is not 0 everywhere we can use l'H\^{o}pital's Rule - 
 	\begin{align*}
 		\lim_{x\to 0} \frac{\sin x}{x} &= \lim_{x\to 0} \frac{\cos x}{1} \\
 					&= \cos 0 = 1
@@ -1697,21 +1697,21 @@ Let us return to our trig integral example at the start to see how this works.
 
 Let us look at another eaxmple 
 \begin{Example}
-	Evaluate $\lim_{x \to 2} \frac{x^3 - 3x^2 + 4}{x^4 - 4x^3 + 7x^2 - 12x + 12}$. First to check that this is an indeterminate form we plug in 2 for $x$ and see that we get $0/0$. As we are dealing with polynomials we have no issue with differentiability so all we need to do is use L'H\^{o}pital's Rule. 
+	Evaluate $\lim_{x \to 2} \frac{x^3 - 3x^2 + 4}{x^4 - 4x^3 + 7x^2 - 12x + 12}$. First to check that this is an indeterminate form we plug in 2 for $x$ and see that we get $0/0$. As we are dealing with polynomials we have no issue with differentiability so all we need to do is use l'H\^{o}pital's Rule. 
 	\begin{align*}
 		\lim_{x\to 2} \frac{x^3 - 3x^2 + 4}{x^4 - 4x^3 + 7x^2 - 12 x+ 12} &= \lim_{x \to 2} \frac{3x^2 - 6x}{4x^3 - 12x^2 + 14x - 12} \\
 		&= \lim_{x \to 2} \frac{6x - 6}{12x^2 - 24x + 14} \\
 		&= \frac{6(2) - 6}{12(4) - 24(2) + 14} = \frac{6}{14} = \frac{3}{7}.
 	\end{align*}
 	
-	Note that we had to use L' H\^{o}pital's Rule twice because after we used it once we still had an indeterminate form of $0/0$. There might be other problems where you might have to use the rule more than once so do not despair if we you end up with an indeterminate form after using the rule once.
+	Note that we had to use l'H\^{o}pital's Rule twice because after we used it once we still had an indeterminate form of $0/0$. There might be other problems where you might have to use the rule more than once so do not despair if we you end up with an indeterminate form after using the rule once.
 \end{Example}
 
 \subsubsection{Indeterminate Form $\infty/\infty$}
 
-Now let us consider the other inderminate form $\infty/\infty$. In this case our application of L'H\^{o}pital's Rule is basically the same as before. 
+Now let us consider the other indeterminate form $\infty/\infty$. In this case our application of L'H\^{o}pital's Rule is basically the same as before. 
 \begin{Theorem}
-	Suppose $f$ and $g$ are differntiable on an open interval $I$ containing $a$ with $g'(x) \neq 0$ on $I$ when $ x \neq a$. If $\lim_{x\to a} f(x) = \pm \infty$ and $\lim_{x\to a} g(x) = \pm \infty$ then 
+	Suppose $f$ and $g$ are differentiable on an open interval $I$ containing $a$ with $g'(x) \neq 0$ on $I$ when $ x \neq a$. If $\lim_{x\to a} f(x) = \pm \infty$ and $\lim_{x\to a} g(x) = \pm \infty$ then 
 	\begin{align*}
 		\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
 	\end{align*}
@@ -1720,7 +1720,7 @@ Now let us consider the other inderminate form $\infty/\infty$. In this case our
 
 Let us look at an example - 
 \begin{Example}
-	Evaluate $\lim_{x \to \infty} \frac{4x^3 - 6x^2 + 1}{2x^3 - 10 x + 3}$. Note that we have $\infty/\infty$ here so we can use L'H\^{o}pital's Rule. 
+	Evaluate $\lim_{x \to \infty} \frac{4x^3 - 6x^2 + 1}{2x^3 - 10 x + 3}$. Note that we have $\infty/\infty$ here so we can use l'H\^{o}pital's Rule. 
 	
 	\begin{align*}
 		\lim_{x \to \infty} \frac{4x^3 - 6x^2 + 1}{2x^3 - 10x + 3} &= \lim_{x \to \infty}\frac{12x^2 - 12x}{6x^2 - 10} \\
@@ -1728,14 +1728,14 @@ Let us look at an example -
 			&= \lim_{x \to \infty} \frac{24}{12} = 2.
 	\end{align*}
 	
-	Notice that we had to keep using L' Hopital's rule on this problem because we kept getting indeterminate forms.
+	Notice that we had to keep using l'Hopital's rule on this problem because we kept getting indeterminate forms.
 \end{Example}
 
 \subsubsection{Related Forms $0 \cdot \infty$ and $\infty - \infty$}
 
 There are a few other forms that you can run into where we cannot directly apply L' Hopital's Rule but if we do some algebra we can. 
 \begin{Example}
- Evaluate $\lim_{x \to \infty} x^2 \sin\left(\frac{1}{4x^2}\right)$. Notice here that we have an indeterminate limit of the form $\infty \cdot 0$. So we cannot immediately use L' Hopital's Rule. So normally what we do is rewrite this in a form where can use L' Hopital's Rule. To do this recall that $x^2 = \frac{1}{1/x^2}$. So then we get 
+ Evaluate $\lim_{x \to \infty} x^2 \sin\left(\frac{1}{4x^2}\right)$. Notice here that we have an indeterminate limit of the form $\infty \cdot 0$. So we cannot immediately use l'Hopital's Rule. So normally what we do is rewrite this in a form where can use l'Hopital's Rule. To do this recall that $x^2 = \frac{1}{1/x^2}$. So then we get 
 \begin{align*}
 	\lim_{x \to \infty} x^2 \sin(\frac{1}{4x^2}) &= \lim_{x \to \infty} \frac{\sin (1/4x^2)}{1/x^2} \\
 	&= \lim_{x \to \infty} \frac{\cos(1/4x^2) \cdot (1/4)(-2x^{-3})}{-2 x^{-3}} \\ 
@@ -1743,12 +1743,12 @@ There are a few other forms that you can run into where we cannot directly apply
 	&= \frac{1}{4}.
 \end{align*}
 
-Notice that we rewrite the limit into the form 0/0 and used L' Hopital's Rule. 
+Notice that we rewrite the limit into the form 0/0 and used l'Hopital's Rule. 
 \end{Example}
 
 The other related form is $\infty - \infty$. 
 \begin{Example}
-	Evaluate $\lim_{x \to \infty} (x - \sqrt{x^2 - 3x})$. Note that this limit is of the form $\infty - \infty$. Again we want to rewrite this in a way we can use L' Hopital's Rule. 
+	Evaluate $\lim_{x \to \infty} (x - \sqrt{x^2 - 3x})$. Note that this limit is of the form $\infty - \infty$. Again we want to rewrite this in a way we can use l'Hopital's Rule. 
 	
 	\begin{align*}
 		\lim_{x \to \infty} x - \sqrt{x^2 - 3x} &= \lim_{x \to \infty}(x - \sqrt{x^2(1 - 3/x)}) \\
@@ -1763,10 +1763,10 @@ The other related form is $\infty - \infty$.
 \subsubsection{Things to be Careful About}
 So we have gone over the most common cases where you will need to use L' Hopital's Rule. However there are a few key things to always remember when you are trying to use the rule/ when you should not use the rule. 
 \begin{enumerate}
-		\item L' Hopital's RUle says $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$. This means you should not be using the quotient rule. You just need to find $f'$ and $g'$ and evaluate the limit of $f'/g'$. 
-		\item You need your limit to be in the indeterminate form of $0/0$ or $\infty/\infty$ before applying L'Hopital's rule. 
-		\item If you are going to need to use l'Hopital's rule more than once, make sure to simplify after you have used it 
-		\item You can get trapped in an unending cycle of using l'Hopital's rule and if you do than you must use a different method of evaluating the limit. 
+		\item L'Hopital's Rule says $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}$. This means you should not be using the quotient rule. You just need to find $f'$ and $g'$ and evaluate the limit of $f'/g'$. 
+		\item You need your limit to be in the indeterminate form of $0/0$ or $\infty/\infty$ before applying l'Hopital's rule. 
+		\item If you are going to need to use l'Hopital's Rule more than once, make sure to simplify after you have used it 
+		\item You can get trapped in an unending cycle of using l'Hopital's Rule and if you do than you must use a different method of evaluating the limit. 
 		\item Be sure that the limit produced by l'Hopital's Rule exists. If a limit does not exist after using the rule that does not mean the original limit does not exist. 
 \end{enumerate}
 \end{document}
