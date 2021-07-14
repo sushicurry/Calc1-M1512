@@ -1769,4 +1769,217 @@ So we have gone over the most common cases where you will need to use L' Hopital
 		\item You can get trapped in an unending cycle of using l'Hopital's Rule and if you do than you must use a different method of evaluating the limit. 
 		\item Be sure that the limit produced by l'Hopital's Rule exists. If a limit does not exist after using the rule that does not mean the original limit does not exist. 
 \end{enumerate}
+\section{7/9}
+\subsection{Antiderivatives} 
+We are now going to move on from taking derivatives to try and do the opposite - finding antiderivatives. Lust us start with the definition -
+\begin{Definition}
+	A function $F$ is an antiderivative of $f$ on an interval $I$ provided $F'(x) = f(x)$ for all $x$ in $I$. 
+\end{Definition}
+
+It is important to note that an function can have an an infinite number of antiderivatives by just adding a constant. For example an antiderivative of $x^2$ is $\frac{1}{3} x^3$ but so is $\frac{1}{3} x^3 - 200000000$. Due to this we normally talk about the family of antiderivatives and at a $+C$ whenever we find the antiderivative. So using the example we were talking with before we say that the family of antiderivatives of $x^2$ is $\frac{1}{3} x^3 + C$. 
+
+\subsection{Indefinite Integrals} 
+
+We have a special notation for taking derivatives using either the prime notation ($f'(x)$) or the $\frac{d}{dx}$ notation. We have a special notation for finding the antiderivative of a function $f(x)$ and that is the indefinite integral - $\int f(x) \; dx$.  Using this notation the example from above is $\int x^2 \; dx = \frac{1}{3} x^3 + C$.  
+
+Now let us look at finding rules for integrals like what we found for taking derivatives. The most important one is the power rule - 
+\begin{Theorem}
+	$$\int x^p \; dx = \frac{1}{p + 1} x^{p  +  1} + C $$
+	where $p \neq -1$
+\end{Theorem}
+
+We will be using this rule quite often much like how often we use the power rule for taking derivatives. HOWEVER it is important to note that the power rule for indefinite integrals above does not work when $p = - 1$. This is an integral we will not be dealing with in this course. 
+
+There are two other rules that we will be using - the constant multiple rule and sum rule
+\begin{Theorem}
+	\begin{align*}
+		\int c f(x) \; dx &= c \int f(x) \; dx \\
+		\int f(x) + g(x) \; dx &= \int f(x) \; dx + \int g(x) \; dx
+	\end{align*}
+\end{Theorem}
+
+\subsection{Simple Trig Integrals}
+
+Just like we had rules based on the power rule, we can find indefinite integrals of trig functions that we know the derivatives to 
+\begin{Theorem}
+	\begin{align*}
+		\int \sin x \; dx &= - \cos x + C \\
+		\int \cos x \; dx &= \sin x + C \\
+		\int \sec^2 x \; dx &= \tan x + C \\
+		\int \sec x \tan x \; dx &= \sec x + C \\
+		\int \csc x \cot x \; dx &= - \csc x + C \\
+		\int \csc^2 x \; dx &= -\cot x + C .
+	\end{align*}
+\end{Theorem}
+
+These are the six main integral we will work with for now. 
+
+\subsection{Introduction to Differential Equations} 
+
+A differential equation is an equation involving derivatives of an unknown function. For now we will be only working with simple initial value problems that look like - 
+\begin{Example} 
+	Suppose $f'(x) = 2x + 4$ and $f(0) = 34$ find $f(x)$. 
+	
+	To find $f$ we just integrate our derivative - $\int 2x + 4 \; dx = x^2 + 4x + C$. Then we use our initial value to find $C$ - $0^2 + 4(0) + C = 34$ so $C = 34$. This gives us that the the function $f$ that satisfies our differential equation is $f(x) = x^2 + 4x + 34$. 
+\end{Example} 
+
+\section{7/14} 
+\subsection{Motion Problems (cont.)} 
+
+Recall that when we were talking about derivatives we had some examples where we were looking at motion problems. We were given a position function and had to find/work with either velocity or acceleration. When we did this we ended up with the following relationship - velocity is the derivative of the position function and acceleration is the derivative of the velocity function. 
+
+Now that we are talking about antiderivatives we can also work in the other direction. Velocity is the antiderivative of acceleration and the position function is the antiderivative of the velocity. Using this we can now answer a different kind of problem then before - 
+\begin{Example} 
+	Runner A begins at the point $s(0) = 0$ and runs on a straight and level road with velocity $v(t) = 2t$. Runner $B$ begins with a head start at the point $S(0) = 8$ and runs with a velocity $V(t) = 2$. Find the positions of the runners for $t \geq 0$ and determine who is ahead at $t = 6$. 
+	
+	The question is asking us to find $s(t)$ and $S(t)$ and then compare $s(6)$ with $S(6)$. So let us first find $s(t)$. Since the position function is the antiderivative of velocity we have the following initial value problem - $s'(t) = 2t, s(0) = 0$. Integrating we have $s(t) = t^2 + C$ and using $s(0) = 0$ we know that $s(t) = t^2$. 
+	
+	Similarly we have $S'(t) = 2, S(0) = 8$. Integrating we have $S(t) = 2t + C$ and using $S(0) = 8$ we get $S(t) = 2t + 8$. 
+	
+	So then $s(6) = 36$ and $S(6)  = 12 + 8 = 20$. So this means that runner A is ahead of runner B after 6 time units. 
+\end{Example}
+
+Another common thing to look at are initial value problems dealing with acceleration due to gravity - 
+\begin{Example}
+	Suppose a stone is thrown vertically upward at $t = 0$ with a velocity of $40$ m/s from the edge of a cliff that is 100 m above a river. 
+	\begin{enumerate}
+		\item[a.] Find the velocity of the object for $t \geq 0$. 
+		
+		This is just asking us to solve an initial value problem. We know that acceleration due to gravity is $a(t) = -9.8$. This is negative as gravity is a downward force. So we want to solve $v'(t) = -9.8, v(0) = 40$. Integrating and solving for $C$ gives us $v(t) = -9.8t + 40$. 
+		
+		\item[b.] Find the position of the object for $t \geq 0$. 
+		
+		Again this is another initial value problem where we have $s'(t) = v(t) = -9.8t + 40$ $s(0) = 100$. Integrating and solving gives $s(t)= -4.9 t^2 + 40t + 100$. 
+		\item[c.] Find the maximum height of the object above the river. 
+		
+		We this problem just wants to find the max of $s$. We know that $s'(t) = -9.8t + 40$ so just solving for when $t$ is 0 should give us the critical point. Solving gives us $t = \frac{40}{9.8} = 40 \cdot \frac{10}{98} = \frac{200}{49} \approx 4.1$. So the height of the ball is a max at roughly 4.1 seconds after launch and the height is $s(\frac{200}{49}) \approx 182$. 
+		
+		\item[d.] With what speed does the object strike the river? 
+		
+		To do this we need to first find the time the object hits the ground. By using the quadratic formula we have that $$ t = \frac{-40 \pm \sqrt{1600 + 4(100)(9.8)}}{-9.8}$$ which after simplifying gives $t \approx -2.0$ and $t \approx 10.2$. As we can only use positive values of $t$ we know that we need to look at the speed when $t = 10.2$ and that is $|v(10.2)| \approx 60$. So the speed that the object strikes the river with is 60 m/s. 
+	\end{enumerate}
+\end{Example}
+
+\subsection{Approximating Areas Under Curves}
+
+When we started talking about derivatives we discussed that a derivative represented the slope of the tangent line and how it represented instantaneous velocity. Similarly we can talk about a geometric/real world representation of the integral - area under a curve/displacement. 
+
+\subsubsection{Area Under a Velocity Curve} 
+If we consider a simple velocity function $v = 60$ with a simple scenario of a car traveling at a constant velocity of 60 mi/hr along a straight highway for two hours and then consider the displacement of the car. This is just the distance traveled - which is 120 mi. If we look at a graph of the situation we see that the displacement can be formed by taking the area under the curve, i.e. the rectangle formed. 
+
+If we want to consider a slightly more complicated example let us consider the velocity function $v(t) = t^2$ where $0 \leq t \leq 8$. We can then try to approximate the displacement in various ways - 
+\begin{enumerate}
+	\item[a.]We can divide the interval $[0, 8]$ into two subintervals $[0, 4]$ and $[4, 8]$ We can then see that if we do this we can approximate the area under the curve using two rectangles (using the midpoints) and we get that the displacement is approximately $4*4 + 36*4 = 160$. However note that there is this large gap that we haven't considered. 
+	\item[b.] To get a better estimate we increase the number of subintervals/rectangles we can use. If we use 4 rectangles our estimate becomes 168. 
+	\item[c.] If we go to 8 rectangles our estimate becomes 170. As we can see the estimate keeps getting better and better as we keep adding rectangles. 
+\end{enumerate}
+
+Much like what we did with slope and using limits, this is another place where we will incorporate limits. 
+
+\subsubsection{Approximating Areas By Riemann Sums} 
+
+We can also talk about approximating areas under curves that are not related to velocity. To do this we will construct something called a Riemann sum. First let us take a continuous function $f(x)$ on an interval $[a, b]$. We will then divide the interval into $n$ subintervals each with a length $\Delta x = \frac{b - a}{n}$. This is what we call a regular partition. 
+\begin{Definition}
+	Suppose $[a, b]$ is a closed interval containing $n$ subintervals $[x_0, x_1], \ldots [x_{n - 1}, x_n]$ of equal length $\Delta x = (b - a)/n$ with $a = x_0$ and $b = x_n$. The endpoints $x_0, x_1, \ldots x_n$ create a regular partition of $[a, b]$ and the $k$th grid point $x_k = a + k\Delta x$ for $k = 0, 1, \ldots, n$. 
+\end{Definition}
+
+Now using this partition if we create a rectangle on each subinterval and take the value of $f$ on a point $x_{k}^{*} $ on each subinterval we get that the area of the rectangle is $f(x_{k}^{*}) \Delta x$. If we then add up the areas of all of these rectangles we get what is called a Riemann sum. 
+
+\begin{Definition}
+	Suppose $f$ is defined on a closed interval $[a, b]$ which is divided into $n$ subintervals of equal length $\Delta x$. If $x_{k}^{*}$ is any point in the $k$the subinterval $[x_{k -1}, x_k]$ for $k = 1, 2, \ldots, n$. Then $$f(x_{1}^{*}) \Delta x + f(x_{2}^{*}) \Delta x + \cdots + f(x_{n}^{*})\Delta x$$ is called a Riemann sum for $f$ on $[a, b]$. This sum is called a \textbf{left Riemann sum} if $x_{k}^*$ is the left endpoint of $[x_{k - 1}, x_k]$. The sum is called a \textbf{right Riemann sum} if $x_{k}^*$ is the right endpoint of $[x_{k - 1}, x_k]$. The sum is called a \textbf{midpoint Riemann sum} if $x_{k}^*$ is the midpoint of $[x_{k - 1}, x_k]$. 
+\end{Definition}
+
+\begin{Example}
+	If we want to look at an example of calculating these sums, let us consider the function $f(x) = x^2$ on the interval $[0, 8]$ with $n = 8$. If we divide this into $8$ subintervals, each interval will be length of 1. We can then calculate the three types of Riemann sums we have. 
+	\begin{enumerate}
+		\item[a.] For a left Riemann sum, we take the left endpoint of each interval and get $$(0) + 1 + 4 + 9 + 16 + 25 + 36 + 49 = 140$$ 
+		\item[b.] For a right Riemann sum, we take the right end point of each interval and get $$ 1 + 4 + 9 + 16 + 25 + 36 + 49 + 64 = 204$$. 
+		\item[c.] The midpoint sum is the most tedious the calculate as it will use midpoints but doing so we get $$\frac{1}{4} + \frac{9}{4} + \frac{25}{4} + \frac{49}{4} + \frac{81}{4} + \frac{121}{4} + \frac{169}{4} + \frac{225}{4} = \frac{680}{4} = 170$$
+	\end{enumerate}
+
+	The actual answer is the area under the curve is approximately 170.67. As we can see left Riemann sums are underestimates, right Riemann sums are overestimates and midpoint sum is an estimate in the middle. 
+\end{Example}
+
+\subsubsection{Sigma (Summation) Notation} 
+
+Now if we want to get really accurate estimates we need to keep adding rectangles. Taking the sum of a really large number of rectangles would become really long, so we want to find a way to simplify writing out a large sum. That is where we bring in summation notation. We use the Greek letter $\Sigma$ to represent a sum. For example to express $1 + 2 + 3 + \cdots + 10$ we write this is $\sum_{k = 1}^{10} k $. The symbol $k$ is what we call an index. At the bottom of the sigma we put the lower limit and at the top we put the upper limit. 
+
+So looking at some other examples we have 
+\begin{Example}
+	\begin{enumerate}
+		\item[a.] $\sum_{k = 1}^{99} k = 1 + 2 + \cdots + 99 = 4950$ 
+		\item[b.] $\sum_{ k = 1}^{4} k^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30$ 
+	\end{enumerate}
+\end{Example}
+
+As a note the index in a sum is called a dummy variable. You can choose any letter you want for it. The most common choices are $i, j, k, n, m$. 
+
+Let us now talk about some important properties of sums - 
+\begin{Theorem}
+	\begin{enumerate}
+		\item Constant Multiple Rule $$\sum_{k = 1}^{n} c a_k = c \sum_{k = 1}^{n} a_k$$ 
+		\item Addition Rule $$\sum_{k = 1}^{n} (a_k + b_k) = \sum_{k = 1}^{n} a_k + \sum_{k = 1}^{n} b_k$$
+	\end{enumerate}
+\end{Theorem}
+
+There are also a few important sum formulas that we will use, this are formulas for the sums of powers of integers -
+\begin{Theorem}
+	\begin{align*}
+		\sum_{k = 1}^{n} c &= cn \\
+		\sum_{k = 1}^{n} k &= \frac{n(n + 1)}{2} \\
+		\sum_{k = 1}^{n} k^2 &= \frac{n(n + 1)(2n + 1)}{6} \\
+		\sum_{k = 1}^{n} k^3 &= \frac{n^2 (n + 1)^2}{4}
+	\end{align*}
+\end{Theorem}
+
+\subsubsection{Riemann Sums Using Sigma Notation} 
+
+Going back to how we defined a Riemann sum before we can rewrite it using Sigma notation - 
+\begin{Definition}
+	(Riemann Sum v2) 	Suppose $f$ is defined on a closed interval $[a, b]$ which is divided into $n$ subintervals of equal length $\Delta x$. If $x_{k}^{*}$ is any point in the $k$the subinterval $[x_{k -1}, x_k]$ for $k = 1, 2, \ldots, n$. Then $\sum_{k = 1}^{n} f(x_{k}^{*}) \Delta x$ is called the Riemann sum of $f$ on $[a, b]$. For an easy way to calculate the $x_{k}^{*}$ for the sums we will be dealing with we have 
+	\begin{enumerate}
+		\item (left Riemann sum) $x_{k}^* = a + (k - 1) \Delta x$ 
+		\item (right Riemann sum) $x_{k}^* = a + k\Delta x$ 
+		\item (midpoint Riemann sum) $x_{k}^{*} = a + (k - \frac{1}{2})\Delta x$
+	\end{enumerate}
+\end{Definition}
+
+To see this in action let us go back again to our example of $f(x) = x^2$ on the interval $[0, 8]$ but this time let us instead take 50 sub intervals. Our $\Delta x = \frac{8}{50} = 0.16$. Then if we want to take the right Riemann sum we know that our $x_{k}^{*} = 0 + k 0.16$. So then our Riemann sum becomes 
+$$\sum_{k = 1}^{50} f(0.16k) \Delta x = \sum_{k = 1}^{50} (0.16 k)^2 (0.16) = \sum_{k = 1}^{50} (0.16)^3 k^2$$. 
+
+Using properties of sums and one of the formulas we wrote down before we have that 
+\begin{align*}
+	\sum_{k = 1}^{50} f(0.16k) \Delta x&= \sum_{k = 1}^{50} (0.16)^3 k^2 \\
+									   &= 0.004096 \left(\frac{(50)(51)(101)}{6}\right) \\
+									   &\approx 175.821
+\end{align*}
+(using a calculator). 
+
+\subsection{Definite Integrals}
+
+We can now begin to move toward talking about a definite integral (as opposed to indefinite integrals which we have dealt with before)
+\subsubsection{Net Area}
+
+Previously all of the function we approximate the area under the curve of were nonnegative. But what happens if we have a function where the curve goes below the $x$-axis? In this case we say that the area is negative. 
+
+For example if we consider the Riemann sum for the function $f(x) = 1 - x^2$ on the interval $[1, 3]$ with $n = 4$, we see that when we calculate the Riemann sum we get a value of $-6.625$. This is because values for $f(x)$ on this interval are negative. 
+
+If we were to extend our interval to $[0, 3]$ we would then see that the area from $[0, 1.5]$ would be positive and add while we subtract the area below the curve. So for example if we are using $n = 6$ on the interval $[0, 3]$ we have two rectangles that are positive and the rest that are negative resulting in a net Riemann sum of -3.875. 
+
+\subsubsection{The Definite Integral} 
+
+Like I have hinted at before, we want to be able to implement limits into our Riemann sum to get towards a definition of our integral. We will do this by changing our partition from a regular one (one that has subintervals of even length) to a more general partition. 
+
+\begin{Definition}
+	(General Riemann Sum) Suppose $[x_0, x_1], [x_1, x_2], \ldots, [x_{n - 1}, x_n]$ are subintervals of $[a, b]$ with $a = x_0 < x_1 < \cdots < x_{n - 1} < x_n = b$. Let $\Delta x_k$ be the length of the subinterval $[x_{ k -1}, x_k]$ and let $x_{k}^*$ be any point in that subinterval. Then $\sum_{k = 1}^{n} f(x_{k}^{*}) \Delta x_k$ is called a general Riemann sum for $f$ on $[a, b]$. 
+\end{Definition}
+
+In practice you will not really work with general Riemann sums, but regular Riemann sums like in many of the previous examples. 
+
+Now note that if we force the length of the subintervals to get smaller and smaller we will need more and more subintervals to fully partition our interval $[a, b]$. That is to says as $\Delta \to 0$ we have that $n \to \infty$. This is the limit that we want to define our integral. 
+\begin{Definition}
+	A function $f$ defined on $[a, b]$ is integrable on $[a, b]$ if $\lim_{\Delta \to 0} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x_k$ exists and is unique over all partitions of $[a, b]$ and all choices of $x_{k}^{*}$ on a partition. This limit is the definite integral of $f$ from $a$ to $b$ which we write $$\int_{a}^{b} f(x) \; dx = \lim_{\Delta \to 0} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x_k.$$
+\end{Definition}
+
+
 \end{document}
