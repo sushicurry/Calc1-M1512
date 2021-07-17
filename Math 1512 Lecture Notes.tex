@@ -1966,7 +1966,8 @@ For example if we consider the Riemann sum for the function $f(x) = 1 - x^2$ on 
 
 If we were to extend our interval to $[0, 3]$ we would then see that the area from $[0, 1.5]$ would be positive and add while we subtract the area below the curve. So for example if we are using $n = 6$ on the interval $[0, 3]$ we have two rectangles that are positive and the rest that are negative resulting in a net Riemann sum of -3.875. 
 
-\subsubsection{The Definite Integral} 
+\section{7/15} 
+\subsection{The Definite Integral} 
 
 Like I have hinted at before, we want to be able to implement limits into our Riemann sum to get towards a definition of our integral. We will do this by changing our partition from a regular one (one that has subintervals of even length) to a more general partition. 
 
@@ -1981,5 +1982,341 @@ Now note that if we force the length of the subintervals to get smaller and smal
 	A function $f$ defined on $[a, b]$ is integrable on $[a, b]$ if $\lim_{\Delta \to 0} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x_k$ exists and is unique over all partitions of $[a, b]$ and all choices of $x_{k}^{*}$ on a partition. This limit is the definite integral of $f$ from $a$ to $b$ which we write $$\int_{a}^{b} f(x) \; dx = \lim_{\Delta \to 0} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x_k.$$
 \end{Definition}
 
+It is important to note that for a definite integral $\int_{a}^{b} f(x) \; dx$ $a$ is the lower bound while $b$ is the upper bound. The $f(x)$ is called the integrand and the $dx$ is the differential. It is important to always remember the $dx$. Another thing to note is that variable $x$ is a dummy variable much like the $k$ in the summation notation. We can replace the $x$ with any other variable we choose for the integral
 
+\subsubsection{Evaluating Definite Integrals (Geometry)} 
+
+Let us start talking about how we evaluate these definite integrals. There are certain definite integrals where we do not need to look at Riemann sums for and can just evaluate based on geometry. 
+
+\begin{Example}
+	Consider the integral $\int_{-1}^{1} x \; dx$. This happens to be an integral that I have mentioned before. Let us draw a sketch of what the area we are trying to find is. Note that this area is composed of two triangles and that one is below the $x$ axis. This means we are going to be adding the area above the $x$-axis and subtracting the area below. Giving us a net area of $0$. 
+\end{Example}
+
+Let us consider another example 
+\begin{Example}
+	Consider the integral of the function $\int_{3}^{4} 2x  + 3 \; dx$. We can draw this as well. Note that this area is going to be trapezoid. If you do not remember the area formula for a trapezoid then you can look that up. In this case our area is going to be $\frac{1}{2}(9 + 11) = 10$. 
+\end{Example}
+
+The last example of a definite integral that you can calculate using geometry would be the following 
+\begin{Example}
+	Consider the integral $\int_{0}^{1} \sqrt{1 - (x - 1)^2} \; dx$. This function is the upper half of a circle of radius 1 centered at (1, 0). So in particular the area that this is calculating would be a quarter of the area of said circle. We know the formula for the area of a circle so this would mean that the value of this integral is $\frac{\pi}{4}$. 
+\end{Example}
+
+These are three types of functions you will the most commonly when asked a question about evaluating a definite integral using geometry. We will eventually talk about how to evaluate the first two integrals analytically in a bit, however the third integral will only get covered in calc 2. 
+
+What about calculating definite integrals that we cannot do geometrically? Well we will get to that after looking at a few properties of definite integrals. 
+
+\subsubsection{Properties of Definite Integrals}
+
+The first two properties we will look at are what happens when we reverse the order of integration and when we have identical limits of integration - 
+\begin{Definition}
+	\begin{align}
+		\int_{a}^{b} f(x) \; dx &= - \int_{b}^{a} f(x) \; dx \\
+		\int_{a}^{a} f(x) \; dx &= 0.
+	\end{align}
+\end{Definition}
+
+
+We talked about the indefinite integral of a sum earlier and similarly we have a property about the definite integral of a sum 
+\begin{Theorem}
+	$$\int_{a}^{b} (f(x) + g(x)) \;dx = \int_{a}^{b} f(x) \; dx + \int_{a}^{b} g(x) \; dx$$
+\end{Theorem}
+
+There is a similar property about a constant multiple
+\begin{Theorem}
+	$$\int_{a}^{b} c f(x) \; dx = c \int_{a}^{b} f(x) \; dx$$
+\end{Theorem}
+
+Both of these properties are not hard to see directly from the definition of a definite integral and using the sum properties we discussed last class. 
+
+\begin{align*}
+	\int_{a}^{b} f(x) + g(x) \;dx &= \lim_{\Delta \to 0} \sum_{k = 1}^{n} f(x_{k}^{*}) \Delta x_k \\ &= \lim_{\Delta \to 0} \left(\sum_{k = 1}^{n} f(x_{k}^*) \Delta x_k + \sum_{k = 1}^{n} g(x_{k}^*) \Delta x_k \right) \\
+	&= \int_{a}^{b} f(x) \; dx + \int_{a}^{b} g(x) \; dx.
+\end{align*}
+
+Similarly using the constant multiple property of sums we get that constant multiple property of definite integrals. 
+
+If we consider the integral of $f(x)$ over an interval $[a, b]$ we have $\int_{a}^{b} f(x) \; dx$. However, what if we want to split our interval into two? Take $p$ such that $a < p < b$ then we have the following property about integrals $\int_{a}^{b} f \; dx = \int_{a}^{p} f(x) \; dx + \int_{p}^{b} f(x) \; dx$. This property even works when we have $p$ being outside of the interval. Instead we have that $\int_{a}^{b} f = \int_{a}^{p} f - \int_{b}^{p} f$. We can rewrite the second integral using our first property to get as a sum $\int_{a}^{p} f + \int_{p}^{b} f$. 
+
+What about taking the integrals of absolute values? Well this integral is just going to be the sum of the areas of the region bounded by the graph of $f$ and the $x$-axis. 
+
+\subsubsection{Bounds on Definite Integrals}
+
+The next major topic we are going to talk about is an important theorem in calculus. Before we get into it let us talk about putting some bounds on integrals that will help us. 
+
+\begin{Theorem}
+	If $f(x) \geq 0$ on $[a, b]$ then $\int_{a}^{b} f(x) \; dx \geq 0$. 
+\end{Theorem}
+
+We can also compare definite integrals. 
+\begin{Theorem}
+	If $f(x) \geq g(x)$ on $[a, b]$ then $\int_{a}^{b} f(x) \; dx \geq \int_{a}^{b} g(x) \; dx$. 
+\end{Theorem}
+
+We can also stick lower and upper bounds on the value of an integral.
+\begin{Theorem}
+	As $f$ is continuous on $[a, b]$, $f$ attains an absolute maximum $M$ and $f$ attains an absolute minimum $m$ on $[a, b]$. So then $$m(b - a) \leq \int_{a}^{b} f(x) \; dx \leq M(b - a)$$. 
+\end{Theorem}
+
+These are three additional properties of definite integrals. 
+\subsubsection{Using Limits to Evaluate Definite Integrals} 
+
+We can use our knowledge of Riemann sums and limits to evaluate certain definite integrals. 
+
+\begin{Example}
+	Let us find $\int_{0}^{2} (x^3 + 1) \; dx$ by evaluating a right Riemann sum and letting $n \to \infty$. 
+	
+	Let us take our interval $[0, 2]$ and divide it into $n$ subintervals of length $\Delta x = \frac{2}{n}$. Since we are calculating a right Riemann sum, we know that the point we are going to be using $x_{k}^* = \frac{2k}{n}$. 
+	
+	So then our right Riemann sum is 
+	\begin{align*}
+		\sum_{k = 1}^{n} f(x_{k}^{*}) \Delta x &= \sum_{k = 1}^{n} \left(\left(\frac{2k}{n}\right)^3 + 1 \right) \frac{2}{n} \\
+		&= \frac{2}{n} \sum_{k = 1}^{n} \left(\frac{8 k^3}{n^3} + 1 \right) \\
+		&= \frac{2}{n} \left(\frac{8}{n^3} \sum_{k = 1}^{n} k^3 + \sum_{k = 1}^{n} 1 \right) \\
+		&= \frac{2}{n} \left(\frac{8}{n^3} \left(\frac{n^2 (n + 1)^2}{4}\right) + n\right) \\
+		&= \frac{4(n^2 + 2n + 1)}{n^2} + 2.
+	\end{align*}
+
+	Then to evaluate $\int_{0}^{2} (x^3 + 1) \; dx$ we let $n \to \infty$. 
+	So
+	\begin{align*}
+		\int_{0}^{2} (x^3 + 1) \; dx &= \lim_{n \to \infty} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x \\
+		&= \lim_{n \to \infty} \left(\frac{4(n^2 + 2n + 1)}{n^2} + 2 \right) \\
+		&= 4 \lim_{n \to \infty} \left(\frac{n^2 + 2n + 1}{n^2} \right) + \lim_{n \to \infty} 2 \\
+		&= 4(1) + 2 = 6.
+	\end{align*}
+
+Therefore, $\int_{0}^{2} (x^3 + 1)\; dx = 6$. 
+\end{Example}
+
+
+As we can see calculating an integral directly from a Riemann sum is quite tedious. We want to find an easier way to evaluate a definite integral and that is our next topic - The Fundamental Theorem of Calculus. 
+
+\subsection{The Fundamental Theorem of Calculus} 
+
+\subsubsection{Area Functions}
+
+Let us talk about area functions. We have already seen that integrals represent area under curves so it should come as no surprise that area functions can be expressed as an integral. 
+
+So let us define an area function - 
+\begin{Definition}
+	Let $f$ be a continuous function for $t \geq a$. The area function for $f$ with left endpoint $a$ is $$A(x) = \int_{a}^{x} f(t) \; dt$$ where $x \geq a$. The area function gives the net area of the region bounded by the graph of $f$ and the $t$-axis on the interval $[a, x]$. 
+\end{Definition}
+
+Let us work through an example. 
+\begin{Example}
+	Consider the trapezoid bounded by the line $f(t) = 2t + 3$ and the $t$-axis between $t = 2$ and $t = x$. The area function $A(x) = \int_{2}^{x} f(t) \; dt$ gives the area of the trapezoid for $x \geq 2$. (Draw a picture)
+	
+	\begin{enumerate}
+		\item[a.] We can find $A(2)$ - this is just going to be 0. 
+		\item[b.] If we want to find $A(5)$ we just have that we have a trapezoid with height $3$ and sum of the two parallel sides being $f(2) + f(5)$. So then $A(5) = \int_{2}^{5} 2t + 3 \; dt = \frac{1}{2}(3)(7 + 13) = 30$. 
+		\item[c.] If we want to find a general formula for what $A(x)$ is we again go back to our formula for the area of a trapezoid. So 
+		\begin{align*}
+			A(x) &= \frac{1}{2} (x - 2) (f(2) + f(x)) \\
+				 &= \frac{1}{2} (x - 2) (7 + 2x + 3) \\
+				 &= (x - 2) (x + 5) \\
+				 &= x^2 + 3x - 10.
+		\end{align*}
+	
+		So we get that a formula for the area of the trapezoid where $x \geq 2$ is $A(x) = x^2 + 3x - 10$. 
+		\item[d.] This is an important thing to note for what we will cover next class, but if we take the derivative of $A(x)$ note what we get - $A'(x) = 2x + 3$. This happens to be exactly what the equation of the line that we are finding the area under is. 
+	\end{enumerate}
+\end{Example}
+
+
+\section{7/16}
+\subsection{Fundamental Theorem of Calculus} 
+
+The fundamental theorem of calculus is usually given in two ways. We will now look at the first way it is given using area functions. If we have an area function $A(x)$ we can consider the difference between $A(x + h)$ and $A(x)$. (draw a picture). We can see the area that is different between the two is approximately $h f(x)$. So this gives us the relation that $$\frac{A(x + h) - A(x)}{h} \approx f(x).$$
+
+Now we do something that should look familiar - we take the limit as $h \to 0$. This gives us $$\lim_{h \to 0} \frac{A (x + h) - A(x)}{h} = \lim_{h \to 0} f(x).$$
+
+Notice that the left hand side should look very similar - this is the derivative of $A(x)$ with respect to $x$, in other words $A'(x)$. From this we have $$A'(x) = \frac{d}{dx} \int_{a}^{x} f(t) \; dt = f(x).$$ This just really says the derivative of the integral of $f$ is $f$, which should seem like a very obvious fact. This is the first part of the Fundamental Theorem of Calculus. 
+\begin{Theorem}
+	(FTC Part 1) If $f$ is continuous on $[a, b]$ then the area function \begin{align*}
+			A(x) = \int_{a}^{x} f(t) \; dt, \textnormal{ for } a \leq x \leq b,
+	\end{align*}
+	is continuous on $[a, b]$ and differentiable on $(a, b)$. Then the area function satisfies $A'(x) = f(x)$ or in other words \begin{align*}
+		A'(x) = \frac{d}{dx} \int_{a}^{x} f(t) \; dt = f(x),
+	\end{align*}
+	which means that the area function of $f$ is an antiderivative of $f$ on $[a, b]$. 
+\end{Theorem} 
+
+Now this is a cool theorem and there will always be problems that you will see that use this aspect of the fundamental theorem, but this does not really help us evaluate a definite integral in general. 
+
+The second part of the FTC which we are getting to will do that. Remember that when we were talking about antiderivatives we noted that any two antiderivatives of a function differ by a constant. So if $A(x)$ is an antiderivative of $f$ on $[a, b]$ and $F(x)$ is another antiderivative of $f$ then $F(x) = A(x) + C$. As $A(a) = 0$ (we say this yesterday when talking about area functions) then if we look at $F(b) - F(a)$ we get $(A(b) + C) - (A(a) + C) = A(b)$. By definition of area function we know that $A(b) = \int_{a}^{b} f(t) \; dt$. Putting all of this together and replacing $t$'s with $x$'s we have $\int_{a}^{b} f(x) \; dx = F(b) - F(a)$. 
+
+\begin{Theorem}
+	(FTC Part 2) If $f$ is continuous on $[a, b]$ and $F$ is any antiderivative of $f$ on $[a, b]$, then \begin{align*}
+		\int_{a}^{b} f(x) \; dx = F(b) - F(a).
+	\end{align*}
+	We use a shorthand notation to denote $F(b) - F(a)$ which can either be notated as $\left.F(x)\right|_{a}^{b}$ or $\left[F(x)\right]_{a}^{b}$. 
+\end{Theorem}
+
+The Fundamental Theorem is an important enough theorem that it is worth going through the proof of. So let us talk about how we get there. 
+
+Let $f$ be continuous on $[a, b]$ and let $A$ be the area function for $f$ with left endpoint $a$. We will first show that $A$ is differentiable on $(a, b)$ and $A'(x) = f(x)$.
+
+We assume that $a < x < b$ and use the definition of the derivative we have 
+\begin{align*}
+	A'(x) = \lim_{h \to 0} \frac{A(x + h) - A(x)}{h}.
+\end{align*}
+
+Let us look at the numerator. We note that by definition $A(x + h) - A(x) = \int_{a}^{x + h} f(t) \; dt - \int_{a}^{x} f(t) \; dt = \int_{x}^{x + h} f(t) \; dt$ (this is by a property of integrals we discussed). Notice that this integral is the net area under the curve $y = f(t)$ on the interval $[x, x + h]$. So we know that as $f$ is continuous on this interval, $f$ attains an absolute max $M$ and absolute min $m$ , so $m \leq f(t) \leq M$ on $[x, x + h]$. 
+
+We then know from one of the properties we discussed yesterday that $$mh \leq \int_{x}^{x + h} f(t) \; dt \leq M h.$$ 
+
+Substituting for the integral we get $$mh \leq A(x + h) - A(x) \leq M h.$$ 
+We can then divide by $h$ and take the limit as $h \to 0$ to get $$\lim_{h \to 0} m \leq \lim_{h \to 0} \frac{A(x + h) - A(x)}{h} \leq \lim_{h \to 0} M.$$
+
+Now the $\lim_{h \to 0} m$ refers to what happens to our absolute minimum as $h \to 0$. As $h \to 0$ our interval $[x, x + h]$ gets smaller and smaller till the only point left is $f(x)$. So $\lim_{h \to 0} m = f(x)$. Similarly $\lim_{h \to 0} M = f(x)$. Note that the limit in the middle is by definition $A'(x)$. So by the Squeeze Theorem we have that $A'$ exists (so $A$ is differentiable for $a < x < b$) and $A'(x) = f(x)$. This proves the first part of the FTC. 
+
+The second part of the FTC follows from the same work we did before. 
+
+
+Now that we have show the FTC let us actually put it to use. We use part 2 of the FTC to evaluate definite integrals. So let us do this - 
+
+\begin{Example}
+	\begin{enumerate}
+		\item[a.] \begin{align*}
+			\int_{0}^{10} (60 x - 6x^2) \; dx &= \left[30 x^2 - 2 x^3\right]_{0}^{10} \\
+						&= (30(100) - 2(1000)) - (30(0) - 2(0)) = 3000-2000 = 1000
+		\end{align*}
+	
+	\item[b.] \begin{align*}
+		\int_{0}^{2\pi} 3 \sin x \; dx &= \left. -3 \cos x \right|_{0}^{2\pi} \\
+		&= (-3 \cos 2\pi) - (-3 \cos 0)  = -3 -(-3) = 0
+	\end{align*}
+	
+	\item[c.] \begin{align*}
+		\int_{1/16}^{1/4} \frac{\sqrt{t} - 2t}{t} \; dt &= \int_{1/16}^{1/4} (t^{-1/2} - 2)\; dt \\
+		&= \left[2 t^{1/2} - 2t\right]_{1/16}^{1/4} \\
+		&= (2 (1/2) - 2(1/4)) - (2(1/4) - 2(1/16)) \\
+		&= 1 - (1/2) - (1/2) + 1/8 = 1/8
+	\end{align*}
+	\end{enumerate}
+\end{Example}
+
+These were examples of where we are using part 2 of the FTC, but you can also run into problems where you have to use part 1 of the FTC. These are problems that like to show up on tests/exams. 
+
+\begin{Example}
+	\begin{enumerate}
+		\item[a.] Simplify $\frac{d}{dx} \int_{x}{1} \sin^2 t \; dt$. 
+		
+		To do this problem remember what was required of part 1 of the FTC. We had an area function $A(x) = \int_{a}^{x} f(t) \; dt$ and that $A'(x) = f(x)$. So we want to make sure our integral is written in the same way as our area function (mainly the $x$ has to be the upper bound). 
+		
+		\begin{align*}
+			\frac{d}{dx}\int_{x}^{1} \sin^2 t \; dt &= \frac{d}{dx} \left(- \int_{1}^{x} \sin^2 t \; dt \right)\\
+			&= - \sin^2 x 
+		\end{align*}
+	
+		\item[b.] A slightly more involved example - simplify $\frac{d}{dx} \int_{0}^{x^2} \cos t^2 \; dt$. The reason this is more involved is because this does not have just an $x$ as the upper bound but an $x^2$. If we were to write this as an area function we would have $A(x) = \int_{0}^{x} \cos t^2 \; dt$, so we want to find $\frac{d}{dx} A(x^2)$. This is a problem where we have to use the chain rule. 
+		\begin{align*}
+			\frac{d}{dx} \int_{0}^{x^2} \cos t^2 \; dt &= \frac{d}{dx} A(x^2) \\
+			&= A'(x^2) (2x) \\
+			&= 2x \cos x^4.
+		\end{align*}
+		Note $A'(x) = \frac{d}{dx} \int_{0}^{x} \cos t^2 \; dt = \cos x^2$. 
+	\end{enumerate}
+
+	In general you can refer to the formula $$\frac{d}{dx} \int_{0}^{g(x)} f(t) \; dt = f(g(x)) g'(x).$$ 
+\end{Example}
+
+
+\subsubsection{Integrating Even and Odd Functions} 
+
+This was briefly mentioned yesterday but there are some tricks we can use when integrating even and odd functions over a symmetric interval. The tricks are as follows - 
+\begin{Theorem}
+	\begin{align*}
+		\int_{-a}^{a} f(x) \; dx &= 2 \int_{0}^{a} f(x) \; dx \; f\textnormal{ is even} \\
+		\int_{-a}^{a} f(x) \; dx &= 0 \; f\textnormal{ is odd.}
+	\end{align*}
+\end{Theorem}
+
+Remember that an even function is a function where $f(x) = f(-x)$ and an odd function is $f(x) = - f(-x)$. 
+
+We take a look at evaluating integrals using this property 
+\begin{Example}
+	\begin{enumerate}
+		\item[a.] 
+		\begin{align*}
+			\int_{-2}^{2} (x^4 - 3x^3) \; dx &= \int_{-2}^{2} x^4 \; dx - 3 \int_{-2}^{2} x^3 \;dx \\
+			&= 2 \int_{0}^{2} x^4 - 3(0) \\
+			&= 2 \left[\frac{1}{5}x^5\right]_{0}^{2} \\
+			&= 2 \left(\frac{1}{5}2^5 - 0\right) = \frac{64}{5}.
+		\end{align*}
+	
+		\item[b.] 
+		\begin{align*}
+			\int_{-\pi/2}^{\pi/2} (\cos x - 4 \sin^3 x) \;dx &= 2 \int_{0}^{\pi/2} \cos x \; dx - 0  \\
+			&= 2 \left.\sin x \right|_{0}^{\pi/2} = 2(\sin \frac{\pi}{2} - 0) = 2(1) = 2. 
+		\end{align*}
+	\end{enumerate}
+\end{Example}
+
+
+\subsubsection{Average Value of a Function} 
+
+Much like how we can find the average of a set of numbers, we can also find the average value of a function on an interval. This is how we would do it. 
+
+Consider a function $f$ continuous on $[a, b]$. Using a regular partition $x_0 = a < x_1 < x_2 < \cdots < x_n = b$ with $\Delta x = \frac{b - a}{n}$, we can select a point $x_{k}^*$ from each subinterval and find $f(x_{k}^*)$. The average value of the function on this interval using these $n$ points is $$\frac{f(x_{1}^*) + f(x_{2}^*) + \cdots + f(x_{n}^*)}{n}.$$
+
+Remember that $\Delta x = \frac{b - a}{n}$ so we can express $n$ as $\frac{b - a}{\Delta x}$. Plugging this into our expression from above we get $$\frac{f(x_{1}^*) + f(x_{2}^*) + \cdots + f(x_{n}^*)}{(b - a)/\Delta x} = \frac{1}{b - a} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x.$$
+
+The sum on the right should look familiar - this is a Riemann sum. If we take the limit as $n \to \infty $ we get a definite integral that gives us the average value $\overline{f}$ on $[a, b]$ - 
+\begin{align*}
+	\overline{f} &= \frac{1}{b - a} \lim_{n \to \infty} \sum_{k = 1}^{n} f(x_{k}^*) \Delta x \\ 
+	&= \frac{1}{b - a} \int_{a}^{b} f(x) \; dx. 
+\end{align*}
+
+This is how we define the average value of a function on an interval. Let us see some examples 
+\begin{Example}
+	A hiking trail has an elevation given by $f(x) = 60x^3 - 650 x^2 + 1200 x + 4500$, where $f$ is measured in feet above sea level and $x$ represents horizontal distance along the trail in miles with $0 \leq x \leq 5$. What is the average elevation of the trail. 
+	
+	The trail ranges between elevations of about 2000 and 5000 ft. Let the end points of the trail be our interval, $[0, 5]$. The average elevation of the trail in feet is given by 
+	\begin{align*}
+		\overline{f} = \frac{1}{b - a} \int_{a}^{b} f(x) \; dx &= \frac{1}{5 - 0} \int_{0}^{5} (60 x^3 - 650 x^2 + 1200 x + 4500) \;dx \\
+		&= \frac{1}{5} \left[ 15 x^{4} - \frac{650}{3} x^3 + 600 x^2 + 4500 x\right]_{0}^{5} \\
+		&= \frac{1}{5} \left( 15 (5^4) - \frac{650}{3} (5)^3 + 600 (5^2) + 4500 (5) \right) \\
+		&= 15 (5^3) - \frac{650}{3} 5^2 + 600(5) + 4500 \\
+		&= 1875 - \frac{16250}{3} + 3000 + 4500 \\
+		&= \frac{5625 - 16250 + 9000 + 13500}{3} = \frac{11875}{3} = 3958\frac{1}{3}.
+	\end{align*}
+
+	So the average elevation of the trail is slightly less than 3960 ft. 
+\end{Example}
+
+\subsubsection{Mean Value Theorem for Integrals} 
+
+The idea of the average value of a function over an interval is part of a very important theoretical result. Much like we had a Mean Value Theorem for derivatives, which stated that if $f$ was continuous on $[a, b]$ and differentiable on $(a, b)$ there is a $c$, $a < c < b$ such that $f'(c) = \frac{f(b) - f(a)}{b - a}$, we have something similar using the average value of a function over a interval. 
+
+\begin{Theorem}
+	(MVT for Integrals) Let $f$ be continuous on the interval $[a, b]$. There exists a point $c$ in $(a, b)$ such that $$f(c) = \overline{f} = \frac{1}{b - a} \int_{a}^{b} f(t) \; dt.$$ 
+\end{Theorem}
+
+In fact the proof of this theorem uses the MVT for functions that I just mentioned. Let us see this in action - Define an area function $F(x) = \int_{a}^{x} f(t)\;dt$. By the FTC (part 1) we know that $F$ is continuous on $[a, b]$ and differentiable on $(a, b)$. Applying the MVT for derivatives we know that there is a point $c$ in $(a, b)$ such that 
+\begin{align*}
+	F'(c) = \frac{F(b) - F(a)}{ b - a}. 
+\end{align*}
+
+By the FTC part 1 we know that $F'(c) = f(c)$ and by FTC part 2 we know that $F(b) - F(a) = \int_{a}^{b} f(t) \;dt$. Putting this together we get the result we wanted which is 
+\begin{align*}
+	f(c) = \frac{1}{b - a} \int_{a}^{b} f(t) \; dt,
+\end{align*}
+where $c$ is a point in $(a, b)$. 
+
+
+Much like for the MVT for derivatives you might run into a problem asking you to use the the MVT for derivatives - 
+\begin{Example}
+	Find the point(s) on the interval $(0, 1)$ at which $f(x) = 2x(1 - x)$ equals its average value on $[0, 1]$. 
+	
+	The first thing we need to do is find the average value using the formula - 
+	\begin{align*}
+		\overline{f} = \frac{1}{1 - 0} \int_{0}^{1} 2x(1 - x) \; dx &= \int_{0}^{1} 2x - 2x^2 \;dx \\
+		&= \left[x^2 - \frac{2}{3} x^3 \right]_{0}^{1}  \\
+		&= \left(1 - \frac{2}{3} \right) = \frac{1}{3}.
+	\end{align*}
+
+	So we want to find $x$ such that $2x (1 - x) = \frac{1}{3}$. We get a quadratic $2x^2 - 2x + \frac{1}{3} = 0$. Using the quadratic theorem we get two points $$\frac{1 - \sqrt{1/3}}{2} \approx 0.211$$ and $$\frac{1 + \sqrt{1/3}}{2} \approx 0.789.$$ So the $x$ values for the two points where $f(x)$ equals its average value are $x \approx 0.211$ and $x \approx 0.789$. 
+\end{Example}
 \end{document}
