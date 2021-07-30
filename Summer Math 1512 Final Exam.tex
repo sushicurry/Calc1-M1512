@@ -204,7 +204,7 @@
 \newpage
 	
 	\begin{enumerate}
-		\item[1.] 
+		\item[1.]  (15 pts) 
 		\begin{enumerate}
 			
 			\item State the mathematical definition of the derivative $f'(x)$ of a function $f(x)$ as a limit.
@@ -215,54 +215,56 @@
 			
 		\end{enumerate}
 		\newpage
-		\item[2.] Find the derivatives of the following functions
+		\item[2.](20 pts) Find the derivatives of the following functions
 		\begin{enumerate}
-			\item $y = [(2x + 1)^{-1} + 3]^{-1}$
-			\vspace{5 cm}
+			%\item $y = [(2x + 1)^{-1} + 3]^{-1}$
+			%\vspace{5 cm}
 			\item $f(x) = \frac{\sin^3 x}{e^{x^2}}$ 
 			\vspace{10cm}
 			\item $g(x) = \sqrt[4]{x^3 - 4x^2 + 2}$
 		\end{enumerate}
 		\newpage
-		\item[3.] Evaluate the following integrals
+		\item[3.](25 pts) Evaluate the following integrals
 			\begin{enumerate}
 				\item $\int \frac{2}{x\sqrt{x}} \; dx$ 
-				\vspace{4cm}
-				\item $\int \frac{x^2}{\sqrt[3]{1 - x^3}} \; dx$
+			%	\vspace{4cm}
+				%\item $\int \frac{x^2}{\sqrt[3]{1 - x^3}} \; dx$
 				\vspace{6cm}
 				\item $\int_{0}^{\sqrt{\pi}/2} x \sec^2 (x^2) \tan(x^2) \;dx$
 			\end{enumerate}
 		\newpage
-		\item[4.] The error function (denoted as erf) is defined as $$\textnormal{erf }x = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^2} \; dt.$$ 
+		\item[4.] (20 pts)The error function (denoted as erf) is defined as $$\textnormal{erf }x = \frac{2}{\sqrt{\pi}} \int_{0}^{x} e^{-t^2} \; dt.$$ 
 		\begin{enumerate}
 			\item Find the first and second derivatives of the error function.
 			\vspace{5cm}
 			\item The error function has two horizontal asymptotes - $\lim_{x \to \infty} \textnormal{erf } x = 1$ and $\lim_{x \to -\infty} \textnormal{erf } x = -1$. Using this and the first and second derivatives from the previous part, sketch a graph of the error function labeling the points of inflection and local extrema if any exist.
 		\end{enumerate}
 		\newpage
-		\item[5.] Find the area between $y = \cos\left(\frac{\pi x}{2}\right)$ and $y = 1 - x^2$ in the first quadrant. 
+		\item[5.] (15 pts) Find the area between $y = \cos\left(\frac{\pi x}{2}\right)$ and $y = 1 - x^2$ in the first quadrant. 
 		\newpage
-		\item[6.] Let $S$ be the region of the $xy$-plane bounded above by the curve $x^3y = 64$, below by the line $y = 1$, on the left by the line $x = 2$ and on the right by the line $x = 4$. 
+		\item[6.] (25 pts) Let $S$ be the region of the $xy$-plane bounded above by the curve $x^3y = 64$, below by the line $y = 1$, on the left by the line $x = 2$ and on the right by the line $x = 4$. 
 		\begin{enumerate}
 			\item Find the volume of the solid obtained by rotating $S$ around the $x$-axis. 
-			\vspace{8cm}
+			\vspace{12cm}
 			\item Find the volume of the solid obtained by rotating $S$ around the line $x = 2$. 
 		\end{enumerate}
 		\newpage
-		\item[7.] Find the arc length of $y = e^{x/2} + e^{-x/2}$ on the interval $[0, 1]$. 
+		\item[7.] (10 pts) Find the arc length of $y = e^{x/2} + e^{-x/2}$ on the interval $[0, 1]$. 
 		\newpage
 		\textbf{DIRECTIONS:} Pick \textbf{ONE} problem from Problems 8-10 to complete. Make sure it is clear which problem you have chosen and which ones you have not chosen. 
-		\item[8.] Evaluate the following expressions
-		\begin{enumerate}
-			\item $$\int_{0}^{\pi/2} \frac{d}{dx}[\sin(x/2)\cos(x/2)] \; dx = $$ 
-			\vspace{2in}
-			\item $$ \frac{d}{dx} \int_{x^2}^{\pi/2} \sin(t/2)\cos(t/2) \; dt = $$ 
-			\vspace{2in} \item $$\frac{d}{dx} \int_{0}^{\pi/2} \sin(x/2)\cos(x/2) \; dx = $$
-		\end{enumerate}
+		\item[8.] (20 pts) You want to see a certain number $n$ of items in order to maximize your profit. Market research tells you that if you set the price at \$1.50, you will be able to sell $5000$ items and for every 10 cents you lower the price below \$1.50 you will be able to sell another 1000 items. Suppose that your fixed costs total \$2000, and the per item cost of production is \$0.50. Find the price to set per item and number of items sold in order to maximize profit. Recall that profit = revenue - cost and revenue = number of items sold times price per item.
 		\newpage
-		\item[9.] A light shines from the top of a pole 20m high. A ball is falling 10 meters from the pole, casting a show on a building 30 meters away. When the ball is 25 meters from the ground it is falling at 6 meters per second. How fast is its shadow moving? 
+		\item[9.] (20 pts) Much like how we found volume of a solid of revolution using the sum of circular cross sections, we can also find the surface area of solid of revolution using the slice and sum method where we slice up a surface and sum the surface area of a frustum of cones. The result we get is that if the area under $f(x)$ on the interval $[a, b]$ is rotated about the $x$-axis, the surface area of the solid of revolution is given by the integral 
+		$$ SA = \int_{a}^{b} 2\pi f(x) \sqrt{1 + [f'(x)]^2} \; dx.$$
+		
+		Recall that we can create a sphere of radius $r$ by rotating $y = \sqrt{r^2 - x^2}$ about the $x$-axis on the interval $[-r, r]$. Using the formula above, show that the surface area of a sphere of radius $r$ is $4 \pi r^2$. 
 		\newpage
-		\item[10.] 	You want to see a certain number $n$ of items in order to maximize your profit. Market research tells you that if you set the price at \$1.50, you will be able to sell $5000$ items and for every 10 cents you lower the price below \$1.50 you will be able to sell another 1000 items. Suppose that your fixed costs total \$2000, and the per item cost of production is \$0.50. Find the price to set per item and number of items sold in order to maximize profit. Recall that profit = revenue - cost and revenue = number of items sold times price per item.
+		\item[10.] (20 pts) A swing consists of a board at the end of a 10 ft long rope. Think of the board as a point $P$ at the end of the rope and let $Q$ be the point of attachment at the other end. Suppose that the swing is directly below $Q$ at time $t = 0$ and is being pushed by someone who walks at 6 ft/sec from left to right. Find how fast the swing is rising after 1 sec. (Hint: Use the picture given) 
+		
+		\begin{figure}[h!]
+			\includegraphics[scale=0.8]{Capture.PNG}
+		\end{figure}
+		
 	
 	\end{enumerate}
 	
